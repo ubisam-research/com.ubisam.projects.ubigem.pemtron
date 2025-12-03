@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MessageList>
+  <SECSMessage>
+    <Header>
+      <MessageName>Name1</MessageName>
+      <Stream>1</Stream>
+      <Function>1</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>True</WaitBit>
+      <AutoReply>False</AutoReply>
+      <NoLogging>False</NoLogging>
+      <Description>jhkdahskk hdhaksj hdakjs</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="Item1" Count="2" IsFixed="True">
+        <A ItemName="Item2" Count="2" IsFixed="True" DefaultValue="ab" />
+        <U2 ItemName="Item2" Count="1" IsFixed="True" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+</MessageList>

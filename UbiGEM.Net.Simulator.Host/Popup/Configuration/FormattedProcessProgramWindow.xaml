@@ -1,0 +1,148 @@
+﻿<Window x:Class="UbiGEM.Net.Simulator.Host.Popup.FormattedProcessProgramWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.Popup"
+        xmlns:Controls="clr-namespace:UbiGEM.Net.Simulator.Host.UserControls"
+        xmlns:common="clr-namespace:UbiGEM.Net.Simulator.Host.Common"
+        mc:Ignorable="d"
+        Title="FormattedProcessProgramWindow" Height="700" Width="1000" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" WindowStyle="None" >
+    <Window.Resources>
+        <common:SECSItemFormatData x:Key="SECSItemFormatData" />
+    </Window.Resources>
+    <Grid Background="{StaticResource UbiSamThemeBackground}">
+        <Grid.RowDefinitions >
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 5 0">
+            <GroupBox Header="Formatted Process Program Setting" Style="{StaticResource UbiSamThemeGroupBox}">
+                <Grid >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="19" MinWidth="19" MaxWidth="19" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="19" MinWidth="19" MaxWidth="19" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border Grid.Row="0" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" >
+                        <GroupBox Header="Recipes" >
+                            <Grid Margin="0 -24 0 0" >
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="24" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <Controls:ClientMenuControl x:Name="ctlFmtPP" Grid.Row="0" OnAdd="ctlFmtPP_OnAdd" OnRemove="ctlFmtPP_OnRemove" Margin="0 -27 1 0" />
+
+                                <DataGrid Name="dgrFmtPP" Grid.Row="1" SelectionChanged="dgrFmtPP_SelectionChanged" FrozenColumnCount="1"
+                                          IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                          >
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="PPID" Binding="{Binding PPID}" IsReadOnly="False" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                                        <DataGridTemplateColumn Header="Auto">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <CheckBox IsChecked="{Binding AutoSend, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        
+                                        <DataGridTemplateColumn Header="Trigger">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Click="btnTriggerEdit_Click" Content="Edit" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+
+                                        <DataGridTextColumn Header="MDLN" Binding="{Binding MDLN}" IsReadOnly="False" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                                        <DataGridTextColumn Header="SOFTREV" Binding="{Binding SOFTREV}" IsReadOnly="False" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </GroupBox>
+                    </Border>
+
+                    <GridSplitter Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" Style="{DynamicResource UbiSamThemeGridSplitter}" HorizontalAlignment="Center" ResizeDirection="Columns"/>
+
+                    <Border Grid.Column="2" Grid.Row="0" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" >
+                        <GroupBox Header="CCode" >
+                            <Grid Margin="0 -25 0 0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="24" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <Controls:ClientMenuControl x:Name="ctlCCode" Grid.Row="0" OnAdd="ctlCCode_OnAdd" OnRemove="ctlCCode_OnRemove" Margin="0 -27 1 0" />
+
+                                <DataGrid Name="dgrCCode" Grid.Row="1" SelectionChanged="dgrCCode_SelectionChanged" Margin="0, 0, 0, 0" FrozenColumnCount="3"
+                                        IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                        >
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="CommandCode" Binding="{Binding CommandCode}" IsReadOnly="False" Width="*" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </GroupBox>
+                    </Border>
+
+                    <GridSplitter Grid.Row="0" Grid.Column="3" Style="{DynamicResource UbiSamThemeGridSplitter}" HorizontalAlignment="Center" ResizeDirection="Columns"/>
+
+                    <Border Grid.Column="4" Grid.Row="0" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" >
+                        <GroupBox Header="PPItem" >
+                            <Grid Margin="0 -25 0 0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="24" MinHeight="24" MaxHeight="24"/>
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <Controls:ClientMenuControl x:Name="ctlPPItem" Grid.Row="0" OnAdd="ctlPPItem_OnAdd" OnRemove="ctlPPItem_OnRemove" Margin="0 -27 1 0" />
+
+                                <DataGrid Grid.Row="1" Name="dgrPPItem" Margin="0, 0, 0, 0" FrozenColumnCount="1"
+                                        IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                        >
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="PPName" Binding="{Binding PPName}" IsReadOnly="False" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                                        <DataGridComboBoxColumn Header="Format" CanUserSort="False" 
+                                                            SelectedValueBinding="{Binding Format}" ItemsSource="{StaticResource SECSItemFormatData}" 
+                                                                EditingElementStyle="{StaticResource DataGridComboBoxColumnEditing}" ElementStyle="{StaticResource DataGridComboBoxColumnElement}"
+                                                                />
+                                        <DataGridTextColumn Header="PPValue" Binding="{Binding PPValue}" IsReadOnly="False" ElementStyle="{StaticResource DataGridTextColumnElement}" >
+                                            <DataGridTextColumn.EditingElementStyle>
+                                                <Style TargetType="TextBox" BasedOn="{StaticResource DataGridTextColumnEditing}">
+                                                    <Setter Property="AcceptsReturn" Value="False" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Format}" Value="A">
+                                                            <Setter Property="AcceptsReturn" Value="True" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </DataGridTextColumn.EditingElementStyle>
+                                        </DataGridTextColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </GroupBox>
+                    </Border>
+                </Grid>
+            </GroupBox>
+        </Border>
+
+        <Border Grid.Column="0" Grid.Row="1" Style="{StaticResource PopupBottomArea}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Content="Save" Click="btnSave_Click" />
+                <Button Grid.Column="3" Content="Close" Click="btnClose_Click" IsCancel="True"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

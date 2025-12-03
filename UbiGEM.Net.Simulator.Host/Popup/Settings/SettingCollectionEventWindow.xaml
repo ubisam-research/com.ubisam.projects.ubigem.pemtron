@@ -1,0 +1,53 @@
+﻿<Window x:Class="UbiGEM.Net.Simulator.Host.Popup.SettingCollectionEventWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.Popup"
+        xmlns:converter="clr-namespace:UbiGEM.Net.Simulator.Host.Converter" 
+        mc:Ignorable="d"
+        Title="SettingCollectionEventWindow" Height="428" Width="567" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" WindowStyle="None" >
+    <Grid Background="{StaticResource UbiSamThemeBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 5 0">
+            <GroupBox Header="Collection Event Namelist Request">
+                <DataGrid Name="dgrCE" FrozenColumnCount="3"
+                          IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                          >
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <CheckBox Click="chkAll_Click" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox IsChecked="{Binding IsSelected, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTextColumn x:Name="dgcCEID" Header="CEID" Binding="{Binding CEID}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                        <DataGridTextColumn x:Name="dgcName" Header="Name" Binding="{Binding Name}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                        <DataGridTextColumn x:Name="dgcDescription" Header="Description" Binding="{Binding Description}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+        </Border>
+
+        <Border Grid.Row="1" Style="{StaticResource PopupBottomArea}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Content="Close" Click="btnClose_Click" IsCancel="True"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

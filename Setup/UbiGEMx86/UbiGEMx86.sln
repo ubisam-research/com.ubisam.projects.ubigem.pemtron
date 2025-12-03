@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "UbiGEMx86", "UbiGEMx86\UbiGEMx86.vdproj", "{7CB3F3BC-0AF3-4D08-B872-2079FCB0BB50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|default = Debug|default
+		Release|default = Release|default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CB3F3BC-0AF3-4D08-B872-2079FCB0BB50}.Debug|default.ActiveCfg = Debug
+		{7CB3F3BC-0AF3-4D08-B872-2079FCB0BB50}.Debug|default.Build.0 = Debug
+		{7CB3F3BC-0AF3-4D08-B872-2079FCB0BB50}.Release|default.ActiveCfg = Release
+		{7CB3F3BC-0AF3-4D08-B872-2079FCB0BB50}.Release|default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {23142E9F-A44B-47D8-BEA8-C9B4FF7C0CC2}
+	EndGlobalSection
+EndGlobal

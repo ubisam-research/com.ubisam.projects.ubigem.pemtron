@@ -1,0 +1,2043 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Ubisam.GEM.Sample.VBnet
+</name>
+</assembly>
+<members>
+<member name="T:Ubisam.GEM.Sample.VBnet.My.MyWpfExtension">
+ <summary>
+ WPF용 My 네임스페이스에 사용할 수 있는 속성을 정의하는 데 사용되는 모듈입니다.
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:Ubisam.GEM.Sample.VBnet.My.MyWpfExtension.Application">
+ <summary>
+ 실행하는 응용 프로그램에 대한 응용 프로그램 개체를 반환합니다.
+ </summary>
+</member>
+<member name="P:Ubisam.GEM.Sample.VBnet.My.MyWpfExtension.Computer">
+ <summary>
+ 호스트 컴퓨터에 대한 정보를 반환합니다.
+ </summary>
+</member>
+<member name="P:Ubisam.GEM.Sample.VBnet.My.MyWpfExtension.User">
+ <summary>
+ 현재 사용자에 대한 정보를 반환합니다.  현재 Windows 사용자 자격 증명을 사용하여 응용 프로그램을 실행하려면 
+ My.User.InitializeWithWindowsUser()를 호출하십시오.
+ </summary>
+</member>
+<member name="P:Ubisam.GEM.Sample.VBnet.My.MyWpfExtension.Log">
+ <summary>
+ 응용 프로그램 로그를 반환합니다. 응용 프로그램의 구성 파일로 수신기를 구성할 수 있습니다.
+ </summary>
+</member>
+<member name="P:Ubisam.GEM.Sample.VBnet.My.MyWpfExtension.Windows">
+ <summary>
+ 프로젝트에 정의된 Windows 컬렉션을 반환합니다.
+ </summary>
+</member>
+<member name="T:Ubisam.GEM.Sample.VBnet.My.Resources.Resources">
+<summary>
+  지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+</summary>
+</member>
+<member name="P:Ubisam.GEM.Sample.VBnet.My.Resources.Resources.ResourceManager">
+<summary>
+  이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+</summary>
+</member>
+<member name="P:Ubisam.GEM.Sample.VBnet.My.Resources.Resources.Culture">
+<summary>
+  이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
+  재정의합니다.
+</summary>
+</member>
+<member name="T:Ubisam.GEM.Sample.VBnet.Application">
+<summary>
+Application
+</summary>
+</member>
+<member name="M:Ubisam.GEM.Sample.VBnet.Application.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="M:Ubisam.GEM.Sample.VBnet.Application.Main">
+<summary>
+Application Entry Point.
+</summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedCE.Offline">
+ <summary>
+ Offline
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedCE.AlarmSet">
+ <summary>
+ Alarm Set
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedCE.AlarmClear">
+ <summary>
+ Alarm Clear
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedCE.LimitMonitoring">
+ <summary>
+ Limit Monitoring
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedCE.OfflineOnHost">
+ <summary>
+ Offline On Host
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedCE.OnlineLocal">
+ <summary>
+ Online Local
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedCE.OnlineRemote">
+ <summary>
+ Online Remote
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedCE.ControlStateChanged">
+ <summary>
+ Control State Changed
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedCE.EquipmentConstantChanged">
+ <summary>
+ Equipment Constant Changed
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedCE.EquipmentConstantChangedByHost">
+ <summary>
+ Equipment Constant Changed(HOST-S2F15)
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedCE.ProcessProgramChanged">
+ <summary>
+ Process Program Changed
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedCE.ProcessStateChanged">
+ <summary>
+ Process State Changed
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedEC.EstablishCommunicationsTimeout">
+ <summary>
+ The length of time, in seconds, of the interval between attempts to send S1F13 when establishing communications.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedEC.TimeFormat">
+ <summary>
+ The setting of this ECV controls whether the equipment shall use use the variable item CLOCK and the data items STIME, TIMESTAMP, and TIME in  12-byte, 16-byte, or Extended format.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedV.ChangedECList">
+ <summary>
+ L2(ECID,ECV) List
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ABS">
+ <summary>
+ Any binary string.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ACCESSMODE">
+ <summary>
+ Load Port Access Mode. Possible values are.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ACDS">
+ <summary>
+ After Command Codes.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ACKA">
+ <summary>
+ Indicates success of a request.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ACKC10">
+ <summary>
+ Acknowledge Code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ACKC13">
+ <summary>
+ Return code for secondary messages 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ACKC15">
+ <summary>
+ Return code for secondary messages, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ACKC3">
+ <summary>
+ Acknowledge code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ACKC5">
+ <summary>
+ Acknowledge code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ACKC6">
+ <summary>
+ Acknowledge code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ACKC7">
+ <summary>
+ Acknowledge code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ACKC7A">
+ <summary>
+ Acknowledge Code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.AGENT">
+ <summary>
+ .
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ALCD">
+ <summary>
+ Alarm code byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ALED">
+ <summary>
+ Alarm enable/disable code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ALID">
+ <summary>
+ Alarm identification.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ALTX">
+ <summary>
+ Alarm text limited to 120 characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ATTRDATA">
+ <summary>
+ Contains a specific attribute value for a specific object.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ATTRID">
+ <summary>
+ Identifier for an attribute for a specific type of object.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ATTRRELN">
+ <summary>
+ The relationship that a specified qualifying value has to the value of an attribute of an object instance (the value of interest).
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.AUTOCLEAR">
+ <summary>
+ A flag which enables or disables the Auto Clear function.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.AUTOCLOSE">
+ <summary>
+ A function that equipment closes the session automatically when operator access doesn’t occur exceeding the predefined maximum time.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.BCDS">
+ <summary>
+ Before Command Codes.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.BCEQU">
+ <summary>
+ Bin code equivalents.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.BINLT">
+ <summary>
+ The Bin List.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.BLKDEF">
+ <summary>
+ Block Definition.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.BPD">
+ <summary>
+ Boot program Data.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.BYTMAX">
+ <summary>
+ Byte Maximum.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CAACK">
+ <summary>
+ Carrier Action Acknowledge Code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CARRIERACTION">
+ <summary>
+ Specifies the action requested for a carrier.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CARRIERID">
+ <summary>
+ The identifier of a carrier.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CARRIERSPEC">
+ <summary>
+ The object specifier for a carrier. Conforms to OBJSPEC.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CATTRDATA">
+ <summary>
+ The value of a carrier attribute.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CATTRID">
+ <summary>
+ The name of a carrier attribute.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CCACK">
+ <summary>
+ Information concerning the result of the service.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CCODE">
+ <summary>
+ Command Code.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CEED">
+ <summary>
+ Collection event or trace enable/disable code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CEID">
+ <summary>
+ Collected event ID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CENAME">
+ <summary>
+ Collection event name.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CEPACK">
+ <summary>
+ Command Enhanced Parameter Acknowledge.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CEPVAL">
+ <summary>
+ Command Enhanced Parameter Value.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CHKINFO">
+ <summary>
+ User defined.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CKPNT">
+ <summary>
+ Checkpoint as defined by the sending system.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CLSSTS">
+ <summary>
+ Information if the session is closed properly.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CMDA">
+ <summary>
+ Command acknowledge code.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CMDMAX">
+ <summary>
+ Command Maximum.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CNAME">
+ <summary>
+ Command Name = 16 characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.COLCT">
+ <summary>
+ Column count in die increments.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.COLHDR">
+ <summary>
+ Text description of contents of TBLELT. 1?20 characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.COMMACK">
+ <summary>
+ Establish Communications Acknowledge Code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.COMPARISONOPERATOR">
+ <summary>
+ Choice of available operators that compare the supplied value to the current attribute value. Evaluated as ‘Current value XX supplied value’ where XX is one of the enumerated values  (e.g., ‘GT’).
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CONDITION">
+ <summary>
+ Provides condition information for a subsystem component. Used in the data item in the CONDITIONLIST.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CONDITIONLIST">
+ <summary>
+ A list of CONDITION data sent in a fixed order. CONDITIONLIST has the following form.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CPACK">
+ <summary>
+ Command Parameter Acknowledge Code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CPNAME">
+ <summary>
+ Command Parameter Name.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CPVAL">
+ <summary>
+ Command Parameter Value.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CRAACK">
+ <summary>
+ Information concerning the result of the service.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CRAEACK">
+ <summary>
+ Information concerning the result of the event.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CSAACK">
+ <summary>
+ Equipment Acknowledgement code,  1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CTLJOBCMD">
+ <summary>
+ Control Job command codes are assigned as follows.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.CTLJOBID">
+ <summary>
+ Identifier for Control Job. Conforms to OBJID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DATA">
+ <summary>
+ A vector or string of unformatted data.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DATAACK">
+ <summary>
+ Acknowledge code for data.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DATAID">
+ <summary>
+ Data ID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DATALENGTH">
+ <summary>
+ Total bytes to be sent.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DATASEG">
+ <summary>
+ Used to identify the data requested.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DATASRC">
+ <summary>
+ Object type for Data Source Objects.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DATLC">
+ <summary>
+ Data location.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DELRSPSTAT">
+ <summary>
+ Status response for the Delete PDE request.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DIRRSPSTAT">
+ <summary>
+ Status response for the GET PDE Directory request.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DRACK">
+ <summary>
+ Define Report Acknowledge Code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DRRACK">
+ <summary>
+ Information concerning the result of the service.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DSID">
+ <summary>
+ Data set ID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DSNAME">
+ <summary>
+ The name of the Data Set.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DSPER">
+ <summary>
+ Data sample period. DSPER has two allowable formats.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DUTMS">
+ <summary>
+ Die Units of Measure.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DVNAME">
+ <summary>
+ Data value name.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DVVAL">
+ <summary>
+ Data value.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.DVVALNAME">
+ <summary>
+ A descriptive name for the data variable.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.EAC">
+ <summary>
+ Equipment acknowledge code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ECDEF">
+ <summary>
+ Equipment constant default value.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ECID">
+ <summary>
+ Equipment Constant ID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ECMAX">
+ <summary>
+ Equipment constant maximum value.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ECMIN">
+ <summary>
+ Equipment constant minimum value.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ECNAME">
+ <summary>
+ Equipment constant name.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ECV">
+ <summary>
+ Equipment Constant Value.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.EDID">
+ <summary>
+ Expected data Identification.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.EMID">
+ <summary>
+ Equivalent material ID  (16 bytes maximum).
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.EPD">
+ <summary>
+ Executive program data.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.EQID">
+ <summary>
+ Identifier that indicates equipment which the recipe is tuned for.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.EQNAME">
+ <summary>
+ A unique ASCII equipment identifier assigned by the factory to the equipment. Limited to a maximum of 80 characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ERACK">
+ <summary>
+ Enable/Disable Event Report. Acknowledge Code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ERCACK">
+ <summary>
+ Response component for single recipe check.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ERRCODE">
+ <summary>
+ Code identifying an error.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ERRTEXT">
+ <summary>
+ Text string describing the error noted in the corresponding ERRCODE. Limited to 120 characters maximum.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ERRW7">
+ <summary>
+ Text string describing error found in process program.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ERXACK">
+ <summary>
+ Response component for single recipe transfer.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.EVNTSRC">
+ <summary>
+ Object type for Event Source Objects.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.EXID">
+ <summary>
+ Unique identifier for the exception. Maximum length of 20 characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.EXMESSAGE">
+ <summary>
+ Text which describes the nature of the exception.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.EXRECVRA">
+ <summary>
+ Text which specifies a recovery action for an exception. Maximum length of 40 bytes.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.EXTYPE">
+ <summary>
+ Text which identifies the type of an exception. It is usually a single word of text.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.FCNID">
+ <summary>
+ Function Identification.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.FFROT">
+ <summary>
+ Film Frame Rotation.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.FILDAT">
+ <summary>
+ Data from the Data Set.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.FNLOC">
+ <summary>
+ Flat/Notch Location.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.FRMLEN">
+ <summary>
+ Formatted Process Program Length.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.GETRSPSTAT">
+ <summary>
+ Status response for the Get PDE and Get PDEheader requests.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.GRANT">
+ <summary>
+ Grant code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.GRANT6">
+ <summary>
+ Permission to send, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.GRNT1">
+ <summary>
+ Grant code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.GRXLACK">
+ <summary>
+ Information concerning the result of the service.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.HANDLE">
+ <summary>
+ Logical unit or channel.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.HCACK">
+ <summary>
+ Host Command Parameter Acknowledge Code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.HOACK">
+ <summary>
+ Conveys whether the corresponding handoff activity succeeded (= True) or failed (= False).
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.HOCANCELACK">
+ <summary>
+ Tells whether the cancel ready message was accepted or rejected.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.HOCMDNAME">
+ <summary>
+ Identifier for the handoff command to be executed.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.HOHALTACK">
+ <summary>
+ Tells whether the halt command was accepted or rejected.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.IACDS">
+ <summary>
+ Immediately After Command Codes.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.IBCDS">
+ <summary>
+ Immediately Before Command Codes.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.IDTYP">
+ <summary>
+ Id type.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.INPTN">
+ <summary>
+ A specialized version of PTN indicating the InputPort.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.JOBACTION">
+ <summary>
+ Specifies the action for a ReticleTransferJob.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.LENGTH">
+ <summary>
+ Length of the service program or process program in bytes.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.LIMITACK">
+ <summary>
+ Acknowledgment code for variable limit attribute set, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.LIMITID">
+ <summary>
+ The identifier of a specific limit in the set of limits (as defined by UPPERDB and LOWERDB) for a variable to which the corresponding limit attributes refer, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.LIMITMAX">
+ <summary>
+ The maximum allowed value for the limit values of a specific variable.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.LIMITMIN">
+ <summary>
+ The minimum allowed value for the limit values of a specific variable.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.LINKID">
+ <summary>
+ Used to link a completion message with a request that an operation be performed. LINKID is set to the value of RMOPID in the initial request except for the last completion message to be sent, where it is set to zero.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.LLIM">
+ <summary>
+ Lower limit for numeric value.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.LOC">
+ <summary>
+ Machine material location code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.LOCID">
+ <summary>
+ The logical identifier of a material location.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.LOWERDB">
+ <summary>
+ A variable limit attribute which defines the lower boundary of the deadband of a limit. The value applies to a single limit (LIMITID) for a specified VID. Thus, UPPERDB and LOWERDB as a pair define a limit.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.LRACK">
+ <summary>
+ Link Report Acknowledge Code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.LVACK">
+ <summary>
+ Variable limit definition acknowledge code, 1 byte. Defines the error with the limit attributes for the referenceVID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MAPER">
+ <summary>
+ Map Error.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MAPFT">
+ <summary>
+ Map data format type.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MAXNUMBER">
+ <summary>
+ Provides MaxNumber information for each subspace. Used in the data item MAXNUMBERLIST.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MAXNUMBERLIST">
+ <summary>
+ Maximum number of PEM Recipes allowed to be preserved in PRC after PJ creation. MaxNumber has a list structure so that it can be applied to each subspace. The usage of the list structure is equipment defined.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MAXTIME">
+ <summary>
+ Maximum time during which a PEM Recipe allowed to be in PRC after use.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MCINDEX">
+ <summary>
+ Identifier used to link a handoff command message with its eventual completion message. Corresponding messages carry the same value for this data item.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MDACK">
+ <summary>
+ Map data acknowledge.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MDLN">
+ <summary>
+ Equipment Model Type, 20 bytes max.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MEXP">
+ <summary>
+ Message expected in the form SxxFyy where x is stream and y is function.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MF">
+ <summary>
+ Material format code 1 byte by Format 10.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MHEAD">
+ <summary>
+ SECS message block header associated with message block in error.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MID">
+ <summary>
+ Material ID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MIDAC">
+ <summary>
+ Material ID Acknowledge Code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MIDRA">
+ <summary>
+ Material ID Acknowledge Code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MLCL">
+ <summary>
+ Message length.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.MMODE">
+ <summary>
+ Matrix mode select, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.NACDS">
+ <summary>
+ Not After Command Codes.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.NBCDS">
+ <summary>
+ Not Before Command Codes.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.NULBC">
+ <summary>
+ Null bin code value.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.OBJACK">
+ <summary>
+ Acknowledge code.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.OBJCMD">
+ <summary>
+ Specifies an action to be performed by an object.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.OBJID">
+ <summary>
+ Identifier for an object.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.OBJSPEC">
+ <summary>
+ A text string that has an internal format and that is used to point to a specific object instance. The string is formed out of a sequence of formatted substrings, each specifying an object’s type and identifier. The substring format has the following four fields: object type,  colon character ‘:’,  object identifier,  greater-than symbol ‘>’ where the colon character ‘:’ is used to terminate an object type and the greater than symbol ‘>’ is used to terminate an identifier field. The object type field may be omitted where it may be otherwise determined. The final ‘>’ is optional.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.OBJTOKEN">
+ <summary>
+ Token used for authorization.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.OBJTYPE">
+ <summary>
+ Identifier for a group or class of objects. All objects of the same type must have the same set of attributes available.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.OFLACK">
+ <summary>
+ Acknowledge code for OFF-LINE request.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ONLACK">
+ <summary>
+ Acknowledge code for ONLINE request.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.OPID">
+ <summary>
+ Operation ID. A unique integer generated by the requestor of an operation, used where multiple completion confirmations may occur.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.OPRID">
+ <summary>
+ Host-registered identifier of the operator who uses the Remote Access sessio.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.OPRPWORD">
+ <summary>
+ Host-registered password of the operator who uses the Remote Access session.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ORAACK">
+ <summary>
+ Information concerning the result of the service.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ORAEACK">
+ <summary>
+ Information concerning the result of the event.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ORLOC">
+ <summary>
+ Origin Location.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.OUTPTN">
+ <summary>
+ A specialized version of PTN indicating the OutPutPort.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PARAMNAME">
+ <summary>
+ The name of a parameter in a request.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PARAMVAL">
+ <summary>
+ The value of the parameter named in PARAMNAME. Values that are lists are restricted to lists of single items of the same format type.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PDEATTRIBUTE">
+ <summary>
+ Selection from available PDE attributes whose values could be reported.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PDEATTRIBUTENAME">
+ <summary>
+ Selection from available PDE attributes that can be used to filter the PDE directory report.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PDEATTRIBUTEVALUE">
+ <summary>
+ Contains the value of the corresponding PDEATTRIBUTE in the appropriate format.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PDEREF">
+ <summary>
+ Contains the unique identifier of a PDE (uid) or of a PDE group (gid).
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PDFLT">
+ <summary>
+ Parameter Default Value.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PECACK">
+ <summary>
+ OK/NG response from the host to Pre-Exe Check event from equipment.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PECEACK">
+ <summary>
+ Information concerning the result of the event.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PECRACK">
+ <summary>
+ Response component for single recipe check.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PEMFLAG">
+ <summary>
+ PEMFlag holds SecurityID to be used for PJ creation.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PFCD">
+ <summary>
+ Predefined form code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PGRPACTION">
+ <summary>
+ The action to be performed on a port group.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PMAX">
+ <summary>
+ Parameter Count Maximum.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PNAME">
+ <summary>
+ Parameter Name ≤16 characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PORTACTION">
+ <summary>
+ The action to be performed on a port.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PORTGRPNAME">
+ <summary>
+ The identifier of a group of ports.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PPARM">
+ <summary>
+ Process Parameter.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PPBODY">
+ <summary>
+ Process program body.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PPGNT">
+ <summary>
+ Process program grant status, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PPID">
+ <summary>
+ Process program ID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRAXI">
+ <summary>
+ Process axis.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRCMDNAME">
+ <summary>
+ Commands sent to a Process Job.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRCPREEXECHK">
+ <summary>
+ Enable/Disable of PreExecution Check option. This defines use of optional Pre-Execution Check.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRCSWITCH">
+ <summary>
+ Enable/Disable of entire PRC functionalities.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRDCT">
+ <summary>
+ Process Die Count.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PREACK">
+ <summary>
+ Information concerning the result of the event.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PREVENTID">
+ <summary>
+ Processing related event identification.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRJOBID">
+ <summary>
+ Text string which uniquely identifies a Process Job.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRJOBMILESTONE">
+ <summary>
+ Notification of Processing status shall have one of the following values.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRJOBSPACE">
+ <summary>
+ The number of Process Jobs that can be created.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRMTRLORDER">
+ <summary>
+ Defines the order by which material in the Process Jobs material list will be processed. Possible values are assigned as follows.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRPAUSEEVENT">
+ <summary>
+ The list of event identifiers, which may be sent as an attribute value to a Process Job. When a Process Job encounters one of these events it will pause, until it receives the PRJobCommand RESUME.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRPROCESSSTART">
+ <summary>
+ Indicates that the process resource start processing immediately when ready.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRRECIPEMETHOD">
+ <summary>
+ Indicates the recipe specification type, whether tuning is applied and which method is used.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRSTATE">
+ <summary>
+ Enumerated value, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PRXACK">
+ <summary>
+ Information concerning the result of the service.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PSRACK">
+ <summary>
+ Information concerning the result of the service.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.PTN">
+ <summary>
+ Material Port number, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.QREACK">
+ <summary>
+ Information concerning the result of the event.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.QRXACK">
+ <summary>
+ Information concerning the result of the service.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.QRXLEACK">
+ <summary>
+ Information concerning the result of the event.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.QUA">
+ <summary>
+ Quantity in format, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RAC">
+ <summary>
+ Reset acknowledge, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RACSWITCH">
+ <summary>
+ Enable/Disable of entire RAC functionalities.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCMD">
+ <summary>
+ Remote command code or string.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPATTRDATA">
+ <summary>
+ The contents (value) of a recipe attribute.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPATTRID">
+ <summary>
+ The name (identifier) of a non-identifier recipe attribute.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPBODY">
+ <summary>
+ Recipe body.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPBODYA">
+ <summary>
+ Recipe body allowed list structure.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPCLASS">
+ <summary>
+ Recipe class.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPCMD">
+ <summary>
+ Indicates an action to be performed on a recipe.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPDEL">
+ <summary>
+ .
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPDESCLTH">
+ <summary>
+ The length in bytes of a recipe section.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPDESCNM">
+ <summary>
+ Identifies a type of descriptor of a recipe: ‘ASDesc’, ‘BodyDesc’, ‘GenDesc..
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPDESCTIME">
+ <summary>
+ The timestamp of a recipe section, in the format ‘YYYYMMDDhhmmsscc..
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPID">
+ <summary>
+ Recipe identifier. Formatted text conforming to the requirements of OBJSPEC.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPNAME">
+ <summary>
+ Recipe name.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPNEWID">
+ <summary>
+ The new recipe identifier assigned as the result of a copy or rename operation.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPOWCODE">
+ <summary>
+ Indicates whether any preexisting recipe is to be overwritten (= TRUE) or not (= FALSE) on download.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPPARNM">
+ <summary>
+ The name of a recipe variable parameter. Maximum length of 256 characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPPARRULE">
+ <summary>
+ The restrictions applied to a recipe variable parameter setting. Maximum length of 80 characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPPARVAL">
+ <summary>
+ The initial setting assigned to a recipe variable parameter. Text form restricted to maximum of 80 characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPRENAME">
+ <summary>
+ Indicates whether a recipe is to be renamed (= TRUE) or copied (= FALSE).
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPSECCODE">
+ <summary>
+ Indicates the sections of a recipe requested for transfer or being transferred.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPSECNM">
+ <summary>
+ Recipe section name: ‘Generic’, ‘Body’, or ‘ASDS..
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPSPEC">
+ <summary>
+ Recipe specifier. The object specifier of a recipe.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPSTAT">
+ <summary>
+ The status of a managed recipe.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPUPDT">
+ <summary>
+ Indicates if an existing recipe is to be updated (= True) or a new recipe is to be created (= False).
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RCPVERS">
+ <summary>
+ Recipe version.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.READLN">
+ <summary>
+ Maximum length to read.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RECID">
+ <summary>
+ RCPSPEC' or 'PPID' RECID may not always be a unique identifier.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RECLEN">
+ <summary>
+ Maximum length of a Discrete record.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.REFP">
+ <summary>
+ Reference Point.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.REPGSZ">
+ <summary>
+ Reporting group size.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RESC">
+ <summary>
+ Resolution code for numeric data.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RESOLUTION">
+ <summary>
+ Contains the unique identifier of a PDE (uid).
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RESPDESTAT">
+ <summary>
+ Status response for the Resolve PDE request. If more than one of these conditions applies, the first value on the list that applies should be returned.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RESPEC">
+ <summary>
+ Object specifier for the recipe executor.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RESV">
+ <summary>
+ Resolution value for numeric data.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RETICLEID">
+ <summary>
+ The object identifier for a reticle. Conforms to OBJSPEC.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RETPLACEINSTR">
+ <summary>
+ Instructions to indicate which pod slots will have reticles placed. Possible values for Reticle-PlacementInstruction are.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RETREMOVEINSTR">
+ <summary>
+ Instructions to indicate which pod slots will have reticles removed.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RIC">
+ <summary>
+ Reset code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RMACK">
+ <summary>
+ Conveys whether a requested action was successfully completed, denied, completed with errors, or will be completed with notification to the requestor.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RMCHGSTAT">
+ <summary>
+ Indicates the change that occurred for an object.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RMCHGTYPE">
+ <summary>
+ Indicates the type of change for a recipe.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RMDATASIZE">
+ <summary>
+ The maximum total length, in bytes, of a multi-block message, used by the receiver to determine if the anticipated message exceeds the receiver’s capacity.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RMGRNT">
+ <summary>
+ Grant code, used to grant or deny a request. 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RMNEWNS">
+ <summary>
+ New name (identifier) assigned to a recipe namespace.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RMNSCMD">
+ <summary>
+ Action to be performed on a recipe namespace.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RMNSSPEC">
+ <summary>
+ The object specifier of a recipe namespace.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RMRECSPEC">
+ <summary>
+ The object specifier of a distributed recipe namespace recorder.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RMREQUESTOR">
+ <summary>
+ Set to TRUE if initiator of change request was an attached segment. Set to FALSE otherwise.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RMSEGSPEC">
+ <summary>
+ The object specifier of a distributed recipe namespace segment.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RMSPACE">
+ <summary>
+ The amount of storage available for at least one recipe in a recipe namespace, in bytes.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ROWCT">
+ <summary>
+ Row count in die increments.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RPMACK">
+ <summary>
+ Reticle Pod management service acknowledge code. 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RPMDESTLOC">
+ <summary>
+ The LocationID towards which a reticle must be moved. Conforms to OBJID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RPMSOURLOC">
+ <summary>
+ The LocationID of the location from which to pick-up a reticle for moving it to another location. Conforms to OBJID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RPSEL">
+ <summary>
+ Reference Point Select.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RPTID">
+ <summary>
+ Report ID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RPTOC">
+ <summary>
+ A Trace Object attribute for a flag which, if set TRUE, causes only variables which have changed during the sample period to be included in a report.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RQCMD">
+ <summary>
+ Required Command.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RQPAR">
+ <summary>
+ Required Parameter.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RRACK">
+ <summary>
+ Information concerning the result of the service.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RSACK">
+ <summary>
+ Ready to Send Acknowledge code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RSDA">
+ <summary>
+ Request Spool Data Acknowledge.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RSDC">
+ <summary>
+ Request Spool Data Code.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RSINF">
+ <summary>
+ Starting location for row or column. This item consists of 3 values (x,y,direction). If direction value is negative, it equals decreasing direction. If the value is positive, it equals increasing direction. Direction must be a nonzero value.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RSPACK">
+ <summary>
+ Reset Spooling Acknowledge.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RTSRSPSTAT">
+ <summary>
+ Status response for the Ready To Send request.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RTYPE">
+ <summary>
+ Type of record.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.RXACK">
+ <summary>
+ Response component for a list of recipe transfer.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SDACK">
+ <summary>
+ Map set-up data acknowledge.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SDBIN">
+ <summary>
+ Send bin information flag.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SECID">
+ <summary>
+ Identifier of Security Class of the recipe.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SENDRESULT">
+ <summary>
+ Reports overall success or failure of the sendPDE() request.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SENDRSPSTAT">
+ <summary>
+ Status response for the Send PDE request.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SEQNUM">
+ <summary>
+ Command Number.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SFCD">
+ <summary>
+ Status form code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SHEAD">
+ <summary>
+ Stored header related to the transaction timer.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SLOTID">
+ <summary>
+ Used to reference material by slot (a position that holds material/substrates) in a carrier. This item may be implemented as an array in some messages.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SMPLN">
+ <summary>
+ Sample numbe.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SOFTREV">
+ <summary>
+ Software revision code 20 bytes maximum.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SPAACK">
+ <summary>
+ Information concerning the result of the service.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SPD">
+ <summary>
+ Service program data.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SPFACK">
+ <summary>
+ Information concerning the result of the service.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SPID">
+ <summary>
+ Service program ID, 6 characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SPNAME">
+ <summary>
+ Service parameter name defined in specific standard. If service parameter is defined as an object attribute, this is completely the same as ATTRID except format restrictions above.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SPR">
+ <summary>
+ Service program results.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SPVAL">
+ <summary>
+ Service parameter value, corresponding to SPNAME. If service parameter is defined as an object attribute, this is completely the same as ATTRDATA except format restrictions for the attribute.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SRAACK">
+ <summary>
+ Information concerning the result of the service.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SRSSWITCH">
+ <summary>
+ Enable/Disable entire SRS functionalities. Default is Disabled.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SSACK">
+ <summary>
+ Indicates the success or failure of a requested action. Two characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SSCMD">
+ <summary>
+ Indicates an action to be performed by the subsystem.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SSSACK">
+ <summary>
+ Information concerning the result of the service.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.STATUS">
+ <summary>
+ Provides status information for a subsystem component. Used in the data item STATUSLIST.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.STATUSLIST">
+ <summary>
+ A list of STATUS data sent in a fixed order. STATUSLIST has the following form.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.STATUSTXT">
+ <summary>
+ Text string describing the corresponding status response. Maximum length of 80 characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.STEMP">
+ <summary>
+ String template. ASCII text string acceptable to equipment as a parameter value. A data string matches a template string if the data string is at least as long as the template and each character of the data string matches the corresponding character of the template. A null list indicates all user data is acceptable to the machine.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.STIME">
+ <summary>
+ Sample time, 12, 16 bytes, or Extended format as specified by the TimeFormat equipment constant value setting.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.STRACK">
+ <summary>
+ Spool Stream Acknowledge.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.STRID">
+ <summary>
+ Stream Identification.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.STRP">
+ <summary>
+ Starting position in die coordinate position. Must be in (X,Y) order.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SV">
+ <summary>
+ Status variable value.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SVCACK">
+ <summary>
+ Service acceptance acknowledge code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SVCNAME">
+ <summary>
+ Service name provided on specified object asking by the host.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SVID">
+ <summary>
+ Status variable ID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.SVNAME">
+ <summary>
+ Status Variable Name.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TARGETID">
+ <summary>
+ Identifies where a request for action or data is to be applied. If text, conforms to OBJSPEC.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TARGETPDE">
+ <summary>
+ Contains the unique identifier (uid) of the PDE that is the starting point for the verification process.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TARGETSPEC">
+ <summary>
+ Object specifier of target object.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TBLACK">
+ <summary>
+ Indicates success or failure.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TBLCMD">
+ <summary>
+ Provides information about the table or parts of the table being transferred or requested. Enumerated.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TBLELT">
+ <summary>
+ Table element. The first table element in a row is used to identify the row.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TBLID">
+ <summary>
+ Table identifier. Text conforming to the requirements of OBJSPEC.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TBLTYP">
+ <summary>
+ A reserved text string to denote the format and application of the table. Text conforming to the requirements of OBJSPEC.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TCID">
+ <summary>
+ TCID is the identifier of the TransferContainer.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TEXT">
+ <summary>
+ A single line of characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TIAACK">
+ <summary>
+ Equipment acknowledgement code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TIACK">
+ <summary>
+ Time Acknowledge Code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TID">
+ <summary>
+ Terminal number, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TIME">
+ <summary>
+ Time of day, 12, 16 bytes, or Extended format as specified by the TimeFormat equipment constant value setting.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TIMESTAMP">
+ <summary>
+ Timestamp in 12, 16 bytes, or Extended format indicating the time of an event, which encodes time as specified by the TimeFormat equipment constant value setting.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TOTSMP">
+ <summary>
+ Total samples to be made.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRACK">
+ <summary>
+ Tells whether the related transfer activity was successful (= True) or unsuccessful (= False).
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRANSFERSIZE">
+ <summary>
+ Size, in bytes, of the TransferContainer proposed for transfer.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRATOMICID">
+ <summary>
+ Equipment assigned identifier for an atomic transfer.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRAUTOD">
+ <summary>
+ A Trace Object attribute for a control flag which, if set TRUE, causes the Trace Object to delete itself when it has completed a report.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRAUTOSTART">
+ <summary>
+ For each atomic transfer, this data item tells the equipment if it should automatically start the handoff when ready (= TRUE) or await the host’s ‘StartHandoff’ command (= FALSE) following setup. This data item only affects the primary transfer partner.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRCMDNAME">
+ <summary>
+ Identifier of the transfer job-related command to be executed. Possible values.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRDIR">
+ <summary>
+ Direction of handoff.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRID">
+ <summary>
+ Trace request ID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRJOBID">
+ <summary>
+ Equipment assigned identifier for the transfer job.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRJOBMS">
+ <summary>
+ Milestone for a transfer job (e.g., started or complete).
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRJOBNAME">
+ <summary>
+ Host assigned identifier for the transfer job. Limited to a maximum of 80 characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRLINK">
+ <summary>
+ Common identifier for the atomic transfer used by the transfer partners to confirm that they are working on the same host-defined task.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRLOCATION">
+ <summary>
+ Identifier of the material location involved with the transfer. For one transfer partner, this will represent the designated source location for the material to be sent. For the other transfer partner, it will represent the designated destination location for the material to be received.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TROBJNAME">
+ <summary>
+ Identifier for the material (transfer object) to be transferred.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TROBJTYPE">
+ <summary>
+ Type of object to be transferred.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRPORT">
+ <summary>
+ Identifier of the equipment port to be used for the handoff.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRPTNR">
+ <summary>
+ Name of the equipment which will serve as the other transfer partner for this atomic transfer. This corresponds to EQNAME.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRPTPORT">
+ <summary>
+ Identifier of the transfer partner’s port to be used for the transfer.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRRCP">
+ <summary>
+ Name of the transfer recipe for this handoff. Limited to a maximum of 80 characters.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRROLE">
+ <summary>
+ Tells whether the equipment is to be the primary or secondary transfer partner.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRSPER">
+ <summary>
+ A Trace Object attribute which holds the value for sampling interval time.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TRTYPE">
+ <summary>
+ Tells whether the equipment is to be an active or passive participant in the transfer.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TSIP">
+ <summary>
+ Transfer status of input port, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TSOP">
+ <summary>
+ Transfer status of output port, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TTC">
+ <summary>
+ Time to completion.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.TYPEID">
+ <summary>
+ Identifier of the Type of the recipe.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.UID">
+ <summary>
+ Contains a unique identifier for a PDE.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.ULIM">
+ <summary>
+ Upper limit for numeric value.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.UNFLEN">
+ <summary>
+ Unformatted Process Program Length.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.UNITS">
+ <summary>
+ Units Identifier.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.UPPERDB">
+ <summary>
+ A variable limit attribute which defines the upper boundary of the deadband of a limit. The value applies to a single limit (LIMITID) for a specified VID. Thus, UPPERDB and LOWERDB as a pair define a limit.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.V">
+ <summary>
+ Variable data.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.VERID">
+ <summary>
+ Optional unique identifier of recipes.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.VERIFYDEPTH">
+ <summary>
+ Selects whether to check only the target PDE or all associated PDEs within a multi-part recipe.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.VERIFYRSPSTAT">
+ <summary>
+ Verification result.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.VERIFYSUCCESS">
+ <summary>
+ Boolean.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.VERIFYTYPE">
+ <summary>
+ Choice of the type of verification to perform.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.VID">
+ <summary>
+ Variable ID.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.VLAACK">
+ <summary>
+ Variable Limit Attribute Acknowledge Code, 1 byte.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.XDIES">
+ <summary>
+ X-axis die size (index).
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.XYPOS">
+ <summary>
+ X and Y Coordinate Position. Must be in (X,Y) order.
+ </summary>
+</member>
+<member name="F:Ubisam.GEM.Sample.VBnet.DefinedDataDictinary.YDIES">
+ <summary>
+ Y-axis die size (index).
+ </summary>
+</member>
+<member name="T:Ubisam.GEM.Sample.VBnet.MainWindow">
+<summary>
+MainWindow
+</summary>
+</member>
+<member name="M:Ubisam.GEM.Sample.VBnet.MainWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+</members>
+</doc>

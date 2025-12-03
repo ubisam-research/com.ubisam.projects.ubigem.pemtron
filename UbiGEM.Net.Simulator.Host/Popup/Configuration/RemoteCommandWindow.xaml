@@ -1,0 +1,196 @@
+﻿<Window x:Class="UbiGEM.Net.Simulator.Host.Popup.RemoteCommandWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.Popup"
+        xmlns:Controls="clr-namespace:UbiGEM.Net.Simulator.Host.UserControls"
+        xmlns:common="clr-namespace:UbiGEM.Net.Simulator.Host.Common"
+        mc:Ignorable="d"
+        Title="RemoteCommandWindow" Height="600" Width="1100" Loaded="Window_Loaded" 
+        WindowStartupLocation="CenterOwner" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" WindowStyle="None" >
+    <Window.Resources>
+        <common:SECSItemFormatData x:Key="SECSItemFormatData" />
+    </Window.Resources>
+    <Grid Background="{StaticResource UbiSamThemeBackground}">
+        <Grid.RowDefinitions >
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 5 0">
+            <GroupBox Grid.Row="0" Header="Remote Command Setting" Style="{StaticResource UbiSamThemeGroupBox}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="19" MinWidth="19" MaxWidth="19" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="37" />
+                    </Grid.RowDefinitions>
+                    <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}">
+                        <GroupBox Header="Remote Commands" >
+                            <Grid Margin="0 -24 0 0" >
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="24" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <Controls:ClientMenuControl x:Name="ctlFunctionRemoteCommand" Grid.Row="0" OnAdd="RemoteCommand_OnAdd" OnRemove="RemoteCommand_OnRemove" Margin="0 -27 1 0" />
+
+                                <DataGrid Name="dgrRemoteCommand" Grid.Row="1" SelectionChanged="dgrRemoteCommand_SelectionChanged" FrozenColumnCount="2"
+                                          IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                          >
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="UGC" Binding="{Binding IsInheritance}" IsReadOnly="True" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                                        <DataGridTextColumn x:Name="dgcCommand" Header="RCMD" Binding="{Binding RemoteCommand}" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                                        <DataGridTemplateColumn Header="Auto">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <CheckBox IsChecked="{Binding AutoSend, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn Header="Trigger">
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Button Click="btnTriggerEdit_Click" Content="Edit" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTextColumn x:Name="dgcDescription" Header="Description" Binding="{Binding Description}" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </GroupBox>
+                    </Border>
+
+                    <GridSplitter Grid.Column="1" Grid.Row="0" Style="{DynamicResource UbiSamThemeGridSplitter}" HorizontalAlignment="Center" ResizeDirection="Columns"/>
+
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="33" MinWidth="33" MaxWidth="33"/>
+                        </Grid.ColumnDefinitions>
+                        <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="0 0 0 5">
+                            <GroupBox Header="ValueSet" >
+                                <Grid Height="32" >
+                                    <Grid.ColumnDefinitions >
+                                        <ColumnDefinition Width="200" />
+                                        <ColumnDefinition Width="5" />
+                                        <ColumnDefinition Width="70" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <ComboBox Name="cboValueSetName" Background="Transparent" DisplayMemberPath="Name" SelectionChanged="cboValueSetName_SelectionChanged" />
+                                    <Button Grid.Column="2" Content="Edit" Click="btnChangeValueSet_Click" />
+                                </Grid>
+                            </GroupBox>
+                        </Border>
+                        <Border Grid.Row="1" Grid.Column="0" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}">
+                            <GroupBox Header="Command Parameters" >
+                                <Grid Margin="0 -24 0 0" >
+                                    <Grid.RowDefinitions >
+                                        <RowDefinition Height="24" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+
+                                    <Controls:ClientMenuControl x:Name="ctlFunctionCommandParameter" Grid.Row="0" OnAdd="CommandParameter_OnAdd" OnRemove="CommandParameter_OnRemove" Margin="0 -27 1 0" />
+
+                                    <DataGrid Name="dgrCommandParameter" Grid.Row="1" FrozenColumnCount="1"
+                                          IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                          >
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                                            <DataGridComboBoxColumn Header="Format" CanUserSort="False" 
+                                                                SelectedValueBinding="{Binding Format}" ItemsSource="{StaticResource SECSItemFormatData}" 
+                                                                    ElementStyle="{StaticResource DataGridComboBoxColumnElement}"
+                                                                    >
+                                                <DataGridComboBoxColumn.EditingElementStyle>
+                                                    <Style TargetType="ComboBox" BasedOn="{StaticResource DataGridComboBoxColumnEditing}">
+                                                        <EventSetter Event="SelectionChanged" Handler="dgcParameterFormat_SelectionChanged" />
+                                                    </Style>
+                                                </DataGridComboBoxColumn.EditingElementStyle>
+                                            </DataGridComboBoxColumn>
+
+                                            <DataGridTextColumn Header="Count" Binding="{Binding Count}" >
+                                                <DataGridTextColumn.EditingElementStyle>
+                                                    <Style TargetType="TextBox" BasedOn="{StaticResource DataGridTextColumnEditing}">
+                                                        <Setter Property="UIElement.IsEnabled" Value="{Binding IsCountEditable}" />
+                                                    </Style>
+                                                </DataGridTextColumn.EditingElementStyle>
+                                                <DataGridTextColumn.ElementStyle>
+                                                    <Style TargetType="TextBlock" BasedOn="{StaticResource DataGridTextColumnElement}">
+                                                        <Setter Property="UIElement.IsEnabled" Value="{Binding IsCountEditable}" />
+                                                    </Style>
+                                                </DataGridTextColumn.ElementStyle>
+                                            </DataGridTextColumn>
+
+                                            <DataGridTextColumn Header="Rule" Binding="{Binding GenerateRule}" IsReadOnly="False" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                                            <DataGridTextColumn Header="Value" Binding="{Binding Value}" ElementStyle="{StaticResource DataGridTextColumnElement}">
+                                                <DataGridTextColumn.EditingElementStyle>
+                                                    <Style TargetType="TextBox" BasedOn="{StaticResource DataGridTextColumnEditing}">
+                                                        <Setter Property="AcceptsReturn" Value="False" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Format}" Value="A">
+                                                                <Setter Property="AcceptsReturn" Value="True" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </DataGridTextColumn.EditingElementStyle>
+                                            </DataGridTextColumn>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Grid>
+                            </GroupBox>
+                        </Border>
+
+                        <Grid Grid.Row="1" Grid.Column="1" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Controls:UCUpDownButton x:Name="ctlUpDown" Grid.Row="1" OnFirst="ctlUpDown_OnFirst" OnUp="ctlUpDown_OnUp" OnDown="ctlUpDown_OnDown" OnLast="ctlUpDown_OnLast"/>
+                        </Grid>
+                    </Grid>
+                    
+                    <Border Grid.Row="1" Grid.ColumnSpan="4" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="0 5 33 0" >
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Content="Rule Example" VerticalContentAlignment="Center" />
+                            <Label Name="lblExample1" Grid.Column="1" VerticalContentAlignment="Center" ToolTip="Use Equipment Constant 15 with pattern 'A_True'"/>
+                            <Label Name="lblExample2" Grid.Column="2" VerticalContentAlignment="Center" ToolTip="Use current value of VID=100 with pattern '1_AA'"/>
+                            <Label Name="lblExample3" Grid.Column="3" VerticalContentAlignment="Center" ToolTip="Use random value [min=1,max=9], max include"/>
+                            <Label Name="lblExample4" Grid.Column="4" VerticalContentAlignment="Center" ToolTip="Use incremental value [start=1,step=2] (1,3,5,7,9....)"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </GroupBox>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="3" BorderThickness="0" Padding="5" >
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Content="Save" Click="btnSave_Click" />
+                <Button Grid.Column="3" Content="Close" Click="btnClose_Click" IsCancel="True"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

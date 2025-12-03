@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="UbiGEM.Net.Simulator.Host.UserControls.UCSelectUnSelectButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="30">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="33" />
+            <RowDefinition Height="33 "/>
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Button Name="btnSelect" Grid.Row="1" Click="btnSelect_Click" Style="{DynamicResource UbiSamThemeButton}">
+            <Image Source="/UbiGEM.Net.Simulator.Host;component/Resources/Images/list_in_out_s_bt_5_a.png"/>
+        </Button>
+        <Button Name="btnUnselect" Grid.Row="2" Click="btnUnselect_Click" Style="{DynamicResource UbiSamThemeButton}">
+            <Image Source="/UbiGEM.Net.Simulator.Host;component/Resources/Images/list_in_out_s_bt_6_a.png"/>
+        </Button>
+    </Grid>
+</UserControl>

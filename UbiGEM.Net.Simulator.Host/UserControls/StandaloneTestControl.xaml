@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="UbiGEM.Net.Simulator.Host.UserControls.StandaloneTestControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.Popup"
+        xmlns:MessageTest="clr-namespace:UbiGEM.Net.Simulator.Host.UserControls.MessageTest"             
+        mc:Ignorable="d"
+        >
+    <StackPanel Orientation="Vertical" >
+        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 0 0 0" Padding="5" >
+            <MessageTest:ConnectionControl x:Name="ctlConnection"/>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 0 0" Padding="5" >
+            <MessageTest:ControlStateControl x:Name="ctlControlState"/>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 0 0" Padding="5" >
+            <MessageTest:DefineEventReportControl x:Name="ctlDefineEventReport"/>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 0 0" Padding="5" >
+            <MessageTest:VariableDataControl x:Name="ctlVariableData" />
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 0 0" Padding="5" >
+            <MessageTest:ReportControl x:Name="ctlReport"/>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 0 0" Padding="5" >
+            <MessageTest:CollectionEventControl x:Name="ctlCollectionEvent"/>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 0 0" Padding="5" >
+            <MessageTest:AlarmControl x:Name="ctlAlarm" />
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 0 0" Padding="5" >
+            <MessageTest:ProcessProgramControl x:Name="ctlProcessProgram"/>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 0 0" Padding="5"
+                Visibility="Visible"
+                >
+            <MessageTest:MapErrorControl x:Name="ctlMapError"/>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 0 0" Padding="5" 
+                Visibility="Visible"
+                >
+            <MessageTest:GEMObjectControl x:Name="ctlGEMObject"/>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 0 0" Padding="5" 
+                Visibility="Visible"
+                >
+            <MessageTest:SpoolControl x:Name="ctlSpoolControl"/>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="1" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 0 0" Padding="5" >
+            <MessageTest:ETCControl x:Name="cltETC"/>
+        </Border>
+    </StackPanel>
+</UserControl>

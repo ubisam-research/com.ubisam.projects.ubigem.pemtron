@@ -1,0 +1,14 @@
+﻿<Application x:Class="UbiSam.Net.KeyLock.Checker.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:UbiSam.Net.KeyLock.Checker"
+             StartupUri="LicenseCheckWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.Wpf;component/Themes/UbiSamTheme.Defaults.xaml"/>
+                <ResourceDictionary Source="/UbiSam.Common.Colors.WPF;component/Themes/Recommended/Primary/UbiSamThemeColor.Blue.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

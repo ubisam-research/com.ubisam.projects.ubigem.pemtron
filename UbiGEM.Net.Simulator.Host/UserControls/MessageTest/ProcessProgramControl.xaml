@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="UbiGEM.Net.Simulator.Host.UserControls.MessageTest.ProcessProgramControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="340" Loaded="UserControl_Loaded">
+    <Grid>
+        <GroupBox Header="Process Program Message Test" VerticalAlignment="Center" MouseUp="GroupBox_MouseUp">
+            <Expander Name="expander" IsExpanded="False" Margin="0, -49, -2, 0" FlowDirection="RightToLeft" Padding="0 10 0 0">
+                <WrapPanel Orientation="Horizontal" Margin="0" FlowDirection="LeftToRight">
+                    <WrapPanel.Resources>
+                        <Style TargetType="Grid">
+                            <Setter Property="Margin" Value="5, 7, 5, 0"/>
+                        </Style>
+                    </WrapPanel.Resources>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S7F1" ToolTip="Process Program Load Inquire" Click="btnS7F1_Click" />
+                        <Button Grid.Column="2" Content="Browse" Click="btnS7F1Edit_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S7F3" ToolTip="Process Program Send" Click="btnS7F3_Click" />
+                        <Button Grid.Column="2" Content="Browse" Click="btnS7F3Edit_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S7F5" ToolTip="Process Program Request" Click="btnS7F5_Click" />
+                        <Button Grid.Column="2" Content="Edit" Click="btnS75Edit_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S7F17" ToolTip="Delete Process Program Send" Click="btnS7F17_Click" />
+                        <Button Grid.Column="2" Content="Edit" Click="btnS7F17Edit_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Button Content="S7F19" ToolTip="Current PP Directory Request" Click="btnS7F19_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S7F25" ToolTip="Formatted Process Program Request" Click="btnS7F25_Click" />
+                        <Button Grid.Column="2" Content="Edit" Click="btnS7F25Edit_Click" />
+                    </Grid>
+                    <Grid Width="310" Height="32">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="80" />
+                        </Grid.ColumnDefinitions>
+                        <ComboBox Name="cboFmtPPS7F23" Grid.Column="0" Grid.Row="0" DropDownOpened="cboFmtPPS7F23_DropDownOpened" />
+                        <CheckBox Grid.Column="2" Name="chkS7F23Ext" IsChecked="True" ToolTip="Name/Value Pair Type" VerticalAlignment="Center" Click="chkS7F23Ext_Click"/>
+                        <Button Grid.Column="4" Content="S7F23" ToolTip="Formatted Process Program Send" Click="btnS7F23_Click" />
+                    </Grid>
+                </WrapPanel>
+            </Expander>
+        </GroupBox>
+    </Grid>
+</UserControl>

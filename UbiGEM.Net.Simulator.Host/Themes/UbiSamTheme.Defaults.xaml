@@ -1,0 +1,54 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.Dark;component/Theme.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Colors.WPF;component/Themes/Recommended/Primary/UbiSamThemeColor.Gray.xaml"/>
+        
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/Generic.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.Button.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.CheckBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.ComboBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.ContextMenu.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.DataGrid.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.Menu.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.RadioButton.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.RichTextBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.GridSplitter.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.GroupBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.Label.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.ListView.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.ListViewItem.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.ScrollBar.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.ScrollViewer.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.TabControl.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.TabItem.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.TextBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.TreeView.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/UbiSam.Common.Themes.WPF;component/Themes/UbiSamTheme.TreeViewItem.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource UbiSamThemeButton}"/>
+    <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource UbiSamThemeCheckBox}"/>
+    <Style TargetType="{x:Type ComboBox}" BasedOn="{StaticResource UbiSamThemeComboBox}"/>
+    <Style TargetType="{x:Type ComboBoxItem}" BasedOn="{StaticResource UbiSamThemeComboBoxItem}"/>
+    <Style TargetType="{x:Type DataGrid}" BasedOn="{StaticResource UbiSamThemeDataGrid}"/>
+    <Style TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource UbiSamThemeDataGridCell}"/>
+    <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource UbiSamThemeDataGridColumHeader}"/>
+    <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource UbiSamThemeDataGridRow}" />
+    <Style TargetType="{x:Type DataGridRowHeader}" BasedOn="{StaticResource UbiSamThemeDataGridRowHeader}"/>
+    <Style TargetType="{x:Type Menu}" BasedOn="{StaticResource UbiSamThemeMenu}"/>
+    <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource UbiSamThemeRadioButton}"/>
+    <Style TargetType="{x:Type RichTextBox}" BasedOn="{StaticResource UbiSamThemeRichTextBox}"/>
+    <Style TargetType="{x:Type GridSplitter}" BasedOn="{StaticResource UbiSamThemeGridSplitter}"/>
+    <Style TargetType="{x:Type GroupBox}" BasedOn="{StaticResource UbiSamThemeGroupBox}"/>
+    <Style TargetType="{x:Type Label}" BasedOn="{StaticResource UbiSamThemeLabel}"/>
+    <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource UbiSamThemeListView}"/>
+    <Style TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource UbiSamThemeListViewItem}"/>
+    <Style TargetType="{x:Type ScrollBar}" BasedOn="{StaticResource UbiSamThemeScrollBar}"/>
+    <Style TargetType="{x:Type ScrollViewer}" BasedOn="{StaticResource UbiSamThemeScrollViewer}"/>
+    <Style TargetType="{x:Type TabControl}" BasedOn="{StaticResource UbiSamThemeTabControl}"/>
+    <Style TargetType="{x:Type TabItem}" BasedOn="{StaticResource UbiSamThemeTabItem}"/>
+    <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource UbiSamThemeTextBox}"/>
+    <Style TargetType="{x:Type TreeView}" BasedOn="{StaticResource UbiSamThemeTreeView}"/>
+    <Style TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource UbiSamThemeTreeViewItem}"/>
+</ResourceDictionary>

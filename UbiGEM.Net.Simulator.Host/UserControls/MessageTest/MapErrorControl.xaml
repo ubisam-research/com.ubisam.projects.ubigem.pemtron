@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="UbiGEM.Net.Simulator.Host.UserControls.MessageTest.MapErrorControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="450" Loaded="UserControl_Loaded">
+    <Grid>
+        <GroupBox Header="Wafer Map Test" VerticalAlignment="Center" MouseUp="GroupBox_MouseUp">
+            <Expander Name="expander" IsExpanded="False" Margin="0, -49, -2, 0" FlowDirection="RightToLeft" Padding="0 10 0 0">
+                <WrapPanel Orientation="Horizontal" Margin="0" FlowDirection="LeftToRight">
+                    <WrapPanel.Resources>
+                        <Style TargetType="Grid">
+                            <Setter Property="Margin" Value="5, 7, 5, 0"/>
+                        </Style>
+                    </WrapPanel.Resources>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S12F19" ToolTip="Map Error Send" Click="btnS12F19Send_Click" />
+                    </Grid>
+                </WrapPanel>
+            </Expander>
+        </GroupBox>
+    </Grid>
+</UserControl>

@@ -1,0 +1,13 @@
+ImageRuntimeVersion: v4.0.30319
+Assembly UbiCom.CPP, Version=0.0.*, Culture=고정 언어(고정 국가): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None
+Assembly UbiCom.Net, Version=1.0.*, Culture=고정 언어(고정 국가): 
+	hash=None, flags=None
+Assembly UbiSam.Net.KeyLock, Version=2.0.*, Culture=고정 언어(고정 국가): 
+	hash=None, flags=None
+Assembly Microsoft.VisualC, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a: 
+	hash=None, flags=None
+Assembly System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=None, flags=None

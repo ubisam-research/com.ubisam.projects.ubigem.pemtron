@@ -1,0 +1,125 @@
+﻿<Window x:Class="UbiGEM.Net.Simulator.Host.Popup.Settings.TriggerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.Popup"
+        xmlns:Controls="clr-namespace:UbiGEM.Net.Simulator.Host.UserControls"
+        mc:Ignorable="d"
+        Title="Trigger Editor" Height="350" Width="700" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip" >
+    <Grid Background="{StaticResource UbiSamThemeBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 5 0">
+            <GroupBox Header="Trigger Editor" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="7" />
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="140" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="140" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Grid.Row="0" Content="Type" VerticalContentAlignment="Center" />
+                    <Label Name="lblType" Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" />
+
+                    <Label Name="lblNameText" Grid.Column="2" Grid.Row="0" Content="Name" VerticalContentAlignment="Center" />
+                    <Label Name="lblName" Grid.Column="3" Grid.Row="0" VerticalContentAlignment="Center" />
+
+                    <Controls:ClientMenuControl x:Name="ctlFunction" Grid.Row="2" Grid.Column="3" OnAdd="Trigger_OnAdd" OnRemove="Trigger_OnRemove" Margin="0, -15, 1, 0" />
+                    
+                    <Label Grid.Column="0" Grid.Row="3" Content="Triggers" VerticalContentAlignment="Center" />
+                    <DataGrid Name="dgrTrigger" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="3" IsReadOnly="False" 
+                            CanUserAddRows="False" CanUserDeleteRows="False" FrozenColumnCount="2"
+                            SelectionChanged="dgrTrigger_SelectionChanged" MouseDoubleClick="dgrTrigger_MouseDoubleClick"
+                            >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Trigger ID" Binding="{Binding TriggerID}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                            <DataGridComboBoxColumn x:Name="dgcMode" Header="Mode" CanUserSort="False" Width="100"
+                                                                SelectedValueBinding="{Binding TriggerMode}" 
+                                                    ElementStyle="{StaticResource DataGridComboBoxColumnElement}"
+                                                    >
+                                <DataGridComboBoxColumn.EditingElementStyle>
+                                    <Style TargetType="ComboBox" BasedOn="{StaticResource DataGridComboBoxColumnEditing}">
+                                        <EventSetter Event="SelectionChanged" Handler="dgcMode_SelectionChanged" />
+                                    </Style>
+                                </DataGridComboBoxColumn.EditingElementStyle>
+                            </DataGridComboBoxColumn>
+                            
+                            <DataGridComboBoxColumn x:Name="dgcCE" Header="CE" CanUserSort="False" Width="100" 
+                                                                SelectedItemBinding="{Binding CollectionEventInfo}" DisplayMemberPath="DisplayStringForComboBox"
+                                                    ElementStyle="{StaticResource DataGridComboBoxColumnElement}"
+                                                    >
+                                <DataGridComboBoxColumn.EditingElementStyle>
+                                    <Style TargetType="ComboBox" BasedOn="{StaticResource DataGridComboBoxColumnEditing}">
+                                        <EventSetter Event="SelectionChanged" Handler="dgcCE_SelectionChanged" />
+                                    </Style>
+                                </DataGridComboBoxColumn.EditingElementStyle>
+                            </DataGridComboBoxColumn>
+
+                            <DataGridComboBoxColumn x:Name="dgcReport" Header="Report" CanUserSort="False" Width="100"
+                                                                SelectedItemBinding="{Binding ReportInfo}" 
+                                                    >
+                                <DataGridComboBoxColumn.ElementStyle>
+                                    <Style TargetType="ComboBox" BasedOn="{StaticResource DataGridComboBoxColumnElement}">
+                                        <Setter Property="ItemsSource" Value="{Binding CandidateReports}" />
+                                        <Setter Property="DisplayMemberPath" Value="DisplayStringForComboBox" />
+                                    </Style>
+                                </DataGridComboBoxColumn.ElementStyle>
+                                <DataGridComboBoxColumn.EditingElementStyle>
+                                    <Style TargetType="ComboBox" BasedOn="{StaticResource DataGridComboBoxColumnEditing}">
+                                        <EventSetter Event="SelectionChanged" Handler="dgcReport_SelectionChanged" />
+                                        <Setter Property="ItemsSource" Value="{Binding CandidateReports}" />
+                                    </Style>
+                                </DataGridComboBoxColumn.EditingElementStyle>
+                            </DataGridComboBoxColumn>
+                            
+                            <DataGridComboBoxColumn x:Name="dgcVariable" Header="Variable" CanUserSort="False" Width="100"
+                                                                SelectedItemBinding="{Binding TopVariable}" 
+                                                    >
+                                <DataGridComboBoxColumn.ElementStyle>
+                                    <Style TargetType="ComboBox" BasedOn="{StaticResource DataGridComboBoxColumnElement}">
+                                        <Setter Property="ItemsSource" Value="{Binding CandidateVariables}" />
+                                        <Setter Property="DisplayMemberPath" Value="DisplayStringForComboBox" />
+                                    </Style>
+                                </DataGridComboBoxColumn.ElementStyle>
+                                <DataGridComboBoxColumn.EditingElementStyle>
+                                    <Style TargetType="ComboBox" BasedOn="{StaticResource DataGridComboBoxColumnEditing}">
+                                        <Setter Property="ItemsSource" Value="{Binding CandidateVariables,UpdateSourceTrigger=PropertyChanged}" />
+                                        <EventSetter Event="SelectionChanged" Handler="dgcVariable_SelectionChanged" />
+                                    </Style>
+                                </DataGridComboBoxColumn.EditingElementStyle>
+                            </DataGridComboBoxColumn>
+                            <DataGridTextColumn x:Name="dgcValue" Header="VariableValue" Binding="{Binding VariableValue}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
+        </Border>
+        <Border Grid.Row="1" Style="{StaticResource PopupBottomArea}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+
+                <Button Name="btnListEdit" Grid.Column="0" Content="List Edit" Click="btnListEdit_Click" />
+                <Button Grid.Column="2" Content="Save" Click="btnSave_Click" />
+                <Button Grid.Column="4" Content="Close" Click="btnCancel_Click" IsCancel="True"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

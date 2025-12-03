@@ -1,0 +1,44 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:UbiSam.Common.Themes.WPF.Themes">
+    <ControlTemplate x:Key="UbiSamThemeRadioButtonTemplate" TargetType="{x:Type RadioButton}">
+        <BulletDecorator Background="Transparent">
+            <BulletDecorator.Bullet>
+                <Grid Width="13" Height="13">
+                    <Ellipse x:Name="Border" Fill="Transparent" Stroke="{TemplateBinding BorderBrush}" StrokeThickness="1"/>
+                    <Ellipse Margin="4" x:Name="CheckMark" Fill="{TemplateBinding BorderBrush}"/>
+                </Grid>
+            </BulletDecorator.Bullet>
+            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                              RecognizesAccessKey="True"
+                              Margin="{TemplateBinding Padding}"
+                              TextBlock.Foreground="{TemplateBinding Foreground}"
+                              TextBlock.FontSize="12"/>
+        </BulletDecorator>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsChecked" Value="false">
+                <Setter Property="Visibility" Value="Collapsed" TargetName="CheckMark"/>
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="true">
+                <Setter Property="Fill" TargetName="Border" Value="{Binding RelativeSource={RelativeSource Self}, Path=Stroke}"/>
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Fill" TargetName="Border" Value="{DynamicResource UbiSamThemeDisableForeground}"/>
+                <Setter Property="Stroke" TargetName="Border" Value="{DynamicResource UbiSamThemeDisableForeground}"/>
+                <Setter Property="Fill" TargetName="CheckMark" Value="{DynamicResource UbiSamThemeDisableForeground}"/>
+                <Setter Property="Foreground" Value="{DynamicResource UbiSamThemeDisableForeground}"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="UbiSamThemeRadioButton" TargetType="{x:Type RadioButton}">
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+        <Setter Property="FocusVisualStyle" Value="{DynamicResource FocusVisual}"/>
+        <Setter Property="Padding" Value="14,0,0,0"/>
+        <Setter Property="Foreground" Value="{DynamicResource UbiSamThemeForeground}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHueDarkBrush}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Template" Value="{StaticResource UbiSamThemeRadioButtonTemplate}"/>
+    </Style>
+</ResourceDictionary>

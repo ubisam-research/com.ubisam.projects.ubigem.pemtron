@@ -1,0 +1,227 @@
+﻿<Window x:Class="UbiSam.Net.KeyLock.Maker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiSam.Net.KeyLock.Maker"
+        x:Name="mainWindow"
+        mc:Ignorable="d"
+        Background="{StaticResource UbiSamThemeBackground}"
+        Title="UBISAM USB Keylock Maker V2.2.0" 
+        Height="550" Width="1100" WindowStartupLocation="CenterScreen" Closing="mainWindow_Closing" 
+        Loaded="mainWindow_Loaded">
+    <Window.Resources>
+        <Style x:Key="NonProgressButton" TargetType="Button">
+            <Setter Property="IsEnabled" Value="True" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=mainWindow, Path=NonProgress}" Value="False">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="ProductComboBox" TargetType="ComboBox">
+            <Setter Property="IsEnabled" Value="True" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=mainWindow, Path=NonProgress}" Value="False">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="StopButton" TargetType="Button">
+            <Setter Property="IsEnabled" Value="True" />
+        </Style>
+        <Style x:Key="NonProgressDataGrid" TargetType="DataGrid" BasedOn="{StaticResource UbiSamThemeDataGrid}">
+            <Setter Property="IsEnabled" Value="True" />
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=mainWindow, Path=NonProgress}" Value="False">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions >
+            <RowDefinition />
+            <RowDefinition Height="140" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Border BorderThickness="1" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Margin="5">
+            <Grid >
+                <GroupBox Header="Product" Padding="0">
+                    <DataGrid Name="dgrProductMaking" 
+                          AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeRows="False" CanUserSortColumns="False"
+                          Style="{DynamicResource NonProgressDataGrid}"
+                              SelectionChanged="dgrProductMaking_SelectionChanged"
+                >
+                        <DataGrid.Resources>
+                            <DataTemplate x:Key="ReadonlyCellTemplate">
+                                <TextBlock Text="{Binding ProductCode}" TextAlignment="Center" />
+                            </DataTemplate>
+                            <DataTemplate x:Key="EditableCellTemplate">
+                                <TextBox Text="{Binding ProductCode,UpdateSourceTrigger=PropertyChanged}" MaxLength="2" />
+                            </DataTemplate>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridCheckBoxColumn Header="V" Binding="{Binding IsSelected,UpdateSourceTrigger=PropertyChanged}" />
+                            <DataGridTextColumn Header="Product" Binding="{Binding Product,UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" Width="*"/>
+                            <DataGridTemplateColumn Header="Code" >
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate >
+                                        <ContentPresenter x:Name="Presenter" Content="{Binding}" ContentTemplate="{StaticResource ReadonlyCellTemplate}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                                <DataGridTemplateColumn.CellEditingTemplate>
+                                    <DataTemplate>
+                                        <ContentPresenter x:Name="Presenter" Content="{Binding}" ContentTemplate="{StaticResource ReadonlyCellTemplate}" />
+                                        <DataTemplate.Triggers>
+                                            <DataTrigger Binding="{Binding Predefined}" Value="False">
+                                                <Setter TargetName="Presenter" Property="ContentTemplate" Value="{StaticResource EditableCellTemplate}" />
+                                            </DataTrigger>
+                                        </DataTemplate.Triggers>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellEditingTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Count" Binding="{Binding Count,UpdateSourceTrigger=PropertyChanged}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </GroupBox>
+                <Grid VerticalAlignment="Top" Margin="0 2 5 0">
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="1" Name="btnAddProduct" Content="+" Click="AddProduct"/>
+                    <Button Grid.Column="2" Name="btnRemoveProduct" Content="-" IsEnabled="False" Click="RemoveProduct"/>
+                </Grid>
+            </Grid>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="1" BorderThickness="1"  Margin="5">
+            <GroupBox Header="Available USB" Padding="0">
+                <Grid >
+                    <DataGrid Name="dgrAvailableTarget" FrozenColumnCount="3" Style="{DynamicResource NonProgressDataGrid}" 
+                              IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
+                              >
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn >
+                                <DataGridTemplateColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Setter Property="IsEnabled" Value="False" />
+                                        <Setter Property="Background" Value="White" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsCandidate}" Value="True">
+                                                <Setter Property="IsEnabled" Value="True" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsLicenseFileCreateFailed}" Value="True">
+                                                <Setter Property="Background" Value="Red" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTemplateColumn.CellStyle>
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <TextBlock Text="Target" />
+                                            <CheckBox Name="chkTargetAll" IsChecked="{Binding Path=CheckBoxState, Mode=TwoWay}" Click="chkTargetAll_Click" ToolTip="Select All"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding IsTarget, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Setter Property="IsEnabled" Value="False" />
+                                        <Setter Property="Background" Value="White" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding IsCandidate}" Value="True">
+                                                <Setter Property="IsEnabled" Value="True" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding IsWriteProtectFailed}" Value="True">
+                                                <Setter Property="Background" Value="Red" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTemplateColumn.CellStyle>
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                            <TextBlock Text="Protect" />
+                                            <CheckBox Name="chkProtectAll" IsChecked="{Binding Path=CheckBoxState, Mode=TwoWay}" Click="chkProtectAll_Click" ToolTip="Select All"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding IsProtect, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Command">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button IsEnabled="{Binding NeedWriteProtect}" Content="Protect" Click="btnProtect_Click" >
+                                            <Button.Style>
+                                                <Style TargetType="Button">
+                                                    <Setter Property="Visibility" Value="Hidden" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding NeedWriteProtect}" Value="True">
+                                                            <Setter Property="Visibility" Value="Visible" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+
+                                            </Button.Style>
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Header="Device ID" Binding="{Binding TargetDisk.DeviceID}" IsReadOnly="True" />
+
+                            <DataGridTextColumn Header="VID" Binding="{Binding TargetDisk.VID}" IsReadOnly="True" />
+
+                            <DataGridTextColumn Header="PID" Binding="{Binding TargetDisk.PID}" IsReadOnly="True" />
+
+                            <DataGridTextColumn Header="SerialNumber" Binding="{Binding TargetDisk.SerialNumber}" IsReadOnly="True" />
+
+                            <DataGridTextColumn Header="Product" Binding="{Binding LicenseInfo.LicensedProducts}" IsReadOnly="True" />
+
+                            <DataGridTextColumn Header="Reason" Binding="{Binding Reason}" IsReadOnly="True" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
+        </Border>
+        <RichTextBox Name="txtLog" Grid.Row="1" Grid.Column="1" IsReadOnly="True" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="5" Padding="0" >
+            <RichTextBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Clear" Click="mnuLogClear_Click" />
+                </ContextMenu>
+            </RichTextBox.ContextMenu>
+        </RichTextBox>
+        <Border Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" BorderThickness="0" Margin="5">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Label Name="lblStatus" />
+                <ProgressBar Grid.Column="1" Name="pgbRunning" Value="{Binding ElementName=mainWindow, Path=Progressing}" Maximum="{Binding ElementName=mainWindow, Path=ProgressingMaximum}" Minimum="{Binding ElementName=mainWindow, Path=ProgressingMinimum}"/>
+                <Button Grid.Column="3" Content="Make" Click="btnStart_Click" Style="{DynamicResource NonProgressButton}" />
+                <Button Grid.Column="5" Content="Exit" Click="btnExit_Click" Style="{DynamicResource NonProgressButton}" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

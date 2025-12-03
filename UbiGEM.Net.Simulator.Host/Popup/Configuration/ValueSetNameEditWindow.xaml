@@ -1,0 +1,61 @@
+﻿<Window x:Class="UbiGEM.Net.Simulator.Host.Popup.ValueSetNameEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.Popup"
+        xmlns:Controls="clr-namespace:UbiGEM.Net.Simulator.Host.UserControls"
+        mc:Ignorable="d"
+        Title="AlarmWindow" Height="500" Width="400" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" WindowStyle="None" >
+    <Grid Background="{StaticResource UbiSamThemeBackground}">
+        <Grid.RowDefinitions >
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 5 0" >
+            <GroupBox Header="ValueSets" >
+                <Grid Margin="0 -24 0 0" >
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="24" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Controls:ClientMenuControl x:Name="ctlAddRemove" Grid.Row="0" OnAdd="ClientMenu_OnAdd" OnRemove="ClientMenu_OnRemove" Margin="0 -27 1 0" />
+
+                    <DataGrid Name="dgrValueSet" Grid.Row="1"
+                              IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                              >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*" ElementStyle="{StaticResource DataGridTextColumnElement}">
+                                <DataGridTextColumn.EditingElementStyle>
+                                    <Style TargetType="TextBox" BasedOn="{StaticResource DataGridTextColumnEditing}">
+                                        <Setter Property="IsReadOnly" Value="False" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Name}" Value="Default">
+                                                <Setter Property="IsReadOnly" Value="True" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.EditingElementStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
+        </Border>
+
+        <Border Grid.Row="1" Style="{StaticResource PopupBottomArea}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Content="Save" Click="btnSave_Click" />
+                <Button Grid.Column="3" Content="Close" Click="btnClose_Click" IsCancel="True"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

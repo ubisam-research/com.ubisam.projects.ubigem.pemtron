@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Recipe>
+  <PPID>MGL19SS06MD</PPID>
+  <CCodeInfoInfos>
+    <CCodeInfo CommandCode="CAMERA_IS_USE">
+      <PPItems>
+        <PPItem PPName="CAMERA1" Format="Boolean" PPValue="True"/>
+        <PPItem PPName="CAMERA2" Format="Boolean" PPValue="True"/>
+        <PPItem PPName="CAMERA3" Format="Boolean" PPValue="True"/>
+        <PPItem PPName="CAMERA4" Format="Boolean" PPValue="True"/>
+        <PPItem PPName="CAMERA5" Format="Boolean" PPValue="False"/>
+      </PPItems>
+    </CCodeInfo>
+    <CCodeInfo CommandCode="CAMERA_LIGHT_VALUE">
+      <PPItems>
+        <PPItem PPName="CAMERA1" Format="U1" PPValue="10"/>
+        <PPItem PPName="CAMERA2" Format="U2" PPValue="20"/>
+        <PPItem PPName="CAMERA3" Format="U4" PPValue="30"/>
+        <PPItem PPName="CAMERA4" Format="U8" PPValue="40"/>
+        <PPItem PPName="CAMERA5" Format="I1" PPValue="0"/>
+      </PPItems>
+    </CCodeInfo>
+    <CCodeInfo CommandCode="BEAM_PROFILER">
+      <PPItems>
+        <PPItem PPName="CNTPERMM" Format="F4" PPValue="100.0000000000"/>
+        <PPItem PPName="SPDRATIO" Format="F8" PPValue="0.0000000000"/>
+        <PPItem PPName="ACCDCC" Format="I2" PPValue="0"/>
+        <PPItem PPName="LENGTH" Format="I4" PPValue="500"/>
+      </PPItems>
+    </CCodeInfo>
+    <CCodeInfo CommandCode="DATA">
+      <PPItems>
+        <PPItem PPName="GLOBAL_SIZE" Format="A" PPValue="100.2500, 50.3500"/>
+        <PPItem PPName="MARK_SIZE" Format="A" PPValue="1.0000, 1.0000"/>
+        <PPItem PPName="MARK_DISTANCE" Format="I8" PPValue="77"/>
+      </PPItems>
+    </CCodeInfo>
+  </CCodeInfoInfos>
+</Recipe>

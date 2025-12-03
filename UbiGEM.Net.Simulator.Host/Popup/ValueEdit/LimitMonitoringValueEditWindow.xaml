@@ -1,0 +1,64 @@
+﻿<Window x:Class="UbiGEM.Net.Simulator.Host.Popup.ValueEdit.LimitMonitoringValueEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.Popup"
+        xmlns:Controls="clr-namespace:UbiGEM.Net.Simulator.Host.UserControls"
+        mc:Ignorable="d"
+        Title="Limit Monitoring Value Edit" Height="370" Width="450" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" WindowStyle="None" >
+    <Grid Background="{StaticResource UbiSamThemeBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 5 0">
+            <GroupBox Header="Limit Monitoring Value Edit" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="7" />
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="7" />
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Grid.Row="0" Content="VID" VerticalContentAlignment="Center" />
+                    <Label Name="lblVID" Grid.Column="1" Grid.Row="0" VerticalContentAlignment="Center" />
+
+                    <Label Grid.Column="0" Grid.Row="2" Content="Variable Name" VerticalContentAlignment="Center" />
+                    <Label Name="lblVariableName" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" />
+
+                    <Label Grid.Column="0" Grid.Row="4" Content="Limit Items" VerticalContentAlignment="Center" />
+                    <DataGrid Name="dgrLimitItem" Grid.Column="1" Grid.Row="4" Grid.RowSpan="2" IsReadOnly="False" 
+                            CanUserAddRows="False" CanUserDeleteRows="False" FrozenColumnCount="1"
+                            >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="LIMITID" Binding="{Binding LimitID}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                            <DataGridTextColumn Header="UPPERDB" Binding="{Binding Upper}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                            <DataGridTextColumn Header="LOWERDB" Binding="{Binding Lower}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
+        </Border>
+        <Border Grid.Row="1" Style="{StaticResource PopupBottomArea}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Content="Save" Click="btnSave_Click" />
+                <Button Grid.Column="3" Content="Close" Click="btnCancel_Click" IsCancel="True"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

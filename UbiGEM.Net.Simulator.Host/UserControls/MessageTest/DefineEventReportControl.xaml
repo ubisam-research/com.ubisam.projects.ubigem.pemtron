@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="UbiGEM.Net.Simulator.Host.UserControls.MessageTest.DefineEventReportControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="300" Loaded="UserControl_Loaded">
+    <Grid>
+        <GroupBox Header="Define Report Message Test" VerticalAlignment="Center" MouseUp="GroupBox_MouseUp">
+            <Expander Name="expander" IsExpanded="False" Margin="0, -49, -2, 0" FlowDirection="RightToLeft" Padding="0 10 0 0">
+                <WrapPanel Orientation="Horizontal" Margin="0" FlowDirection="LeftToRight">
+                    <WrapPanel.Resources>
+                        <Style TargetType="Grid">
+                            <Setter Property="Margin" Value="5, 7, 5, 0"/>
+                        </Style>
+                    </WrapPanel.Resources>
+                    <Grid Width="150" Height="32">
+                        <Button Content="S2F33 Disable" ToolTip="Disable Define Report" Click="btnS2F33Disable_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Button Content="S2F35 Disable" ToolTip="Disable Link Event Report" Click="btnS2F35Disable_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Button Content="S2F37 Disable" ToolTip="Disable Event Report" Click="btnS2F37Disable_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Button Content="S2F33" ToolTip="Define report" Click="btnS2F33Enable_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Button Content="S2F35" ToolTip="Link Event Report" Click="btnS2F35Enable_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Button Content="S2F37" ToolTip="Enable Event Report" Click="btnS2F37Enable_Click" />
+                    </Grid>
+                </WrapPanel>
+            </Expander>
+        </GroupBox>
+    </Grid>
+</UserControl>

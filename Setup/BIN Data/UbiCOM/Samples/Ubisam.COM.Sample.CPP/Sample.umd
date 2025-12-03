@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MessageList>
+  <SECSMessage>
+    <Header>
+      <MessageName>AreYouThere</MessageName>
+      <Stream>1</Stream>
+      <Function>1</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Are You There Request</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>OnLineData</MessageName>
+      <Stream>1</Stream>
+      <Function>2</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Are You There Request</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="" Count="2" IsFixed="true">
+        <A ItemName="MDLN" Count="20" IsFixed="false" DefaultValue="UbiSAM" />
+        <A ItemName="SOFTREV" Count="20" IsFixed="false" DefaultValue="SWREV" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>IAmHere</MessageName>
+      <Stream>1</Stream>
+      <Function>2</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Are You There Request</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="" Count="0" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F41</MessageName>
+      <Stream>2</Stream>
+      <Function>41</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Host Command Send</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="" Count="2" IsFixed="true">
+        <X ItemName="RCMD" Count="1000" IsFixed="false" />
+        <L ItemName="CPCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="" Count="2" IsFixed="true">
+            <A ItemName="CPNAME" Count="1000" IsFixed="false" />
+            <X ItemName="CPVAL" Count="1000" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F42</MessageName>
+      <Stream>2</Stream>
+      <Function>42</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Host Command Send</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="" Count="2" IsFixed="true">
+        <B ItemName="HCACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="CPCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="" Count="2" IsFixed="true">
+            <A ItemName="CPNAME" Count="1000" IsFixed="false" />
+            <B ItemName="CPACK" Count="1" IsFixed="true" DefaultValue="0" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F11</MessageName>
+      <Stream>6</Stream>
+      <Function>11</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Event Report Send</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <I4 ItemName="DATAID" Count="1" IsFixed="true" DefaultValue="0" />
+        <I4 ItemName="CEID" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="RPTIDCOUNT" Count="100" IsFixed="false">
+          <L ItemName="L" Count="2" IsFixed="true">
+            <I4 ItemName="RPTID" Count="1" IsFixed="true" DefaultValue="0" />
+            <X ItemName="VCOUNT" Count="10000" IsFixed="false"/>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F12</MessageName>
+      <Stream>6</Stream>
+      <Function>12</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Event Report Send</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC6" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <WrapperInfo>
+    <WrapperInfo>
+      <FileName></FileName>
+      <Namespace></Namespace>
+      <ClassName></ClassName>
+      <DeviceType>Host</DeviceType>
+    </WrapperInfo>
+  </WrapperInfo>
+</MessageList>

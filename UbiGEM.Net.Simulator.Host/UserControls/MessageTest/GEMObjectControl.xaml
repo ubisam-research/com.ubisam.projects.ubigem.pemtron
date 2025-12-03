@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="UbiGEM.Net.Simulator.Host.UserControls.MessageTest.GEMObjectControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="450" Loaded="UserControl_Loaded">
+    <Grid>
+        <GroupBox Header="GEM Object Message Test" VerticalAlignment="Center" MouseUp="GroupBox_MouseUp">
+            <Expander Name="expander" IsExpanded="False" Margin="0, -49, -2, 0" FlowDirection="RightToLeft" Padding="0 10 0 0">
+                <WrapPanel Orientation="Horizontal" Margin="0" FlowDirection="LeftToRight">
+                    <WrapPanel.Resources>
+                        <Style TargetType="Grid">
+                            <Setter Property="Margin" Value="5, 7, 5, 0"/>
+                        </Style>
+                    </WrapPanel.Resources>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S14F1" ToolTip="GetAttr Request" Click="btnS14F1Send_Click" />
+                        <Button Grid.Column="2" Content="Edit" Click="btnS14F1Edit_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S14F3" ToolTip="SetAttr Request" Click="btnS14F3Send_Click" />
+                        <Button Grid.Column="2" Content="Edit" Click="btnS14F3Edit_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S14F5" ToolTip="GetType Request" Click="btnS14F5Send_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S14F7" ToolTip="GetAttrName Request" Click="btnS14F7Send_Click" />
+                        <Button Grid.Column="2" Content="Edit" Click="btnS14F7Edit_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S14F9" ToolTip="Create Object Request" Click="btnS14F9Send_Click" />
+                        <Button Grid.Column="2" Content="Edit" Click="btnS14F9Edit_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S14F11" ToolTip="Delete Object Request" Click="btnS14F11Send_Click" />
+                        <Button Grid.Column="2" Content="Edit" Click="btnS14F11Edit_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S14F13" ToolTip="Object Attach Request" Click="btnS14F13Send_Click" />
+                        <Button Grid.Column="2" Content="Edit" Click="btnS14F13Edit_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S14F15" ToolTip="Attached Object Action Request" Click="btnS14F15Send_Click" />
+                        <Button Grid.Column="2" Content="Edit" Click="btnS14F15Edit_Click" />
+                    </Grid>
+                    <Grid Width="150" Height="32">
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Content="S14F17" ToolTip="Supervised Object Action Request" Click="btnS14F17Send_Click" />
+                        <Button Grid.Column="2" Content="Edit" Click="btnS14F17Edit_Click" />
+                    </Grid>
+                </WrapPanel>
+            </Expander>
+        </GroupBox>
+    </Grid>
+</UserControl>

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 14.0.25420.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ubisam.GEM.Sample.CPP", "Ubisam.GEM.Sample.CPP\Ubisam.GEM.Sample.CPP.vcxproj", "{901BB37F-030D-4954-9895-4DE52673B95F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		DM|x64 = DM|x64
+		DM|x86 = DM|x86
+		DU|x64 = DU|x64
+		DU|x86 = DU|x86
+		RM|x64 = RM|x64
+		RM|x86 = RM|x86
+		RU|x64 = RU|x64
+		RU|x86 = RU|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{901BB37F-030D-4954-9895-4DE52673B95F}.DM|x64.ActiveCfg = DM|x64
+		{901BB37F-030D-4954-9895-4DE52673B95F}.DM|x64.Build.0 = DM|x64
+		{901BB37F-030D-4954-9895-4DE52673B95F}.DM|x86.ActiveCfg = DM|Win32
+		{901BB37F-030D-4954-9895-4DE52673B95F}.DM|x86.Build.0 = DM|Win32
+		{901BB37F-030D-4954-9895-4DE52673B95F}.DU|x64.ActiveCfg = DU|x64
+		{901BB37F-030D-4954-9895-4DE52673B95F}.DU|x64.Build.0 = DU|x64
+		{901BB37F-030D-4954-9895-4DE52673B95F}.DU|x86.ActiveCfg = DU|Win32
+		{901BB37F-030D-4954-9895-4DE52673B95F}.DU|x86.Build.0 = DU|Win32
+		{901BB37F-030D-4954-9895-4DE52673B95F}.RM|x64.ActiveCfg = RM|x64
+		{901BB37F-030D-4954-9895-4DE52673B95F}.RM|x64.Build.0 = RM|x64
+		{901BB37F-030D-4954-9895-4DE52673B95F}.RM|x86.ActiveCfg = RM|Win32
+		{901BB37F-030D-4954-9895-4DE52673B95F}.RM|x86.Build.0 = RM|Win32
+		{901BB37F-030D-4954-9895-4DE52673B95F}.RU|x64.ActiveCfg = RU|x64
+		{901BB37F-030D-4954-9895-4DE52673B95F}.RU|x64.Build.0 = RU|x64
+		{901BB37F-030D-4954-9895-4DE52673B95F}.RU|x86.ActiveCfg = RU|Win32
+		{901BB37F-030D-4954-9895-4DE52673B95F}.RU|x86.Build.0 = RU|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F4F5093-78F8-4F1E-93D9-0E372C5A234C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<UbiGEM>
+  <Driver>
+    <Name>GEM_EQP_HOST</Name>
+    <Type>Host</Type>
+    <IsAsyncMode>true</IsAsyncMode>
+    <DeviceID>1</DeviceID>
+    <Mode>HSMS</Mode>
+    <MaxMessageSize>2097152</MaxMessageSize>
+    <LogEnabledSECS1>Hour</LogEnabledSECS1>
+    <LogEnabledSECS2>Hour</LogEnabledSECS2>
+    <LogEnabledSystem>None</LogEnabledSystem>
+    <LogExpirationDay>30</LogExpirationDay>
+    <LogPath>c:\Log</LogPath>
+    <HSMS>
+      <HSMSMode>Active</HSMSMode>
+      <RemoteIPAddress>127.0.0.1</RemoteIPAddress>
+      <RemotePortNo>7000</RemotePortNo>
+      <LocalIPAddress>127.0.0.1</LocalIPAddress>
+      <LocalPortNo>7000</LocalPortNo>
+      <Timeout>
+        <T3>45</T3>
+        <T5>10</T5>
+        <T6>5</T6>
+        <T7>10</T7>
+        <T8>5</T8>
+        <LinkTest>120</LinkTest>
+      </Timeout>
+    </HSMS>
+  </Driver>
+  <UGCFileName>C:\TROI64x\Init\SecsGem\JCET_SPI.ugc</UGCFileName>
+  <EquipmentConstants>
+    <ECID ID="101" Name="InitCommunicationState" Format="U1" Use="true" Value="7" />
+    <ECID ID="102" Name="EstablishCommunicationsTimeout" Format="U2" Use="true" Value="10" />
+    <ECID ID="103" Name="MaxSpoolTransmit" Format="U4" Use="true" Value="10" />
+    <ECID ID="104" Name="OverWriteSpool" Format="Boolean" Use="true" Value="True" />
+    <ECID ID="105" Name="EnableSpooling" Format="Boolean" Use="true" Value="False" />
+    <ECID ID="106" Name="TimeFormat" Format="U1" Use="true" Value="0" />
+    <ECID ID="109" Name="T3Timeout" Format="U2" Use="true" Value="45" />
+    <ECID ID="110" Name="T5Timeout" Format="U2" Use="true" Value="10" />
+    <ECID ID="111" Name="T6Timeout" Format="U2" Use="true" Value="5" />
+    <ECID ID="112" Name="T7Timeout" Format="U2" Use="true" Value="10" />
+    <ECID ID="113" Name="T8Timeout" Format="U2" Use="true" Value="5" />
+    <ECID ID="117" Name="InitControlState" Format="U1" Use="true" Value="5" />
+    <ECID ID="118" Name="OffLineSubState" Format="U1" Use="true" Value="1" />
+    <ECID ID="120" Name="OnLineFailState" Format="U1" Use="true" Value="1" />
+    <ECID ID="121" Name="Maker" Format="A" Use="true" Value="" />
+    <ECID ID="122" Name="OnLineSubState" Format="U1" Use="true" Value="5" />
+    <ECID ID="123" Name="MaxSpoolMsg" Format="U2" Use="true" Value="200" />
+    <ECID ID="124" Name="DeviceID" Format="A" Use="true" Value="1" />
+    <ECID ID="125" Name="IPAddress" Format="A" Use="true" Value="127.0.0.1" />
+    <ECID ID="126" Name="PortNumber" Format="U2" Use="true" Value="7000" />
+    <ECID ID="127" Name="ActiveMode" Format="Boolean" Use="true" Value="False" />
+    <ECID ID="128" Name="LinkTestInterval" Format="U1" Use="true" Value="120" />
+    <ECID ID="129" Name="RetryLimit" Format="U1" Use="true" Value="0" />
+    <ECID ID="130" Name="AreYouThereTimeout" Format="U1" Use="true" Value="10" />
+  </EquipmentConstants>
+  <Variables>
+    <VID ID="1" Name="Clock" Format="A" Use="true" Value="" />
+    <VID ID="5" Name="AlarmSet" Format="L" Use="true" Value="">
+      <Childs />
+    </VID>
+    <VID ID="6" Name="ControlState" Format="U1" Use="true" Value="" />
+    <VID ID="7" Name="EventsEnabled" Format="L" Use="true" Value="">
+      <Childs />
+    </VID>
+    <VID ID="8" Name="ProcessState" Format="U1" Use="true" Value="" />
+    <VID ID="9" Name="PreviousProcessState" Format="U1" Use="true" Value="" />
+    <VID ID="10" Name="AlarmsEnabled" Format="L" Use="true" Value="">
+      <Childs />
+    </VID>
+    <VID ID="11" Name="SpoolCountActual" Format="U2" Use="true" Value="" />
+    <VID ID="12" Name="SpoolCountTotal" Format="U2" Use="true" Value="" />
+    <VID ID="13" Name="SpoolFullTime" Format="A" Use="true" Value="" />
+    <VID ID="14" Name="MDLN" Format="A" Use="true" Value="" />
+    <VID ID="15" Name="SOFTREV" Format="A" Use="true" Value="" />
+    <VID ID="16" Name="SpoolStartTime" Format="A" Use="true" Value="" />
+    <VID ID="17" Name="SpoolStatus" Format="U1" Use="true" Value="" />
+    <VID ID="18" Name="SpoolFull" Format="U1" Use="true" Value="" />
+    <VID ID="19" Name="ChangedECID" Format="L" Use="true" Value="">
+      <Childs />
+    </VID>
+    <VID ID="20" Name="ChangedECV" Format="L" Use="true" Value="">
+      <Childs />
+    </VID>
+    <VID ID="21" Name="ChangedECList" Format="L" Use="true" Value="">
+      <Childs />
+    </VID>
+    <VID ID="22" Name="EventLimit" Format="U2" Use="true" Value="" />
+    <VID ID="23" Name="LimitVariable" Format="U2" Use="true" Value="" />
+    <VID ID="24" Name="OperatorCommand" Format="U1" Use="true" Value="" />
+    <VID ID="25" Name="PPChangeName" Format="A" Use="true" Value="" />
+    <VID ID="27" Name="PPError" Format="A" Use="true" Value="" />
+    <VID ID="28" Name="TransitionType" Format="B" Use="true" Value="" />
+    <VID ID="29" Name="PortID" Format="U1" Use="true" Value="" />
+    <VID ID="30" Name="PreviousControlState" Format="U1" Use="true" Value="" />
+    <VID ID="31" Name="CommState" Format="U1" Use="true" Value="" />
+    <VID ID="32" Name="PreviousCommState" Format="U1" Use="true" Value="" />
+    <VID ID="1008" Name="PPChangeStatus" Format="A" Use="true" Value="" />
+    <VID ID="1030" Name="ALCD" Format="I2" Use="true" Value="" />
+    <VID ID="1031" Name="ALID" Format="I2" Use="true" Value="" />
+    <VID ID="1032" Name="ALTX" Format="A" Use="true" Value="" />
+    <VID ID="1001" Name="PCBID" Format="I2" Use="true" Value="" />
+    <VID ID="1002" Name="OperatorID" Format="A" Use="true" Value="" />
+    <VID ID="1003" Name="LaneID" Format="I2" Use="true" Value="" />
+    <VID ID="1004" Name="GroupName" Format="A" Use="true" Value="" />
+    <VID ID="1005" Name="BoardName" Format="A" Use="true" Value="" />
+    <VID ID="1007" Name="BarcodeName" Format="A" Use="true" Value="" />
+    <VID ID="1011" Name="JobName" Format="A" Use="true" Value="" />
+    <VID ID="2001" Name="ProcessResult" Format="A" Use="true" Value="" />
+    <VID ID="2002" Name="AverageVolume" Format="F4" Use="true" Value="" />
+    <VID ID="2003" Name="AverageArea" Format="F4" Use="true" Value="" />
+    <VID ID="2004" Name="AverageHeight" Format="F4" Use="true" Value="" />
+    <VID ID="2005" Name="AverageShiftX" Format="F4" Use="true" Value="" />
+    <VID ID="2006" Name="AverageShiftY" Format="F4" Use="true" Value="" />
+    <VID ID="3001" Name="MappingData" Format="A" Use="true" Value="" />
+  </Variables>
+  <Reports>
+    <Report ID="1011" IDList="1003,1008" />
+    <Report ID="1012" IDList="1001,1003" />
+    <Report ID="1013" IDList="1003,1007" />
+    <Report ID="1014" IDList="1002,1003,1004,1005" />
+    <Report ID="1015" IDList="1002,1003,1004,1005,2001,2002,2003,2004,2005,2006" />
+    <Report ID="1016" IDList="1001,1003" />
+    <Report ID="1017" IDList="6" />
+    <Report ID="1018" IDList="1003,1005" />
+    <Report ID="2001" IDList="3001" />
+  </Reports>
+  <CollectionEvents>
+    <CEID ID="1" Enabled="false" IDList="" />
+    <CEID ID="2" Enabled="false" IDList="" />
+    <CEID ID="3" Enabled="false" IDList="" />
+    <CEID ID="5" Enabled="false" IDList="" />
+    <CEID ID="6" Enabled="false" IDList="" />
+    <CEID ID="7" Enabled="false" IDList="" />
+    <CEID ID="8" Enabled="false" IDList="" />
+    <CEID ID="9" Enabled="false" IDList="" />
+    <CEID ID="10" Enabled="false" IDList="" />
+    <CEID ID="11" Enabled="false" IDList="" />
+    <CEID ID="12" Enabled="false" IDList="" />
+    <CEID ID="13" Enabled="false" IDList="" />
+    <CEID ID="14" Enabled="false" IDList="" />
+    <CEID ID="16" Enabled="false" IDList="" />
+    <CEID ID="17" Enabled="false" IDList="" />
+    <CEID ID="1011" Enabled="true" IDList="1011" />
+    <CEID ID="1017" Enabled="false" IDList="" />
+    <CEID ID="10000" Enabled="false" IDList="" />
+    <CEID ID="20000" Enabled="false" IDList="" />
+    <CEID ID="30000" Enabled="false" IDList="" />
+    <CEID ID="1012" Enabled="true" IDList="1012" />
+    <CEID ID="1013" Enabled="true" IDList="1013" />
+    <CEID ID="1014" Enabled="true" IDList="1014" />
+    <CEID ID="1015" Enabled="true" IDList="1015" />
+    <CEID ID="1016" Enabled="true" IDList="1016" />
+    <CEID ID="1018" Enabled="true" IDList="1018" />
+    <CEID ID="2001" Enabled="true" IDList="2001" />
+  </CollectionEvents>
+  <Alarms>
+    <Alarm ID="41000" Code="0" Description="Fail to inspect to Barcode. Please check the barcode" />
+    <Alarm ID="41001" Code="1" Description="Time over error from the conveyor controller.  Please check the PCB on the conveyor.     " />
+    <Alarm ID="41002" Code="2" Description="Grab Sequence fail  Timeout" />
+    <Alarm ID="41003" Code="3" Description="Fiducial mark recognization failure. Press OK to stop alert" />
+    <Alarm ID="41004" Code="4" Description="Over the Contraction limit. Please check PCB status or Fiducial" />
+    <Alarm ID="41005" Code="5" Description="Over the Expansion limit. Please check PCB status or Fiducial" />
+    <Alarm ID="41006" Code="6" Description="conveyor adjusting safety sensor is sensing. Please check safety sensor." />
+    <Alarm ID="41007" Code="7" Description="Emergency switch is ON. Check the status of machine then unlock the emergency switch." />
+    <Alarm ID="41008" Code="8" Description="Pannel Opened. You should close the pannel." />
+    <Alarm ID="41009" Code="9" Description="System is not receiving sufficient air pressure.  Please check the air pressure.      " />
+    <Alarm ID="41010" Code="10" Description="PCB detected on abnormal position. Check PCB position." />
+    <Alarm ID="41011" Code="11" Description="OK_PCB inserted NG Rack. Please check NG Buffer Rack, Condition" />
+    <Alarm ID="41012" Code="12" Description="NG_PCB inserted OK Rack. Please check NG Buffer Rack, Condition" />
+    <Alarm ID="41013" Code="13" Description="No message from NG buffer IN message didnt arrive after inspected PCB out. Please check NG Buffer Rack, Condition" />
+    <Alarm ID="41014" Code="14" Description="Calling PCB is out from NG buffer rack.Please Check NG Buffer Rack" />
+    <Alarm ID="41015" Code="15" Description="NG No Confirm PCB is out from NG buffer rack. Please Check NG Buffer's Rack" />
+    <Alarm ID="41016" Code="16" Description="please check on the NG RACK. NG Rack FULL" />
+    <Alarm ID="41017" Code="0" Description="Error in Shuttle Sensor. Please check Shuttle Sensor" />
+    <Alarm ID="41018" Code="18" Description="Failed to move to home X, Y. Check home creation." />
+    <Alarm ID="41019" Code="19" Description="No arrays Inspected. Please check array inspection flag." />
+    <Alarm ID="41020" Code="20" Description="The OpenJob program will not run. Please check the OpenJob program " />
+    <Alarm ID="41021" Code="21" Description="Error in conveyor.  Check the status of conveyor/PCB." />
+  </Alarms>
+  <RemoteCommands>
+    <RemoteCommand Command="PPSELECT" AutoSend="false" Description="">
+      <ValueSetCollection>
+        <ValueSet Name="Default">
+          <Parameters>
+            <Parameter Name="PPID" Format="A" GenerateRule="" Value="JF12109M03-UC-01T" />
+            <Parameter Name="Lane ID" Format="A" GenerateRule="" Value="0" />
+          </Parameters>
+        </ValueSet>
+      </ValueSetCollection>
+      <Triggers />
+    </RemoteCommand>
+    <RemoteCommand Command="STOP" AutoSend="false" Description="">
+      <ValueSetCollection>
+        <ValueSet Name="Default">
+          <Parameters>
+            <Parameter Name="Lane ID" Format="A" GenerateRule="" Value="" />
+          </Parameters>
+        </ValueSet>
+      </ValueSetCollection>
+      <Triggers />
+    </RemoteCommand>
+    <RemoteCommand Command="RUN" AutoSend="false" Description="">
+      <ValueSetCollection>
+        <ValueSet Name="Default">
+          <Parameters>
+            <Parameter Name="Lane ID" Format="A" GenerateRule="" Value="" />
+          </Parameters>
+        </ValueSet>
+      </ValueSetCollection>
+      <Triggers />
+    </RemoteCommand>
+  </RemoteCommands>
+  <FormattedProcessProgramCollection />
+  <GEMObjectCollection>
+    <GEMObject OBJSPEC="4621" OBJTYPE="Substrate">
+      <GEMObjectIDCollection>
+        <GEMObjectID OBJID="ABC" IsChecked="true">
+          <GEMObjectAttributeCollection>
+            <GEMObjectAttribute ATTRID="MapData" Format="A" IsChecked="true" ATTRDATA="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xD;&#xA;&lt;MapData xmlns=&quot;urn:semi-org:xsd.E142-1.V1005.SubstrateMap&quot;&gt;&#xD;&#xA;    &lt;SubstrateMaps&gt;&#xD;&#xA;        &lt;SubstrateMap LayoutSpecifier=&quot;StripLayout/Device&quot;&#xD;&#xA;            SubstrateId=&quot;S452318045389-0J-0A&quot; SubstrateType=&quot;Strip&quot;&gt;&#xD;&#xA;            &lt;Overlay MapName=&quot;DownloadBinCodeMap&quot;&gt;&#xD;&#xA;                &lt;BinCodeMap&gt;&#xD;&#xA;                   &lt; BinCode&gt;010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F&lt; / BinCode&gt;&#xD;&#xA;                   &lt; BinCode&gt;010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F&lt; / BinCode&gt;&#xD;&#xA;                   &lt; BinCode&gt;010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F010F&lt; / BinCode&gt;&#xD;&#xA;                &lt;/BinCodeMap&gt;&#xD;&#xA;            &lt;/Overlay&gt;&#xD;&#xA;        &lt;/SubstrateMap&gt;&#xD;&#xA;    &lt;/SubstrateMaps&gt;&#xD;&#xA;&lt;/MapData&gt;" />
+          </GEMObjectAttributeCollection>
+        </GEMObjectID>
+      </GEMObjectIDCollection>
+    </GEMObject>
+  </GEMObjectCollection>
+  <GEMSetting>
+    <S10F3 TID="" TEXT="" />
+    <S10F5 TID="">
+      <TEXTs />
+    </S10F5>
+    <ACK>
+      <ACKItem Name="S1F14CommAck" Use="false" Value="0" />
+      <ACKItem Name="S2FxAckc2" Use="false" Value="0" />
+      <ACKItem Name="S5FxAckc5" Use="false" Value="0" />
+      <ACKItem Name="S6F2Ackc6" Use="false" Value="0" />
+      <ACKItem Name="S6F4Ackc6" Use="false" Value="0" />
+      <ACKItem Name="S6F6Grant6" Use="false" Value="0" />
+      <ACKItem Name="S6F10Ackc6" Use="false" Value="0" />
+      <ACKItem Name="S6F12Ackc6" Use="false" Value="0" />
+      <ACKItem Name="S6F14Ackc6" Use="false" Value="0" />
+      <ACKItem Name="S6F26Ackc6" Use="false" Value="0" />
+      <ACKItem Name="S7F2Ackc7" Use="false" Value="0" />
+      <ACKItem Name="S7F4Ackc7" Use="false" Value="0" />
+      <ACKItem Name="S7F24Ackc7" Use="false" Value="0" />
+      <ACKItem Name="S7F26Ccode" Use="false" Value="0" />
+      <ACKItem Name="S7F30Ackc7" Use="false" Value="0" />
+      <ACKItem Name="S10F2Ackc10" Use="false" Value="0" />
+      <ACKItem Name="S14F2ObjAck" Use="false" Value="0" />
+      <ACKItem Name="S14F4ObjAck" Use="false" Value="0" />
+    </ACK>
+    <UseReply>
+      <ReplyItem Stream="1" Function="1" Reply="true" />
+      <ReplyItem Stream="1" Function="13" Reply="true" />
+      <ReplyItem Stream="2" Function="17" Reply="true" />
+      <ReplyItem Stream="2" Function="25" Reply="true" />
+      <ReplyItem Stream="5" Function="1" Reply="true" />
+      <ReplyItem Stream="6" Function="1" Reply="true" />
+      <ReplyItem Stream="6" Function="11" Reply="true" />
+      <ReplyItem Stream="7" Function="1" Reply="true" />
+      <ReplyItem Stream="7" Function="3" Reply="true" />
+      <ReplyItem Stream="7" Function="5" Reply="true" />
+      <ReplyItem Stream="7" Function="19" Reply="true" />
+      <ReplyItem Stream="7" Function="23" Reply="true" />
+      <ReplyItem Stream="7" Function="25" Reply="true" />
+      <ReplyItem Stream="7" Function="27" Reply="true" />
+      <ReplyItem Stream="10" Function="1" Reply="true" />
+      <ReplyItem Stream="14" Function="1" Reply="true" />
+      <ReplyItem Stream="14" Function="3" Reply="true" />
+    </UseReply>
+    <ETC>
+      <ProcessProgramFileS7F3 FileName="D:\JF12109M03-01T.zip" />
+      <ProcessProgramIDS7F5 PPID="JF12109M03-01T" />
+      <AutoSendS1F13 Value="true" />
+    </ETC>
+  </GEMSetting>
+  <TraceDatas />
+  <LimitMonitorings />
+  <SECSMessages />
+</UbiGEM>

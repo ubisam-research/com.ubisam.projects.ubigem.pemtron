@@ -1,0 +1,2703 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UbiCom.Net</name>
+    </assembly>
+    <members>
+        <member name="T:UbiCom.Net.Driver.HSMSDriver">
+            <summary>
+            UbiCom.Net - HSMS Driver입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnSECSConnected">
+            <summary>
+            Socket Connected 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnSECSDisconnected">
+            <summary>
+            Socket Disconnected 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnSECSSelected">
+            <summary>
+            HSMS Selected 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnSECSDeselected">
+            <summary>
+            HSMS Deselected 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnTimeout">
+            <summary>
+            Timeout 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnT3Timeout">
+            <summary>
+            T3 Timeout 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnReceivedUnknownMessage">
+            <summary>
+            Unknown Message 수신 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnReceivedInvalidPrimaryMessage">
+            <summary>
+            Invalid Primary Message 수신 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnReceivedInvalidSecondaryMessage">
+            <summary>
+            Invalid Seconadry Message 수신 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnSentControlMessage">
+            <summary>
+            Control Message 송신 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnSentSECSMessage">
+            <summary>
+            SECS Message 송신 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnReceivedControlMessage">
+            <summary>
+            Control Message 수신 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnReceivedPrimaryMessage">
+            <summary>
+            Primary SECS Message 수신 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnReceivedSecondaryMessage">
+            <summary>
+            Secondary SECS Message 수신 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnSECS1WriteLog">
+            <summary>
+            SECS-I Log Write 시 발생합니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.HSMSDriver.OnSECS2WriteLog">
+            <summary>
+            SECS-II Log Write 시 발생합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Driver.HSMSDriver.Config">
+            <summary>
+            환경 설정 값을 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Driver.HSMSDriver.Connected">
+            <summary>
+            Connected 상태를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Driver.HSMSDriver.ConnectionState">
+            <summary>
+            Connection 상태를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Driver.HSMSDriver.UseAutoReply">
+            <summary>
+            Auto reply 사용 여부를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Driver.HSMSDriver.MessageManager">
+            <summary>
+            Message manager를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Driver.HSMSDriver.Messages">
+            <summary>
+            SECS message를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Driver.HSMSDriver.PrimaryMessages">
+            <summary>
+            Primary message를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Driver.HSMSDriver.SecondaryMessages">
+            <summary>
+            Secondary message를 가져옵니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.#ctor">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.Finalize">
+            <summary>
+            기본 소멸자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.Dispose">
+            <summary>
+            관리되지 않는 리소스의 확보, 해제 또는 다시 설정과 관련된 애플리케이션 정의 작업을 수행합니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.Dispose(System.Boolean)">
+            <summary>
+            관리되지 않는 리소스의 확보, 해제 또는 다시 설정과 관련된 애플리케이션 정의 작업을 수행합니다.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.Initialize(System.String,System.String,System.String@)">
+            <summary>
+            Driver를 초기화합니다.
+            </summary>
+            <param name="configurationFileName">환경 설정 File입니다.</param>
+            <param name="driverName">SECS Driver Name입니다.</param>
+            <param name="errorText">초기화 실패 시 실패 사유입니다.(단, OK 시 string.Empty)</param>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.Initialize(UbiCom.Net.Structure.Configurtion,System.String@)">
+            <summary>
+            Driver를 초기화합니다.
+            </summary>
+            <param name="configuration">환경 설정 값입니다.</param>
+            <param name="errorText">초기화 실패 시 실패 사유입니다.(단, OK 시 string.Empty)</param>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.Terminate">
+            <summary>
+            Driver를 terminate합니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.Open">
+            <summary>
+            Driver를 Open합니다.
+            </summary>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.Open(UbiCom.Net.Structure.Configurtion)">
+            <summary>
+            Driver를 Open합니다.
+            </summary>
+            <param name="configuration">환경 설정 값입니다.</param>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.Close">
+            <summary>
+            Driver를 Close합니다.
+            </summary>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.SendSECSMessage(UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            SECS Message를 송신합니다.
+            </summary>
+            <param name="message">송신 할 Primary message입니다.</param>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.ReplySECSMessage(UbiCom.Net.Structure.SECSMessage,UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            SECS Message를 Reply합니다.
+            </summary>
+            <param name="primaryMessage">연관된 Primary message입니다.</param>
+            <param name="secondaryMessage">송신 할 Secondary message입니다.</param>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.ReplySECSMessage(System.UInt32,UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            SECS Message를 Reply합니다.
+            </summary>
+            <param name="primarySystemBytes">연관된 Primary message의 System Bytes입니다.</param>
+            <param name="secondaryMessage">송신 할 Secondary message입니다.</param>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.HSMSDriver.AddUserDefinedMessage(UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            사용자 정의 SECS Message를 추가합니다.
+            </summary>
+            <param name="message">추가 할 message입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.SECSConnectedEventHandler">
+            <summary>
+            Connected 상태 변경 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="ipAddress">연관된 IP Address입니다.</param>
+            <param name="portNo">연관된 Port no입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.SECSDisconnectedEventHandler">
+            <summary>
+            Disconnected 상태 변경 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="ipAddress">연관된 IP Address입니다.</param>
+            <param name="portNo">연관된 Port no입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.SECSSelectedEventHandler">
+            <summary>
+            Selected 상태 변경 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="ipAddress">연관된 IP Address입니다.</param>
+            <param name="portNo">연관된 Port no입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.SECSDeselectedEventHandler">
+            <summary>
+            Deselected 상태 변경 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="ipAddress">연관된 IP Address입니다.</param>
+            <param name="portNo">연관된 Port no입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.TimeoutEventHandler">
+            <summary>
+            Timeout 발생 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="timeoutType">발생한 Timeout 종류입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.T3TimeoutEventHandler">
+            <summary>
+            T3 Timeout 발생 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="message">T3 Timeout이 발생한 Primary message입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.ReceivedUnknownMessageEventHandler">
+            <summary>
+            Unknown message 수신 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="message">수신한 message입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.ReceivedInvalidPrimaryMessageEventHandler">
+            <summary>
+            Invalid primary message 수신 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="reason">Invalid 사유입니다.</param>
+            <param name="message">수신한 message입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.ReceivedInvalidSecondaryMessageEventHandler">
+            <summary>
+            Invalid secondary message 수신 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="reason">Invalid 사유입니다.</param>
+            <param name="primaryMessage">연관된 Primary message입니다.</param>
+            <param name="secondaryMessage">수신한 Secondary message입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.SentControlMessageEventHandler">
+            <summary>
+            Control message 송신 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="message">송신한 message입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.SentSECSMessageEventHandler">
+            <summary>
+            Data message 송신 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="message">송신한 message입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.ReceivedControlMessageEventHandler">
+            <summary>
+            Control message 수신 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="message">수신한 message입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.ReceivedPrimaryMessageEventHandler">
+            <summary>
+            Data primary message 수신 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="message">수신한 message입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.ReceivedSecondaryMessageEventHandler">
+            <summary>
+            Data secondary message 수신 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="primaryMessage">연관된 Primary message입니다.</param>
+            <param name="secondaryMessage">수신한 Secondary message입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Driver.IDriver">
+            <summary>
+            SECS Driver Interface
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnSECSConnected">
+            <summary>
+            Connected 상태 변경 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnSECSDisconnected">
+            <summary>
+            Disconnected 상태 변경 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnSECSSelected">
+            <summary>
+            Selected 상태 변경 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnSECSDeselected">
+            <summary>
+            Deselected 상태 변경 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnTimeout">
+            <summary>
+            Timeout 발생 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnT3Timeout">
+            <summary>
+            T3 Timeout 발생 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnReceivedUnknownMessage">
+            <summary>
+            Unknown message 수신 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnReceivedInvalidPrimaryMessage">
+            <summary>
+            Invalid primary message 수신 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnReceivedInvalidSecondaryMessage">
+            <summary>
+            Invalid secondary message 수신 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnSentControlMessage">
+            <summary>
+            Control message 송신 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnSentSECSMessage">
+            <summary>
+            Data message 송신 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnReceivedControlMessage">
+            <summary>
+            Control message 수신 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnReceivedPrimaryMessage">
+            <summary>
+            Data primary message 수신 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnReceivedSecondaryMessage">
+            <summary>
+            Data secondary message 수신 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnSECS1WriteLog">
+            <summary>
+            SECS-I Log write 발생 이벤트입니다.
+            </summary>
+        </member>
+        <member name="E:UbiCom.Net.Driver.IDriver.OnSECS2WriteLog">
+            <summary>
+            SECS-II Log write 발생 이벤트입니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Driver.IDriver.ConnectionState">
+            <summary>
+            Current Connection State를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Driver.IDriver.Initialize(System.String,System.String,System.String@)">
+            <summary>
+            Driver를 초기화합니다.
+            </summary>
+            <param name="configurationFileName">환경 설정 File입니다.</param>
+            <param name="driverName">SECS Driver Name입니다.</param>
+            <param name="errorText">초기화 실패 시 실패 사유입니다.(단, OK 시 string.Empty)</param>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.IDriver.Initialize(UbiCom.Net.Structure.Configurtion,System.String@)">
+            <summary>
+            Driver를 초기화합니다.
+            </summary>
+            <param name="configuration">환경 설정 값입니다.</param>
+            <param name="errorText">초기화 실패 시 실패 사유입니다.(단, OK 시 string.Empty)</param>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.IDriver.Terminate">
+            <summary>
+            Driver를 terminate합니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Driver.IDriver.Open">
+            <summary>
+            Driver를 Open합니다.
+            </summary>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.IDriver.Open(UbiCom.Net.Structure.Configurtion)">
+            <summary>
+            Driver를 Open합니다.
+            </summary>
+            <param name="configuration">환경 설정 값입니다.</param>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.IDriver.Close">
+            <summary>
+            Driver를 Close합니다.
+            </summary>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.IDriver.SendSECSMessage(UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            SECS Message를 송신합니다.
+            </summary>
+            <param name="primaryMessage">송신 할 Primary message입니다.</param>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.IDriver.ReplySECSMessage(UbiCom.Net.Structure.SECSMessage,UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            SECS Message를 Reply합니다.
+            </summary>
+            <param name="primaryMessage">연관된 Primary message입니다.</param>
+            <param name="secondaryMessage">송신 할 Secondary message입니다.</param>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Driver.IDriver.ReplySECSMessage(System.UInt32,UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            SECS Message를 Reply합니다.
+            </summary>
+            <param name="primarySystemBytes">연관된 Primary message의 System Bytes입니다.</param>
+            <param name="secondaryMessage">송신 할 Secondary message입니다.</param>
+            <returns>실패 사유입니다.</returns>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSMessageBoth">
+            <summary>
+            양방향 SECS message입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageBoth.#ctor(UbiCom.Net.Driver.HSMSDriver,System.String)">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageBoth.Request">
+            <summary>
+            Message를 송신합니다.
+            </summary>
+            <returns>송신 결과입니다</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageBoth.Reply(UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            Secondary Message를 송신합니다.
+            </summary>
+            <param name="primaryMessage">연관된 Primary message입니다.</param>
+            <returns>송신 결과입니다</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageBoth.Reply(System.UInt32)">
+            <summary>
+            Secondary Message를 송신합니다.
+            </summary>
+            <param name="systemBytes">연관된 Primary System Bytes입니다.</param>
+            <returns>송신 결과입니다</returns>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSMessageReceive">
+            <summary>
+            수신 message정보입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageReceive.#ctor(UbiCom.Net.Driver.HSMSDriver,System.String)">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSMessageReply">
+            <summary>
+            Secondary message 정보입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageReply.#ctor(UbiCom.Net.Driver.HSMSDriver,System.String)">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageReply.Reply(UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            Secondary Message를 송신합니다.
+            </summary>
+            <param name="primaryMessage">연관된 Primary message입니다.</param>
+            <returns>송신 결과입니다</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageReply.Reply(System.UInt32)">
+            <summary>
+            Secondary Message를 송신합니다.
+            </summary>
+            <param name="systemBytes">연관된 Primary System Bytes입니다.</param>
+            <returns>송신 결과입니다</returns>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSMessageRequest">
+            <summary>
+            Primary message 정보입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageRequest.#ctor(UbiCom.Net.Driver.HSMSDriver,System.String)">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageRequest.Request">
+            <summary>
+            Message를 송신합니다.
+            </summary>
+            <returns>송신 결과입니다</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageValidate.ValidateItem.ToString">
+            <summary>
+            현재 인스탄스를 나타내는 문자열로 변환합니다.
+            </summary>
+            <returns>현재 인스탄스를 나타내는 문자열입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageValidate.ValidateMessage.ToString">
+            <summary>
+            현재 인스탄스를 나타내는 문자열로 변환합니다.
+            </summary>
+            <returns>현재 인스탄스를 나타내는 문자열입니다.</returns>
+        </member>
+        <member name="T:UbiCom.Net.Structure.IWrapper">
+            <summary>
+            Wrapper interface입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.IWrapper.MakeList(System.Collections.IList,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="list"></param>
+            <param name="name"></param>
+            <param name="count"></param>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSItemWrapper">
+            <summary>
+            SECS Item Wrapper입니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemWrapper.Owner">
+            <summary>
+            이 SECSItemWrapper을 소유하는 SECSItemCollectionWrapper를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemWrapper.Name">
+            <summary>
+            Item의 이름을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemWrapper.Format">
+            <summary>
+            Item의 Format을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemWrapper.IsFixed">
+            <summary>
+            Item의 Length 고정 여부를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemWrapper.Length">
+            <summary>
+            Item의 Length를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemWrapper.Parent">
+            <summary>
+            이 SECSItemWrapper을 소유하는 SECSItem를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemWrapper.Value">
+            <summary>
+            Item의 Value를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemWrapper.#ctor(UbiCom.Net.Structure.SECSItemWrapper)">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+            <param name="item">SECS Item입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemWrapper.#ctor(System.String,UbiCom.Net.Structure.SECSItemFormat,System.Int32,System.Boolean,System.Object)">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+            <param name="name">SECS Item의 name입니다.</param>
+            <param name="format">SECS Item의 format입니다.</param>
+            <param name="length">SECS Item의 length입니다.</param>
+            <param name="isFixed">SECS Item의 fix 여부입니다.</param>
+            <param name="value">SECS Item의 value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemWrapper.#ctor(UbiCom.Net.Structure.SECSItemFormat,System.Int32,System.Object)">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+            <param name="format">SECS Item의 format입니다.</param>
+            <param name="length">SECS Item의 length입니다.</param>
+            <param name="value">SECS Item의 value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemWrapper.#ctor(System.String,System.Object)">
+            <summary>
+            기본 생성자입니다.(format=L)
+            </summary>
+            <param name="name">SECS Item의 name입니다.</param>
+            <param name="value">SECS Item의 value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemWrapper.ToString">
+            <summary>
+            현재 인스탄스를 나타내는 문자열로 변환합니다.
+            </summary>
+            <returns>현재 인스탄스를 나타내는 문자열입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemWrapper.MakeList(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="count"></param>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSItemCollectionWrapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemCollectionWrapper.Owner">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemCollectionWrapper.AsDictionary">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemCollectionWrapper.AsList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemCollectionWrapper.Item(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemCollectionWrapper.Item(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemCollectionWrapper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemCollectionWrapper.ToString">
+            <summary>
+            현재 인스탄스를 나타내는 문자열로 변환합니다.
+            </summary>
+            <returns>현재 인스탄스를 나타내는 문자열입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemCollectionWrapper.Add(UbiCom.Net.Structure.SECSItemWrapper)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemCollectionWrapper.MakeList(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemCollectionWrapper.MakeList(System.Collections.IList,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="list"></param>
+            <param name="name"></param>
+            <param name="count"></param>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSMessageWrapper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSMessageWrapper._driver">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessageWrapper.Items">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageWrapper.#ctor(UbiCom.Net.Driver.HSMSDriver,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="driver"></param>
+            <param name="messageName"></param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageWrapper.Add(UbiCom.Net.Structure.SECSItemWrapper)">
+            <summary>
+            
+            </summary>
+            <param name="item"></param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageWrapper.Add(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="length"></param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageWrapper.Add(System.String,System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageWrapper.MakeList(System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="name"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageWrapper.MakeList(System.Collections.IList,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="list"></param>
+            <param name="name"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageWrapper.MakeSECSMessage">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:UbiCom.Net.Structure.HSMSMode">
+            <summary>
+            HSMS 모드입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.HSMSMode.Passive">
+            <summary>
+            Passive 모드입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.HSMSMode.Active">
+            <summary>
+            Active 모드입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSMode">
+            <summary>
+            SECS 모드입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSMode.SECS1">
+            <summary>
+            SECS-I 모드입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSMode.HSMS">
+            <summary>
+            HSMS 모드입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.DeviceType">
+            <summary>
+            Device type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DeviceType.Host">
+            <summary>
+            HOST 모드입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DeviceType.Equipment">
+            <summary>
+            Equipment 모드입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSMessageDirection">
+            <summary>
+            SECS message direction입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSMessageDirection.ToEquipment">
+            <summary>
+            HOST -> Equipment입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSMessageDirection.ToHost">
+            <summary>
+            Equipment -> HOST 입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSMessageDirection.Both">
+            <summary>
+            Equipment &lt;-> HOST 입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSItemFormat">
+            <summary>
+            SECS item format입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.None">
+            <summary>
+            초기값(사용하면 안됨)
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.L">
+            <summary>
+            List type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.A">
+            <summary>
+            ASCII type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.B">
+            <summary>
+            Binary type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.Boolean">
+            <summary>
+            Boolean type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.I1">
+            <summary>
+            1-byte integer (signed) type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.I2">
+            <summary>
+            2-byte integer (signed) type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.I4">
+            <summary>
+            4-byte integer (signed) type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.I8">
+            <summary>
+            8-byte integer (signed) type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.U1">
+            <summary>
+            1-byte integer (unsigned) type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.U2">
+            <summary>
+            2-byte integer (unsigned) type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.U4">
+            <summary>
+            4-byte integer (unsigned) type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.U8">
+            <summary>
+            8-byte integer (unsigned) type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.F4">
+            <summary>
+            4-byte floating point type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.F8">
+            <summary>
+            8-byte floating point type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.J">
+            <summary>
+            JIS-8 type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SECSItemFormat.X">
+            <summary>
+            Any type입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.ConnectionState">
+            <summary>
+            연결 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ConnectionState.Unknown">
+            <summary>
+            알 수 없는 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ConnectionState.Connected">
+            <summary>
+            Socket conneted 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ConnectionState.Selected">
+            <summary>
+            HSMS selected 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ConnectionState.Disconnected">
+            <summary>
+            Socket disconneted 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ConnectionState.Deselected">
+            <summary>
+            HSMS deselected 상태입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.LogMode">
+            <summary>
+            Logging 모드입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.LogMode.None">
+            <summary>
+            Logging 하지 않는 모드입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.LogMode.Hour">
+            <summary>
+            시간 단위로 Logging하는 모드입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.LogMode.Day">
+            <summary>
+            일자 단위로 Logging하는 모드입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.TimeoutType">
+            <summary>
+            Timeout 종류입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.TimeoutType.T1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.TimeoutType.T2">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.TimeoutType.T3">
+            <summary>
+            Reply timeout입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.TimeoutType.T4">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.TimeoutType.T5">
+            <summary>
+            Connect separation timeout입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.TimeoutType.T6">
+            <summary>
+            Transaction timeout입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.TimeoutType.T7">
+            <summary>
+            Not selected timeout입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.TimeoutType.T8">
+            <summary>
+            Network intercharacter timeout입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.TimeoutType.Linktest">
+            <summary>
+            Linktest timeout입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.ControlMessageType">
+            <summary>
+            SECS Message Header S-Type Code입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ControlMessageType.DataMessage">
+            <summary>
+            Data message입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ControlMessageType.SelectRequest">
+            <summary>
+            Select request입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ControlMessageType.SelectResponse">
+            <summary>
+            Select response입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ControlMessageType.DeselectRequest">
+            <summary>
+            Deselect request입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ControlMessageType.DeselectResponse">
+            <summary>
+            Deselect response입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ControlMessageType.LinktestRequest">
+            <summary>
+            Linktest request입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ControlMessageType.LinktestResponse">
+            <summary>
+            Linktest response입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ControlMessageType.RejectRequest">
+            <summary>
+            Reject request입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.ControlMessageType.SeparateRequest">
+            <summary>
+            Separate request입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SelectStatus">
+            <summary>
+            Select Response 시 Select Status입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SelectStatus.Succeed">
+            <summary>
+            Select가 성공적으로 완료된 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SelectStatus.AlreadySelected">
+            <summary>
+            통신이 이미 Active된 상태입니다.(이전의 Select가 이미 통신 설정한 상태)
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SelectStatus.ConnectionNotReady">
+            <summary>
+            Select Requests를 받을 준비가 되어 있지 않은 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.SelectStatus.ConnectExhaust">
+            <summary>
+            Entity가 이미 TCP/IP Connection을 분리 단계에 있는 상태입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.DeselectStatus">
+            <summary>
+            Deselected 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DeselectStatus.Succeed">
+            <summary>
+            Deselect가 성공적으로 완료된 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DeselectStatus.AlreadyDeselected">
+            <summary>
+            이전의 Deselect로 이미 HSMS 통신이 종료된 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DeselectStatus.ConnectionBusy">
+            <summary>
+            Session이 여전히 응답 Entity로 사용 중에 있어서 끊을 수 없는 상태입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.RejectReasonCode">
+            <summary>
+            수신 message의 reject reason code입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.RejectReasonCode.Unknown">
+            <summary>
+            알 수 없는 상태입니다.(Default Value)
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.RejectReasonCode.STypeNotSupported">
+            <summary>
+            SType 값이 표준에 정의 되지 않은 Message를 수신했을 경우입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.RejectReasonCode.PTypeNotSupported">
+            <summary>
+            PType 값이 표준에 정의 되지 않은 Message를 수신했을 경우입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.RejectReasonCode.TransactionNotOpen">
+            <summary>
+            부합된 Request Message를 보내지 않았는데, Response Control Message를 수신했을 경우입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.RejectReasonCode.EntityNotSelected">
+            <summary>
+            Selected 상태가 아닐 때, Data Message를 수신했을 경우입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.DriverError">
+            <summary>
+            SECS Driver 오류 type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DriverError.Ok">
+            <summary>
+            정상 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DriverError.Unknown">
+            <summary>
+            알수 없는 오류입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DriverError.NotExistDriverName">
+            <summary>
+            Driver 이름을 지정하지 않았습니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DriverError.NotExistFile">
+            <summary>
+            파일이 존재하지 않습니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DriverError.FileLoadFailed">
+            <summary>
+            환경 설정 파일 로드를 실패했습니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DriverError.FileSaveFailed">
+            <summary>
+            환경 설정 파일 저장을 실패했습니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DriverError.InvalidConfiguration">
+            <summary>
+            올바르지 않은 환경 설정입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DriverError.AlreadyConnected">
+            <summary>
+            이미 Connected 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DriverError.SocketException">
+            <summary>
+            Socket 에러입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DriverError.LicenseVerificationFailed">
+            <summary>
+            License 검증 실패입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.DriverError.TrialVersion">
+            <summary>
+            Trial version입니다.(재기동 후 정상 진행 가능)
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.MessageError">
+            <summary>
+            SECS Message 오류 type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageError.Ok">
+            <summary>
+            정상 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageError.Unknown">
+            <summary>
+            알수 없는 오류입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageError.NoInitialize">
+            <summary>
+            Driver 초기화를 하지 않았습니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageError.NoConnected">
+            <summary>
+            Driver Connected 상태가 아닙니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageError.NotSelected">
+            <summary>
+            Driver Selected 상태가 아닙니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageError.MessageQueueOverflow">
+            <summary>
+            Message Queue가 가득 찼습니다.(MAX Queue size는 Primary/Secondary 각각 100개 임)
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageError.DuplicateSystemBytes">
+            <summary>
+            System Byte가 중복되었습니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageError.InvalidLength">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageError.DataIsNull">
+            <summary>
+            Data(message)가 존재하지 않습니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageError.SocketIsNull">
+            <summary>
+            Socket이 정상적으로 생성되지 않았습니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageError.InvalidMessageStructure">
+            <summary>
+            Message 구조가 올바르지 않습니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.MessageValidationError">
+            <summary>
+            Message 검증 에러 type입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageValidationError.Ok">
+            <summary>
+            정상 상태입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageValidationError.UnrecognizedDeviceID">
+            <summary>
+            Unrecognized Device ID입니다.(S9F1)
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageValidationError.UnrecognizedSteam">
+            <summary>
+            Unrecognized Stream Type입니다.(S9F3)
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageValidationError.UnrecognizedFunction">
+            <summary>
+            Unrecognized Function Type입니다.(S9F5)
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageValidationError.IllegalDataFormat">
+            <summary>
+            Illegal Data입니다.(S9F7)
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageValidationError.T3Timeout">
+            <summary>
+            Transaction Timer Timeout입니다.(S9F9)
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Structure.MessageValidationError.DataToLong">
+            <summary>
+            Data Too Long입니다.(S9F11, Default Value = 2MB)
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.Configurtion">
+            <summary>
+            Driver 환경 설정 Class입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.Configurtion.SECS1">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.Configurtion.HSMS">
+            <summary>
+            HSMS 환경 설정 Value입니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.HSMS.HSMSMode">
+            <summary>
+            HSMS Mode를 가져오거나 설정합니다.(Default Value = Active)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.HSMS.RemoteIPAddress">
+            <summary>
+            Remote IP Address를 가져오거나 설정합니다.(Active Mode)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.HSMS.RemotePortNo">
+            <summary>
+            Remote Port No를 가져오거나 설정합니다.(Active Mode)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.HSMS.LocalIPAddress">
+            <summary>
+            Local IP Address를 가져오거나 설정합니다.(Passive Mode)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.HSMS.LocalPortNo">
+            <summary>
+            Local Port No를 가져오거나 설정합니다.(Passive Mode)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.HSMS.T3">
+            <summary>
+            T3 Timeout을 가져오거나 설정합니다.(단위 = s, Default Value = 45)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.HSMS.T5">
+            <summary>
+            T5 Timeout을 가져오거나 설정합니다.(단위 = s, Default Value = 10)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.HSMS.T6">
+            <summary>
+            T6 Timeout을 가져오거나 설정합니다.(단위 = s, Default Value = 5)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.HSMS.T7">
+            <summary>
+            T7 Timeout을 가져오거나 설정합니다.(단위 = s, Default Value = 10)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.HSMS.T8">
+            <summary>
+            T8 Timeout을 가져오거나 설정합니다.(단위 = s, Default Value = 5)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.HSMS.LinkTest">
+            <summary>
+            Link Test 주기를 가져오거나 설정합니다.(단위 = s, Default Value = 120)
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.Configurtion.HSMS.#ctor">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.Configurtion.HSMS.ToString">
+            <summary>
+            현재 인스탄스를 나타내는 문자열로 변환합니다.
+            </summary>
+            <returns>현재 인스탄스를 나타내는 문자열입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.Configurtion.HSMS.ValidateConfiguration(System.String@)">
+            <summary>
+            HSMS 환경 설정을 검증합니다.
+            </summary>
+            <param name="errorText">검증 실패 사유입니다.(검증 성공 시 string.Empty)</param>
+            <returns>검증 결과입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.Configurtion.HSMS.Copy">
+            <summary>
+            HSMS의 단순 복사본을 만듭니다.
+            </summary>
+            <returns>HSMS의 단순 복사본입니다.</returns>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.DriverName">
+            <summary>
+            Driver Name을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.DeviceType">
+            <summary>
+            Device Type을 가져오거나 설정합니다.(Default Value = Equipment)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.IsAsyncMode">
+            <summary>
+            Message 송/수신 처리 방법을 가져오거나 설정합니다.(Default Value = true)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.DeviceID">
+            <summary>
+            Device ID를 가져오거나 설정합니다.(Default Value = 0)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.SECSMode">
+            <summary>
+            SECS Mode를 가져오거나 설정합니다.(Default Value = HSMS)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.MaxMessageSize">
+            <summary>
+            Message의 최대 Size를 가져오거나 설정합니다.(Default Value = 2MB)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.UMDFileName">
+            <summary>
+            UMD File Name(Path 포함)을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.LogPath">
+            <summary>
+            Log Path를 가져오거나 설정합니다.(Default Value = C:/Log)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.LogEnabledSECS1">
+            <summary>
+            SECS-I Log 저장 방법을 가져오거나 설정합니다.(Default Value = Hour)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.LogEnabledSECS2">
+            <summary>
+            SECS-II Log 저장 방법을 가져오거나 설정합니다.(Default Value = Hour)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.LogEnabledSystem">
+            <summary>
+            Driver Log 저장 방법을 가져오거나 설정합니다.(Default Value = None)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.LogExpirationDay">
+            <summary>
+            Log 보관 기간을 가져오거나 설정합니다.(단위 = 일, Default Value = 30)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.SECS1ModeConfig">
+            <summary>
+            SECS1 Mode의 설정을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.Configurtion.HSMSModeConfig">
+            <summary>
+            HSMS Mode의 설정을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.Configurtion.#ctor">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.Configurtion.ToString">
+            <summary>
+            현재 인스탄스를 나타내는 문자열로 변환합니다.
+            </summary>
+            <returns>현재 인스탄스를 나타내는 문자열입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.Configurtion.ValidateConfiguration(System.String@)">
+            <summary>
+            환경 설정을 검증합니다.
+            </summary>
+            <param name="errorText">검증 실패 사유입니다.(검증 성공 시 string.Empty)</param>
+            <returns>검증 결과입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.Configurtion.Copy">
+            <summary>
+            Configurtion의 단순 복사본을 만듭니다.
+            </summary>
+            <returns>Configurtion의 단순 복사본입니다.</returns>
+        </member>
+        <member name="T:UbiCom.Net.Structure.ConfigurtionCollection">
+            <summary>
+            Driver 환경 설정 Collection Class입니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.ConfigurtionCollection.Count">
+            <summary>
+            설정된 driver수를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.ConfigurtionCollection.AsDictionary">
+            <summary>
+            Driver 정보를 가져옵니다.(Key=Driver Name)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.ConfigurtionCollection.AsList">
+            <summary>
+            Driver 정보를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.ConfigurtionCollection.Item(System.String)">
+            <summary>
+            Driver 정보를 가져옵니다.
+            </summary>
+            <param name="driverName">Driver name입니다.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.ConfigurtionCollection.#ctor">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.ConfigurtionCollection.ToString">
+            <summary>
+            현재 인스탄스를 나타내는 문자열로 변환합니다.
+            </summary>
+            <returns>현재 인스탄스를 나타내는 문자열입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.ConfigurtionCollection.Load(System.String,System.String@)">
+            <summary>
+            Configuration File을 Load합니다.
+            </summary>
+            <param name="fileName">Load할 Configuration Full File Name입니다.</param>
+            <param name="errorText">Configuration File Load 실패 사유입니다.(Load 성공 시 string.Empty)</param>
+            <returns>Configuration File Load 결과입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.ConfigurtionCollection.Save(System.String,System.String@)">
+            <summary>
+            Configuration File을 Save합니다.
+            </summary>
+            <param name="fileName">Save할 Configuration Full File Name입니다.</param>
+            <param name="errorText">Configuration File Save 실패 사유입니다.(Save 성공 시 string.Empty)</param>
+            <returns>Configuration File Save 결과입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.ConfigurtionCollection.Contains(System.String)">
+            <summary>
+            Driver Name이 등록되어 있는지 여부를 확인합니다.
+            </summary>
+            <param name="driverName">설정에서 찾을 수 있는 Driver Name입니다.</param>
+            <returns>지정한 Diver Name이 있는 요소가 포함되어 있으면 true이고, 그렇지 않으면 false입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.ConfigurtionCollection.Add(UbiCom.Net.Structure.Configurtion)">
+            <summary>
+            Driver Configuration을 추가합니다.
+            </summary>
+            <param name="configurtion">추가 할 Driver Configuration입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.ConfigurtionCollection.Remove(System.String)">
+            <summary>
+            Driver Configuration을 삭제합니다.
+            </summary>
+            <param name="driverName">제거 할 Driver Name입니다.</param>
+            <returns>성공적으로 찾아서 제거한 경우 true이고, 그렇지 않으면 false입니다.이 메서드는 key가 없는 경우 false를 반환합니다.</returns>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSBody">
+            <summary>
+            SECS Message의 Body입니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSBody.Item">
+            <summary>
+            수신한 Item을 가져오거나 설정합니다.(Tree 형식으로 구성)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSBody.AsList">
+            <summary>
+            송신할 Item 목록을 가져오거나 설정합니다.(동일 Level로 구성)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSBody.Count">
+            <summary>
+            Item의 수량을 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSBody.TotalBytes">
+            <summary>
+            Body의 Total Byte 크기를 가져옵니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSBody.#ctor">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSBody.ToString">
+            <summary>
+            현재 인스탄스를 나타내는 문자열로 변환합니다.
+            </summary>
+            <returns>현재 인스탄스를 나타내는 문자열입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSBody.Clone">
+            <summary>
+            SECS Body의 단순 복사본을 만듭니다.
+            </summary>
+            <returns>SECS Body의 단순 복사본입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSBody.Clear">
+            <summary>
+            SECS Header의 모든 Data를 초기화합니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSBody.Add(UbiCom.Net.Structure.SECSItem)">
+            <summary>
+            SECS Item을 추가합니다.
+            </summary>
+            <param name="item">추가할 SECS Item입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSBody.Add(UbiCom.Net.Structure.SECSItemFormat,System.Int32,UbiCom.Net.Structure.SECSValue)">
+            <summary>
+            SECS Item을 추가합니다.
+            </summary>
+            <param name="format">추가할 SECS Itemd의 format입니다.</param>
+            <param name="length">추가할 SECS Itemd의 length입니다.</param>
+            <param name="value">추가할 SECS Itemd의 value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSBody.Add(System.String,UbiCom.Net.Structure.SECSItemFormat,System.Int32,UbiCom.Net.Structure.SECSValue)">
+            <summary>
+            SECS Item을 추가합니다.
+            </summary>
+            <param name="name">추가할 SECS Itemd의 name입니다.</param>
+            <param name="format">추가할 SECS Itemd의 format입니다.</param>
+            <param name="length">추가할 SECS Itemd의 length입니다.</param>
+            <param name="value">추가할 SECS Itemd의 value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSBody.Add(System.String,UbiCom.Net.Structure.SECSItemFormat,System.Int32,System.Boolean,UbiCom.Net.Structure.SECSValue)">
+            <summary>
+            SECS Item을 추가합니다.
+            </summary>
+            <param name="name">추가할 SECS Itemd의 name입니다.</param>
+            <param name="format">추가할 SECS Itemd의 format입니다.</param>
+            <param name="length">추가할 SECS Itemd의 length입니다.</param>
+            <param name="isFixed">추가할 SECS Itemd의 fix 여부입니다.</param>
+            <param name="value">추가할 SECS Itemd의 value입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSItem">
+            <summary>
+            SECS Body의 Item입니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItem.Name">
+            <summary>
+            Item의 이름을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItem.Format">
+            <summary>
+            Item의 format을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItem.IsFixed">
+            <summary>
+            Item의 length 고정 여부를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItem.Length">
+            <summary>
+            Item의 length를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItem.SubItem">
+            <summary>
+            Item의 하위 item을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItem.Parent">
+            <summary>
+            Item의 상위 item을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItem.Value">
+            <summary>
+            Item의 value를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItem.DriverData">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItem.#ctor">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItem.#ctor(System.String,UbiCom.Net.Structure.SECSItemFormat,System.Int32,UbiCom.Net.Structure.SECSValue)">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+            <param name="name">SECS item의 name입니다.</param>
+            <param name="format">SECS Itemd의 format입니다.</param>
+            <param name="length">SECS Itemd의 length입니다.</param>
+            <param name="value">SECS Itemd의 value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItem.ToString">
+            <summary>
+            현재 인스탄스를 나타내는 문자열로 변환합니다.
+            </summary>
+            <returns>현재 인스탄스를 나타내는 문자열입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItem.Clone">
+            <summary>
+            SECS Item의 단순 복사본을 만듭니다.
+            </summary>
+            <returns>SECS Item의 단순 복사본입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItem.Clear">
+            <summary>
+            SECS Item의 모든 Data를 초기화합니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSItemCollection">
+            <summary>
+            SECS Body의 Item Collection입니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemCollection.Items">
+            <summary>
+            System.Collections.Generic.List&lt;SECSItem&gt;를 반환합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemCollection.Count">
+            <summary>
+            Item Count를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemCollection.Item(System.String)">
+            <summary>
+            지정한 이름과 연결된 SECS Item을 가져옵니다.
+            </summary>
+            <param name="name">가져올 SECS Item의 이름입니다.</param>
+            <returns>지정한 이름과 연결된 SECS Item입니다.</returns>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSItemCollection.Item(System.Int32)">
+            <summary>
+            해당 Index의 SECS Item을 가져옵니다.
+            </summary>
+            <param name="index">가져올 Index입니다.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemCollection.#ctor">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemCollection.ToString">
+            <summary>
+            현재 인스탄스를 나타내는 문자열로 변환합니다.
+            </summary>
+            <returns>현재 인스탄스를 나타내는 문자열입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemCollection.Add(UbiCom.Net.Structure.SECSItem)">
+            <summary>
+            Body Item을 추가합니다.
+            </summary>
+            <param name="secsItem">추가할 Body Item입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemCollection.Clear">
+            <summary>
+            Body Item의 모든 Data를 초기화합니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemCollection.Clone">
+            <summary>
+            SECS Item Collection의 단순 복사본을 만듭니다.
+            </summary>
+            <returns>SECS Item Collection의 단순 복사본입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSItemCollection.Exists(System.String)">
+            <summary>
+            SECS Item의 이름과 일치하는 요소가 포함되어 있는지 여부를 확인합니다.
+            </summary>
+            <param name="name">검색할 SECS Item의 이름입니다.</param>
+            <returns>지정한 요소가 포함되어 있으면 true이고, 그렇지 않으면 false입니다.</returns>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSMessage">
+            <summary>
+            SECS Meesage입니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.Name">
+            <summary>
+            SECS Message의 이름을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.ControlMessageType">
+            <summary>
+            Control Message Type을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.Direction">
+            <summary>
+            Direction을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.DeviceId">
+            <summary>
+            Device ID를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.Description">
+            <summary>
+            Description을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.Stream">
+            <summary>
+            Stream No을 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.Function">
+            <summary>
+            Function No를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.WaitBit">
+            <summary>
+            Wait Bit 여부를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.AutoReply">
+            <summary>
+            Auto Reply 여부를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.NoLogging">
+            <summary>
+            Logging 여부를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.SystemBytes">
+            <summary>
+            System Bytes를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.StatusCode">
+            <summary>
+            Status / Reason Code를 가져오거나 설정합니다.(Select Status / Deselect Status / Reject Reason)
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.Body">
+            <summary>
+            SECS Message의 Body를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.Length">
+            <summary>
+            SECS Message의 전체 길이를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessage.UserData">
+            <summary>
+            사용자 정의 Data를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessage.#ctor">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessage.ToString">
+            <summary>
+            현재 인스탄스를 나타내는 문자열로 변환합니다.
+            </summary>
+            <returns>현재 인스탄스를 나타내는 문자열입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessage.Clone">
+            <summary>
+            SECS Message의 단순 복사본을 만듭니다.(단, User Data는 복사하지 않음)
+            </summary>
+            <returns>SECS Message의 단순 복사본입니다.</returns>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSMessageCollection">
+            <summary>
+            SECS Meesage Collection입니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessageCollection.MessageInfo">
+            <summary>
+            SECS Message를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessageCollection.Item(System.String)">
+            <summary>
+            지정한 이름과 연결된 SECS Message를 가져오거나 설정합니다.
+            </summary>
+            <param name="name">가져올 SECS Messag의 이름입니다.</param>
+            <returns>지정한 이름과 연결된 SECS Messag입니다.</returns>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessageCollection.Item(System.Int32,System.Int32)">
+            <summary>
+            지정한 Stream No / Function No와 연결된 SECS Message을 가져옵니다.
+            </summary>
+            <param name="stream">가져올 SECS Messag의 Stream No입니다.</param>
+            <param name="function">가져올 SECS Messag의 Function No입니다.</param>
+            <returns>지정한 Stream No / Function No와 연결된 SECS Messag입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageCollection.#ctor">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageCollection.ToString">
+            <summary>
+            현재 인스탄스를 나타내는 문자열로 변환합니다.
+            </summary>
+            <returns>현재 인스탄스를 나타내는 문자열입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageCollection.Add(UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            SECS Message를 추가합니다.
+            </summary>
+            <param name="secsMessage">추가할 SECS Message입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageCollection.Clear">
+            <summary>
+            SECS Message의 모든 Data를 초기화합니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageCollection.Clone">
+            <summary>
+            SECS Message Collection의 단순 복사본을 만듭니다.
+            </summary>
+            <returns>SECS Message Collection의 단순 복사본입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageCollection.Exist(System.Int32,System.Int32,UbiCom.Net.Structure.DeviceType)">
+            <summary>
+            Message의 존재 여부입니다.
+            </summary>
+            <param name="stream">검색할 Stream No입니다.</param>
+            <param name="function">검색할 Function No입니다.</param>
+            <param name="deviceType">검색할 Device Type입니다.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageCollection.GetMessage(System.Int32,System.Int32,UbiCom.Net.Structure.DeviceType)">
+            <summary>
+            Message를 가져옵니다.
+            </summary>
+            <param name="stream">검색할 Stream No입니다.</param>
+            <param name="function">검색할 Function No입니다.</param>
+            <param name="deviceType">검색할 Device Type입니다.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageCollection.GetMessageHeader(System.Int32,System.Int32)">
+            <summary>
+            Message Header를 설정합니다.
+            </summary>
+            <param name="stream">검색할 Stream No입니다.</param>
+            <param name="function">검색할 Function No입니다.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageCollection.GetMessageHeader(System.Int32,System.Int32,UbiCom.Net.Structure.DeviceType)">
+            <summary>
+            Message Header를 설정합니다.
+            </summary>
+            <param name="stream">검색할 Stream No입니다.</param>
+            <param name="function">검색할 Function No입니다.</param>
+            <param name="deviceType">검색할 Device Type입니다.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageCollection.GetMessageHeader(System.String)">
+            <summary>
+            Message Header를 설정합니다.
+            </summary>
+            <param name="messageName">검색할 SECS Messag의 이름입니다.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageCollection.GetMessageHeader(System.String,UbiCom.Net.Structure.DeviceType)">
+            <summary>
+            Message Header를 설정합니다.
+            </summary>
+            <param name="messageName">검색할 SECS Messag의 이름입니다.</param>
+            <param name="deviceType">검색할 Device Type입니다.</param>
+            <returns></returns>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSValue">
+            <summary>
+            SECS Item의 Value입니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSValue.Length">
+            <summary>
+            Value의 Length를 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSValue.IsEmpty">
+            <summary>
+            Value에 값이 존재하는지 여부를 나타냅니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.#ctor">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.#ctor(System.Object)">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+            <param name="value">SECS Item의 Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.ToString">
+            <summary>
+            현재 인스탄스를 나타내는 문자열로 변환합니다.
+            </summary>
+            <returns>현재 인스탄스를 나타내는 문자열입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.Equals(System.Object)">
+            <summary>
+            지정한 SECSValue가 현재 SECSValue와 같은지 여부를 확인합니다.
+            </summary>
+            <param name="obj">현재 SECSValue와 비교할 SECSValue입니다.</param>
+            <returns>지정된 SECSValue가 현재 SECSValue와 같으면 true이고, 그렇지 않으면 false입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.GetHashCode">
+            <summary>
+            특정 형식에 대한 해시 함수 역할을 합니다.
+            </summary>
+            <returns>현재 SECSValue의 해시 코드입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Boolean">
+            <summary>
+            변환 연산자 : SECSValue -> bool
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Boolean[]">
+            <summary>
+            변환 연산자 : SECSValue -> bool[]
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.SByte">
+            <summary>
+            변환 연산자 : SECSValue -> sbyte
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.SByte[]">
+            <summary>
+            변환 연산자 : SECSValue -> sbyte[]
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Byte">
+            <summary>
+            변환 연산자 : SECSValue -> byte
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Byte[]">
+            <summary>
+            변환 연산자 : SECSValue -> byte[]
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Int16">
+            <summary>
+            변환 연산자 : SECSValue -> short
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Int16[]">
+            <summary>
+            변환 연산자 : SECSValue -> short[]
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.UInt16">
+            <summary>
+            변환 연산자 : SECSValue -> ushort
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.UInt16[]">
+            <summary>
+            변환 연산자 : SECSValue -> ushort[]
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Int32">
+            <summary>
+            변환 연산자 : SECSValue -> int
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Int32[]">
+            <summary>
+            변환 연산자 : SECSValue -> int[]
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.UInt32">
+            <summary>
+            변환 연산자 : SECSValue -> uint
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.UInt32[]">
+            <summary>
+            변환 연산자 : SECSValue -> uint[]
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Int64">
+            <summary>
+            변환 연산자 : SECSValue -> long
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Int64[]">
+            <summary>
+            변환 연산자 : SECSValue -> long[]
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.UInt64">
+            <summary>
+            변환 연산자 : SECSValue -> ulong
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.UInt64[]">
+            <summary>
+            변환 연산자 : SECSValue -> ulong[]
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Single">
+            <summary>
+            변환 연산자 : SECSValue -> float
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Single[]">
+            <summary>
+            변환 연산자 : SECSValue -> float[]
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Double">
+            <summary>
+            변환 연산자 : SECSValue -> double
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.Double[]">
+            <summary>
+            변환 연산자 : SECSValue -> double[]
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.String">
+            <summary>
+            변환 연산자 : SECSValue -> string
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(UbiCom.Net.Structure.SECSValue)~System.String[]">
+            <summary>
+            변환 연산자 : SECSValue -> string[]
+            </summary>
+            <param name="value">SECSValue입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Boolean)~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : bool -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Boolean[])~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : bool[] -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.SByte)~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : sbyte -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.SByte[])~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : sbyte[] -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Byte)~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : byte -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Byte[])~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : byte[] -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Int16)~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : short -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Int16[])~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : short[] -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.UInt16)~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : ushort -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.UInt16[])~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : ushort[] -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Int32)~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : int -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Int32[])~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : int[] -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.UInt32)~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : uint -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.UInt32[])~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : uint[] -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Int64)~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : long -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Int64[])~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : long[] -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.UInt64)~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : ulong -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.UInt64[])~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : ulong[] -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Single)~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : float -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Single[])~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : float[] -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Double)~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : double -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.Double[])~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : double[] -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.String)~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : string -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.op_Implicit(System.String[])~UbiCom.Net.Structure.SECSValue">
+            <summary>
+            변환 연산자 : double[] -> SECSValue
+            </summary>
+            <param name="value">Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.SetValue(System.Object)">
+            <summary>
+            SECS Value를 설정합니다.
+            </summary>
+            <param name="value">설정할 Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.SetValue(UbiCom.Net.Structure.SECSItemFormat,System.Object)">
+            <summary>
+            SECS Value를 설정합니다.
+            </summary>
+            <param name="format">SECS Itemd의 format입니다.</param>
+            <param name="value">설정할 Value입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.GetValue">
+            <summary>
+            SECS Value를 가져옵니다.
+            </summary>
+            <returns>Value(object)입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSValue.GetType">
+            <summary>
+            현재 인스턴스의 System.Type을 가져옵니다.
+            </summary>
+            <returns>현재 인스턴스의 런타임 형식을 나타내는 System.Type 인스턴스입니다.</returns>
+        </member>
+        <member name="T:UbiCom.Net.Structure.SECSMessageManager">
+            <summary>
+            SECS Message manager입니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessageManager.Messages">
+            <summary>
+            SECS Mesage를 가져오거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessageManager.Item(System.Int32,System.Int32)">
+            <summary>
+            SECS Mesage를 가져옵니다.
+            </summary>
+            <param name="stream">Stream no입니다.</param>
+            <param name="function">Function no입니다.</param>
+            <returns>SECS Mesage입니다.</returns>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessageManager.Item(System.Int32,System.Int32,UbiCom.Net.Structure.SECSMessageDirection)">
+            <summary>
+            SECS Mesage를 가져옵니다.
+            </summary>
+            <param name="stream">Stream no입니다.</param>
+            <param name="function">Function no입니다.</param>
+            <param name="direction">Direction입니다.</param>
+            <returns>SECS Mesage입니다.</returns>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessageManager.Item(System.Int32,System.Int32,UbiCom.Net.Structure.DeviceType)">
+            <summary>
+            SECS Mesage를 가져옵니다.
+            </summary>
+            <param name="stream">Stream no입니다.</param>
+            <param name="function">Function no입니다.</param>
+            <param name="deviceType">Device Type입니다.</param>
+            <returns>SECS Mesage입니다.</returns>
+        </member>
+        <member name="P:UbiCom.Net.Structure.SECSMessageManager.Item(System.String)">
+            <summary>
+            SECS Mesage를 가져옵니다.
+            </summary>
+            <param name="messageName">Message name입니다.</param>
+            <returns>SECS Mesage입니다.</returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageManager.#ctor">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageManager.Finalize">
+            <summary>
+            기본 소멸자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageManager.Initialize(UbiCom.Net.Structure.Configurtion)">
+            <summary>
+            SECS Message manager를 초기화합니다.
+            </summary>
+            <param name="config">환경 설정 정보입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageManager.Load(System.String)">
+            <summary>
+            Message 구조를 로드합니다.
+            </summary>
+            <param name="umdFileName">Message 구조 파일입니다.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageManager.Load(System.Xml.Linq.XElement)">
+            <summary>
+            Message 구조를 로드합니다.
+            </summary>
+            <param name="rootElement">Message 구조의 root element입니다.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageManager.Dispose">
+            <summary>
+            할당된 리소스를 해제합니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageManager.Dispose(System.Boolean)">
+            <summary>
+            할당된 리소스를 해제합니다.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageManager.AddUserDefinedMessage(UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            사용자 정의 SECS Message를 추가합니다.
+            </summary>
+            <param name="message">추가 할 message입니다.</param>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageManager.ValidateReceivedMessage(UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            수신 Message를 validate합니다.
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Structure.SECSMessageManager.UpdateUserMessageStructure(UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            사용자 정의 Message의 구조를 Update합니다.(UMD 사용하지 않을 경우)
+            </summary>
+            <param name="message">Update할 Message입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Utility.Logger.LogLevel">
+            <summary>
+            Log level입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Utility.Logger.LogLevel.Information">
+            <summary>
+            Information입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Utility.Logger.LogLevel.HSMS">
+            <summary>
+            Driver information입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Utility.Logger.LogLevel.Send">
+            <summary>
+            송신 관련입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Utility.Logger.LogLevel.Receive">
+            <summary>
+            수신 관련입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Utility.Logger.LogLevel.Warning">
+            <summary>
+            Warning입니다.
+            </summary>
+        </member>
+        <member name="F:UbiCom.Net.Utility.Logger.LogLevel.Error">
+            <summary>
+            동작에 영향을 미치는 error입니다.
+            </summary>
+        </member>
+        <member name="T:UbiCom.Net.Utility.Logger.LogWriteEventHandler">
+            <summary>
+            Log write 발생 이벤트 핸들러입니다.
+            </summary>
+            <param name="sender"></param>
+            <param name="logLevel">Log level입니다.</param>
+            <param name="logText">Log 내용입니다.</param>
+        </member>
+        <member name="T:UbiCom.Net.Utility.MessageLoader">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Utility.MessageLoader.SECSMessageMgr">
+            <summary>
+            SECS Message Structure를 가져옵니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Utility.MessageLoader.#ctor(UbiCom.Net.Driver.HSMSDriver)">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Utility.MessageLoader.Finalize">
+            <summary>
+            기본 소멸자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Utility.MessageLoader.Dispose">
+            <summary>
+            관리되지 않는 리소스의 확보, 해제 또는 다시 설정과 관련된 애플리케이션 정의 작업을 수행합니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Utility.MessageLoader.Dispose(System.Boolean)">
+            <summary>
+            관리되지 않는 리소스의 확보, 해제 또는 다시 설정과 관련된 애플리케이션 정의 작업을 수행합니다.
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:UbiCom.Net.Utility.MessageLoader.Load(UbiCom.Net.Structure.Configurtion)">
+            <summary>
+            Message Structure를 load합니다.
+            </summary>
+            <param name="configuration">환경 설정 정보입니다.</param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Utility.MessageLoader.Load(System.Xml.Linq.XElement)">
+            <summary>
+            Message Structure를 load합니다.
+            </summary>
+            <param name="rootElement"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Utility.MessageLoader.ValidateReceivedMessage(UbiCom.Net.Structure.SECSMessage)">
+            <summary>
+            수신 Message를 validate합니다.
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:UbiCom.Net.Utility.MessageLoader.GetSECSMessage(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="stream"></param>
+            <param name="function"></param>
+            <returns></returns>
+        </member>
+        <member name="T:UbiCom.Net.Utility.SECSMessageLoader">
+            <summary>
+            SECS Message loader입니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Utility.SECSMessageLoader.Message">
+            <summary>
+            SECS Message 정보를 가져옵니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Utility.SECSMessageLoader.#ctor">
+            <summary>
+            기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:UbiCom.Net.Utility.SECSMessageLoader.Load(System.String)">
+            <summary>
+            SECS message를 load합니다.
+            </summary>
+            <param name="umdFileName">UbiCom message definition file입니다.</param>
+            <returns>처리 결과입니다.(OK시 string.Empty)</returns>
+        </member>
+        <member name="M:UbiCom.Net.Utility.SECSMessageLoader.Load(System.Xml.Linq.XElement)">
+            <summary>
+            SECS message를 load합니다.
+            </summary>
+            <param name="rootElement">Message 구조의 root element입니다.</param>
+            <returns>처리 결과입니다.(OK시 string.Empty)</returns>
+        </member>
+        <member name="T:UbiCom.Net.Resources.ErrorString">
+            <summary>
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.ResourceManager">
+            <summary>
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.Culture">
+            <summary>
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대해 현재 스레드의 CurrentUICulture 속성을
+              재정의합니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.AlreadyConnected">
+            <summary>
+              이미 Connected 상태입니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.ConfigurationIsNull">
+            <summary>
+              환경 설정 값이 존재하지 않습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.DoseNotExistConfigurationFile">
+            <summary>
+              Configuration File이 존재하지 않습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.DoseNotExistDefinedMessageSet">
+            <summary>
+              UMD File에 정의된 Message가 존재하지 않습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.DoseNotExistDriverName">
+            <summary>
+              Driver 이름이 존재하지 않습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.DoseNotExistUMDFile">
+            <summary>
+              UMD File이 존재하지 않습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.ExceptionOccurrence">
+            <summary>
+              처리되지 않은 예외가 발생했습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.FailedConfigurationFileLoad">
+            <summary>
+              Configuration File Load를 실패했습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.FailedConfigurationFileSave">
+            <summary>
+              Configuration File Save를 실패했습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.FailedPortOpen">
+            <summary>
+              Port Open에 실패했습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.FailedUMDFileLoad">
+            <summary>
+              UMD File Load를 실패했습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.InvalidIPAddress">
+            <summary>
+              IP Address 설정 값이 올바르지 않습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.InvalidPortNo">
+            <summary>
+              Port No 설정 값이 올바르지 않습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UbiCom.Net.Resources.ErrorString.InvalidTimeout">
+            <summary>
+              Timeout 설정 값이 올바르지 않습니다.과(와) 유사한 지역화된 문자열을 찾습니다.
+            </summary>
+        </member>
+    </members>
+</doc>

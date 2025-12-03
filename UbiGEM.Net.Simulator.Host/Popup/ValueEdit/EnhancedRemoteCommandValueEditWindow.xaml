@@ -1,0 +1,314 @@
+﻿<Window x:Class="UbiGEM.Net.Simulator.Host.Popup.ValueEdit.EnhancedRemoteCommandValueEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.Popup"
+        xmlns:Controls="clr-namespace:UbiGEM.Net.Simulator.Host.UserControls"
+        mc:Ignorable="d"
+        Title="Enhanced Remote Command Value Edit" Height="700" Width="640" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" WindowStyle="None" >
+    <Grid Background="{StaticResource UbiSamThemeBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 5 0">
+            <GroupBox Header="Enhanced Remote Command Value Edit" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="7" />
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="7" />
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="7" />
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="7" />
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="7" />
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="7" />
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Grid.Row="0" Content="Name" VerticalContentAlignment="Center" />
+                    <Label Name="lblName" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="3" VerticalContentAlignment="Center" />
+
+                    <Label Grid.Column="0" Grid.Row="2" Content="ValueSet" VerticalContentAlignment="Center" />
+                    <Label Name="lblValueSet" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" />
+                    
+                    <Label Grid.Column="0" Grid.Row="4" Content="Description" VerticalContentAlignment="Center" />
+                    <Label Name="lblDescription" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" VerticalContentAlignment="Center" />
+
+                    <Label Grid.Column="0" Grid.Row="6" Content="DATAID" VerticalContentAlignment="Center" />
+                    <TextBox Name="txtDataID" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" VerticalContentAlignment="Center" />
+                    
+                    <Label Grid.Column="0" Grid.Row="8" Content="OBJSPEC" VerticalContentAlignment="Center" />
+                    <TextBox Name="txtObjSpec" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="3" VerticalContentAlignment="Center" />
+
+                    <Label Grid.Column="0" Grid.Row="10" Content="Parameters" VerticalContentAlignment="Center" />
+                    <DataGrid Name="dgrCommandParameter" Grid.Column="1" Grid.Row="10" Grid.RowSpan="2" Grid.ColumnSpan="3" IsReadOnly="False" 
+                            CanUserAddRows="False" CanUserDeleteRows="False" FrozenColumnCount="1"
+                            SelectionChanged="dgrCommandParameter_SelectionChanged"
+                            >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                            <DataGridTextColumn Header="Format" Binding="{Binding Format}" IsReadOnly="True" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                            <DataGridTextColumn Header="Count" Binding="{Binding Count}" >
+                                <DataGridTextColumn.EditingElementStyle>
+                                    <Style TargetType="TextBox" BasedOn="{StaticResource DataGridTextColumnEditing}">
+                                        <Setter Property="UIElement.IsEnabled" Value="{Binding IsCountEditable}" />
+                                    </Style>
+                                </DataGridTextColumn.EditingElementStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource DataGridTextColumnElement}">
+                                        <Setter Property="UIElement.IsEnabled" Value="{Binding IsCountEditable}" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Header="Rule" Binding="{Binding GenerateRule}" IsReadOnly="False" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                            <DataGridTemplateColumn Header="Value">
+                                <DataGridTemplateColumn.CellEditingTemplate>
+                                    <DataTemplate>
+                                        <Grid HorizontalAlignment="Stretch">
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Grid.Style>
+                                                <TextBox Text="{Binding Value}" TextAlignment="Left" Style="{DynamicResource CustomTextBoxStyleForDataGridTemplateColumn}" />
+                                            </Grid>
+
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Grid.Style>
+                                                <ComboBox ItemsSource="{Binding ChildLength}" SelectedValue="{Binding UseChildLength}" SelectedValuePath="Key" DisplayMemberPath="Value" Style="{DynamicResource CustomComboBoxStyleForDataGridTemplateColumn}" SelectionChanged="dgcParameterChildLength_SelectionChanged" />
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellEditingTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Left" >
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource CustomTextBlockStyleForDataGridTemplateColumn}">
+                                                    <Setter Property="Text" Value="{Binding Value}" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                            <Setter Property="Text" Value="{Binding SelectedChildLength}" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <Label Grid.Column="0" Grid.Row="13" Content="Values" VerticalContentAlignment="Center" />
+                    <DataGrid Name="dgrCommandValue" Grid.Column="1" Grid.Row="13" Grid.RowSpan="2" Grid.ColumnSpan="3" IsReadOnly="False" IsEnabled="False"
+                            CanUserAddRows="False" CanUserDeleteRows="False" FrozenColumnCount="1" 
+                            >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                            <DataGridTextColumn Header="Format" Binding="{Binding Format}" IsReadOnly="True" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                            <DataGridTextColumn Header="Count" Binding="{Binding Count}" >
+                                <DataGridTextColumn.EditingElementStyle>
+                                    <Style TargetType="TextBox" BasedOn="{StaticResource DataGridTextColumnEditing}">
+                                        <Setter Property="UIElement.IsEnabled" Value="{Binding IsCountEditable}" />
+                                    </Style>
+                                </DataGridTextColumn.EditingElementStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource DataGridTextColumnElement}">
+                                        <Setter Property="UIElement.IsEnabled" Value="{Binding IsCountEditable}" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+
+                            <DataGridTemplateColumn Header="Rule">
+                                <DataGridTemplateColumn.CellEditingTemplate>
+                                    <DataTemplate>
+                                        <Grid HorizontalAlignment="Stretch">
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Grid.Style>
+                                                <TextBox Text="{Binding GenerateRule}" TextAlignment="Left" Style="{DynamicResource CustomTextBoxStyleForDataGridTemplateColumn}"/>
+                                            </Grid>
+
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Grid.Style>
+                                                <Button Content="Child Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnChildEdit_Click"/>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellEditingTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid HorizontalAlignment="Stretch">
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Grid.Style>
+                                                <TextBlock Text="{Binding GenerateRule}" TextAlignment="Left" Style="{DynamicResource CustomTextBlockStyleForDataGridTemplateColumn}"/>
+                                            </Grid>
+
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Grid.Style>
+                                                <Button Content="Child Edit" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnChildEdit_Click"/>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn Header="Value">
+                                <DataGridTemplateColumn.CellEditingTemplate>
+                                    <DataTemplate>
+                                        <Grid HorizontalAlignment="Stretch">
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Grid.Style>
+                                                <TextBox Text="{Binding Value}" TextAlignment="Left" Style="{DynamicResource CustomTextBoxStyleForDataGridTemplateColumn}" />
+                                            </Grid>
+
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Grid.Style>
+                                                <ComboBox ItemsSource="{Binding ChildLength}" SelectedValue="{Binding UseChildLength}" SelectedValuePath="Key" DisplayMemberPath="Value" Style="{DynamicResource CustomComboBoxStyleForDataGridTemplateColumn}" SelectionChanged="dgcValueChildLength_SelectionChanged" />
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellEditingTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Left" >
+                                            <TextBlock.Style>
+                                                <Style TargetType="TextBlock" BasedOn="{StaticResource CustomTextBlockStyleForDataGridTemplateColumn}">
+                                                    <Setter Property="Text" Value="{Binding Value}" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                            <Setter Property="Text" Value="{Binding SelectedChildLength}" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TextBlock.Style>
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <!--<Controls:ClientMenuControl x:Name="ctlCommandValue" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="3" OnAdd="EnhancedCommandValue_OnAdd" OnRemove="EnhancedCommandValue_OnRemove" Margin="0, 0, 1, 0" />-->
+                </Grid>
+            </GroupBox>
+        </Border>
+
+        <Border Grid.Row="1" Grid.ColumnSpan="4" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 5 0" >
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="32" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" Content="Rule Example" VerticalContentAlignment="Center" />
+                <Label Name="lblExample1" Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center" ToolTip="Use Equipment Constant 15 with pattern 'A_True'"/>
+                <Label Name="lblExample2" Grid.Row="0" Grid.Column="2" VerticalContentAlignment="Center" ToolTip="Use current value of VID=100 with pattern '1_AA'"/>
+                <Label Name="lblExample3" Grid.Row="1" Grid.Column="1" VerticalContentAlignment="Center" ToolTip="Use random value [min=1,max=9], max include"/>
+                <Label Name="lblExample4" Grid.Row="1" Grid.Column="2" VerticalContentAlignment="Center" ToolTip="Use incremental value [start=1,step=2] (1,3,5,7,9....)"/>
+            </Grid>
+        </Border>
+        <Border Grid.Row="1" Style="{StaticResource PopupBottomArea}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Content="Save" Click="btnSave_Click" />
+                <Button Grid.Column="3" Content="Close" Click="btnCancel_Click" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

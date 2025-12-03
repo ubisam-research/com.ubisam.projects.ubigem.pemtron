@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PreDefined>
+  <CEIDList>
+    <CEID ID="1" Name="Offline" Description="Offline" IsBase="false" />
+    <CEID ID="18" Name="OfflineOnHost" Description="Offline on HOST" IsBase="false" />
+    <CEID ID="2" Name="OnlineLocal" Description="Online Local" IsBase="false" />
+    <CEID ID="3" Name="OnlineRemote" Description="Online Remote" IsBase="false" />
+    <CEID ID="4" Name="ControlStateChanged" Description="Control State Changed" IsBase="false" />
+    <CEID ID="5" Name="EquipmentConstantChanged" Description="Equipment Constant Changed" IsBase="false" />
+    <CEID ID="6" Name="EquipmentConstantChangedByHost" Description="Equipment Constant Changed(HOST-S2F15)" IsBase="false" />
+    <CEID ID="7" Name="ProcessProgramChanged" Description="Process Program Changed" IsBase="false" />
+    <CEID ID="8" Name="ProcessProgramSeleted" Description="Process Program Seleted" IsBase="false" />
+    <CEID ID="9" Name="MaterialReceived" Description="Material Received" IsBase="false" />
+    <CEID ID="10" Name="MaterialRemoved" Description="Material Removed" IsBase="false" />
+    <CEID ID="11" Name="SpoolActivated" Description="Spool Activated" IsBase="false" />
+    <CEID ID="12" Name="SpoolDeactivated" Description="Spool Deactivated" IsBase="false" />
+    <CEID ID="13" Name="SpoolTransmitFailure" Description="Spool Transmit Failure" IsBase="false" />
+    <CEID ID="14" Name="MessageRecognition" Description="Message Recognition" IsBase="false" />
+    <CEID ID="15" Name="ProcessStateChanged" Description="Process State Changed" IsBase="false" />
+    <CEID ID="16" Name="AlarmSet" Description="Alarm Set" IsBase="false" />
+    <CEID ID="17" Name="AlarmClear" Description="Alarm Clear" IsBase="false" />
+    <CEID ID="10000" Name="AlarmSetBase" Description="Alarm Set" IsBase="true" />
+    <CEID ID="20000" Name="AlarmClearBase" Description="Alarm Clear" IsBase="true" />
+    <CEID ID="30000" Name="LimitMonitoringBase" Description="Limit Monitoring" IsBase="true" />
+  </CEIDList>
+  <ECIDList>
+    <ECID ID="101" Name="InitCommunicationState" Format="U1" Length="1" Unit="" Min="" Max="" Value="7" Default="7" Description="Disabled=1, Enabled=2, NotCommunication=3, Communicating=7" />
+    <ECID ID="102" Name="EstablishCommunicationsTimeout" Format="U2" Length="1" Unit="" Min="" Max="" Value="20" Default="" Description="The length of time, in seconds, of the interval between attempts to send S1F13 when establishing communications." />
+    <ECID ID="103" Name="MaxSpoolTransmit" Format="U4" Length="1" Unit="" Min="" Max="" Value="10" Default="" Description="" />
+    <ECID ID="104" Name="OverWriteSpool" Format="Boolean" Length="1" Unit="" Min="" Max="" Value="1" Default="1" Description="" />
+    <ECID ID="105" Name="EnableSpooling" Format="Boolean" Length="0" Unit="" Min="" Max="" Value="0" Default="1" Description="" />
+    <ECID ID="106" Name="TimeFormat" Format="U1" Length="1" Unit="" Min="" Max="" Value="0" Default="0" Description="The setting of this ECV controls whether the equipment shall use use the variable item CLOCK and the data items STIME, TIMESTAMP, and TIME in  12-byte, 16-byte, or Extended format." />
+    <ECID ID="109" Name="T3Timeout" Format="U2" Length="1" Unit="seconds" Min="1" Max="120" Value="45" Default="45" Description="" />
+    <ECID ID="110" Name="T5Timeout" Format="U2" Length="1" Unit="seconds" Min="1" Max="240" Value="10" Default="10" Description="" />
+    <ECID ID="111" Name="T6Timeout" Format="U2" Length="1" Unit="seconds" Min="1" Max="240" Value="5" Default="5" Description="" />
+    <ECID ID="112" Name="T7Timeout" Format="U2" Length="1" Unit="seconds" Min="1" Max="240" Value="10" Default="10" Description="" />
+    <ECID ID="113" Name="T8Timeout" Format="U2" Length="1" Unit="seconds" Min="1" Max="120" Value="5" Default="5" Description="" />
+    <ECID ID="117" Name="InitControlState" Format="U1" Length="1" Unit="" Min="1" Max="2" Value="1" Default="" Description="" />
+    <ECID ID="118" Name="OffLineSubState" Format="U1" Length="1" Unit="" Min="1" Max="3" Value="1" Default="" Description="" />
+    <ECID ID="120" Name="OnLineFailState" Format="U1" Length="1" Unit="" Min="1" Max="2" Value="2" Default="" Description="" />
+    <ECID ID="121" Name="Maker" Format="A" Length="20" Unit="" Min="" Max="" Value="" Default="" Description="" />
+    <ECID ID="122" Name="OnLineSubState" Format="U1" Length="1" Unit="" Min="4" Max="5" Value="5" Default="" Description="" />
+    <ECID ID="123" Name="MaxSpoolMsg" Format="U2" Length="1" Unit="100" Min="0" Max="300" Value="300" Default="" Description="" />
+    <ECID ID="124" Name="DeviceID" Format="A" Length="20" Unit="" Min="" Max="" Value="0" Default="0" Description="" />
+    <ECID ID="125" Name="IPAddress" Format="A" Length="16" Unit="" Min="" Max="" Value="127.0.0.1" Default="127.0.0.1" Description="" />
+    <ECID ID="126" Name="PortNumber" Format="U2" Length="1" Unit="" Min="" Max="" Value="6000" Default="6000" Description="" />
+    <ECID ID="127" Name="ActiveMode" Format="Boolean" Length="1" Unit="" Min="" Max="" Value="0" Default="0" Description="" />
+    <ECID ID="128" Name="LinkTestInterval" Format="U1" Length="1" Unit="" Min="" Max="" Value="30" Default="30" Description="" />
+    <ECID ID="129" Name="RetryLimit" Format="U1" Length="1" Unit="" Min="" Max="" Value="0" Default="0" Description="" />
+    <ECID ID="130" Name="AreYouThereTimeout" Format="U1" Length="1" Unit="" Min="" Max="" Value="10" Default="10" Description="" />
+  </ECIDList>
+  <VIDList>
+    <VID ID="1" Name="Clock" Format="A" Length="16" Class="SV" Unit="YYYYMMDDhhmmsscc" Min="" Max="" Default="0" Description="" />
+    <VID ID="2" Name="ALCD" Format="B" Length="1" Class="DV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="3" Name="ALID" Format="U2" Length="1" Class="DV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="4" Name="ALTX" Format="A" Length="100" Class="DV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="5" Name="AlarmSet" Format="L" Length="0" Class="SV" Unit="" Min="" Max="" Default="" Description="" />
+    <VID ID="6" Name="ControlState" Format="U1" Length="1" Class="SV" Unit="" Min="1" Max="5" Default="0" Description="" />
+    <VID ID="7" Name="EventsEnabled" Format="L" Length="0" Class="SV" Unit="" Min="" Max="" Default="" Description="" />
+    <VID ID="8" Name="ProcessState" Format="U1" Length="1" Class="SV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="9" Name="PreviousProcessState" Format="U1" Length="1" Class="SV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="10" Name="AlarmsEnabled" Format="L" Length="0" Class="SV" Unit="" Min="" Max="" Default="" Description="" />
+    <VID ID="11" Name="SpoolCountActual" Format="U2" Length="1" Class="SV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="12" Name="SpoolCountTotal" Format="U2" Length="1" Class="SV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="13" Name="SpoolFullTime" Format="A" Length="16" Class="SV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="14" Name="MDLN" Format="A" Length="20" Class="SV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="15" Name="SOFTREV" Format="A" Length="20" Class="SV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="16" Name="SpoolStartTime" Format="A" Length="16" Class="SV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="17" Name="SpoolStatus" Format="U1" Length="1" Class="SV" Unit="" Min="" Max="1" Default="0" Description="" />
+    <VID ID="18" Name="SpoolFull" Format="U1" Length="1" Class="SV" Unit="" Min="5" Max="6" Default="0" Description="" />
+    <VID ID="19" Name="ChangedECID" Format="L" Length="0" Class="DV" Unit="" Min="" Max="" Default="" Description="" />
+    <VID ID="20" Name="ChangedECV" Format="L" Length="0" Class="DV" Unit="" Min="" Max="" Default="" Description="" />
+    <VID ID="21" Name="ChangedECList" Format="L" Length="0" Class="DV" Unit="" Min="" Max="" Default="" Description="L2(ECID,ECV) List" />
+    <VID ID="22" Name="EventLimit" Format="U2" Length="1" Class="DV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="23" Name="LimitVariable" Format="U2" Length="1" Class="DV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="24" Name="OperatorCommand" Format="U1" Length="1" Class="DV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="25" Name="PPChangeName" Format="A" Length="20" Class="DV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="26" Name="PPChangeStatus" Format="U1" Length="1" Class="DV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="27" Name="PPError" Format="A" Length="20" Class="DV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="28" Name="TransitionType" Format="B" Length="1" Class="DV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="29" Name="PortID" Format="U1" Length="1" Class="DV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="30" Name="PreviousControlState2" Format="U1" Length="1" Class="SV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="31" Name="CommState" Format="U1" Length="1" Class="SV" Unit="" Min="" Max="" Default="0" Description="" />
+    <VID ID="32" Name="PreviousCommState" Format="U1" Length="1" Class="SV" Unit="" Min="" Max="" Default="0" Description="" />
+  </VIDList>
+  <DataItemList>
+    <DataItem Name="ABS" AllowableFormats="B" Length="-1" Description="Any binary string." />
+    <DataItem Name="ACCESSMODE" AllowableFormats="U1" Length="-1" Description="Load Port Access Mode. Possible values are:" />
+    <DataItem Name="ACDS" AllowableFormats="I2, U2" Length="-1" Description="After Command Codes." />
+    <DataItem Name="ACKA" AllowableFormats="Boolean" Length="-1" Description="Indicates success of a request:" />
+    <DataItem Name="ACKC3" AllowableFormats="B" Length="-1" Description="Acknowledge code, 1 byte." />
+    <DataItem Name="ACKC5" AllowableFormats="B" Length="-1" Description="Acknowledge code, 1 byte." />
+    <DataItem Name="ACKC6" AllowableFormats="B" Length="-1" Description="Acknowledge code, 1 byte." />
+    <DataItem Name="ACKC7" AllowableFormats="B" Length="-1" Description="Acknowledge code, 1 byte." />
+    <DataItem Name="ACKC7A" AllowableFormats="I1, U1" Length="-1" Description="Acknowledge Code, 1 byte." />
+    <DataItem Name="ACKC10" AllowableFormats="B" Length="-1" Description="Acknowledge Code, 1 byte." />
+    <DataItem Name="ACKC13" AllowableFormats="B" Length="-1" Description="Return code for secondary messages 1 byte." />
+    <DataItem Name="ACKC15" AllowableFormats="B" Length="-1" Description="Return code for secondary messages, 1 byte." />
+    <DataItem Name="AGENT" AllowableFormats="A" Length="-1" Description="" />
+    <DataItem Name="ALCD" AllowableFormats="B" Length="-1" Description="Alarm code byte." />
+    <DataItem Name="ALED" AllowableFormats="B" Length="-1" Description="Alarm enable/disable code, 1 byte." />
+    <DataItem Name="ALID" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Alarm identification." />
+    <DataItem Name="ALTX" AllowableFormats="A" Length="-1" Description="Alarm text limited to 120 characters." />
+    <DataItem Name="ATTRDATA" AllowableFormats="L, B, A, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8, Boolean" Length="-1" Description="Contains a specific attribute value for a specific object." />
+    <DataItem Name="ATTRID" AllowableFormats="A, U1, U2, U4, U8" Length="-1" Description="Identifier for an attribute for a specific type of object." />
+    <DataItem Name="ATTRRELN" AllowableFormats="U1" Length="-1" Description="The relationship that a specified qualifying value has to the value of an attribute of an object instance (the value of interest):" />
+    <DataItem Name="AUTOCLEAR" AllowableFormats="U1" Length="-1" Description="A flag which enables or disables the Auto Clear function." />
+    <DataItem Name="AUTOCLOSE" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="A function that equipment closes the session automatically when operator access doesn’t occur exceeding the predefined maximum time." />
+    <DataItem Name="BCDS" AllowableFormats="I2, U2" Length="-1" Description="Before Command Codes." />
+    <DataItem Name="BCEQU" AllowableFormats="A, U1" Length="-1" Description="Bin code equivalents." />
+    <DataItem Name="BINLT" AllowableFormats="A, U1" Length="-1" Description="The Bin List." />
+    <DataItem Name="BLKDEF" AllowableFormats="I1, U1" Length="-1" Description="Block Definition." />
+    <DataItem Name="BPD" AllowableFormats="B" Length="-1" Description="Boot program Data." />
+    <DataItem Name="BYTMAX" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Byte Maximum." />
+    <DataItem Name="CAACK" AllowableFormats="U1" Length="-1" Description="Carrier Action Acknowledge Code, 1 byte." />
+    <DataItem Name="CARRIERACTION" AllowableFormats="A" Length="-1" Description="Specifies the action requested for a carrier." />
+    <DataItem Name="CARRIERID" AllowableFormats="A" Length="-1" Description="The identifier of a carrier." />
+    <DataItem Name="CARRIERSPEC" AllowableFormats="A" Length="-1" Description="The object specifier for a carrier. Conforms to OBJSPEC." />
+    <DataItem Name="CATTRDATA" AllowableFormats="L, B, A, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8, Boolean" Length="-1" Description="The value of a carrier attribute." />
+    <DataItem Name="CATTRID" AllowableFormats="A" Length="-1" Description="The name of a carrier attribute." />
+    <DataItem Name="CCACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the service." />
+    <DataItem Name="CCODE" AllowableFormats="A, I2, 34, U2, U4" Length="-1" Description="Command Code." />
+    <DataItem Name="CEED" AllowableFormats="Boolean" Length="-1" Description="Collection event or trace enable/disable code, 1 byte." />
+    <DataItem Name="CEID" AllowableFormats="A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Collected event ID." />
+    <DataItem Name="CENAME" AllowableFormats="A" Length="-1" Description="Collection event name." />
+    <DataItem Name="CEPACK" AllowableFormats="L, U1" Length="-1" Description="Command Enhanced Parameter Acknowledge." />
+    <DataItem Name="CEPVAL" AllowableFormats="L, B, Boolean, A, J, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Command Enhanced Parameter Value." />
+    <DataItem Name="CHKINFO" AllowableFormats="L, B, Boolean, A, J, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="User defined." />
+    <DataItem Name="CKPNT" AllowableFormats="U4" Length="-1" Description="Checkpoint as defined by the sending system." />
+    <DataItem Name="CLSSTS" AllowableFormats="U1" Length="-1" Description="Information if the session is closed properly." />
+    <DataItem Name="CMDA" AllowableFormats="I1, U1" Length="-1" Description="Command acknowledge code." />
+    <DataItem Name="CMDMAX" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Command Maximum." />
+    <DataItem Name="CNAME" AllowableFormats="A" Length="-1" Description="Command Name = 16 characters." />
+    <DataItem Name="COLCT" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Column count in die increments." />
+    <DataItem Name="COLHDR" AllowableFormats="A" Length="-1" Description="Text description of contents of TBLELT. 1–20 characters." />
+    <DataItem Name="COMMACK" AllowableFormats="B" Length="-1" Description="Establish Communications Acknowledge Code, 1 byte." />
+    <DataItem Name="COMPARISONOPERATOR" AllowableFormats="U1" Length="-1" Description="Choice of available operators that compare the supplied value to the current attribute value. Evaluated as ‘Current value XX supplied value’ where XX is one of the enumerated values  (e.g., ‘GT’)." />
+    <DataItem Name="CONDITION" AllowableFormats="A" Length="-1" Description="Provides condition information for a subsystem component. Used in the data item in the CONDITIONLIST." />
+    <DataItem Name="CONDITIONLIST" AllowableFormats="L" Length="-1" Description="A list of CONDITION data sent in a fixed order. CONDITIONLIST has the following form:" />
+    <DataItem Name="CPACK" AllowableFormats="B" Length="-1" Description="Command Parameter Acknowledge Code, 1 byte." />
+    <DataItem Name="CPNAME" AllowableFormats="A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Command Parameter Name." />
+    <DataItem Name="CPVAL" AllowableFormats="B, Boolean, A, J, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Command Parameter Value." />
+    <DataItem Name="CRAACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the service." />
+    <DataItem Name="CRAEACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the event." />
+    <DataItem Name="CSAACK" AllowableFormats="B" Length="-1" Description="Equipment Acknowledgement code,  1 byte." />
+    <DataItem Name="CTLJOBCMD" AllowableFormats="U1" Length="-1" Description="Control Job command codes are assigned as follows:" />
+    <DataItem Name="CTLJOBID" AllowableFormats="A" Length="-1" Description="Identifier for Control Job. Conforms to OBJID." />
+    <DataItem Name="DATA" AllowableFormats="A" Length="-1" Description="A vector or string of unformatted data." />
+    <DataItem Name="DATAACK" AllowableFormats="B" Length="-1" Description="Acknowledge code for data." />
+    <DataItem Name="DATAID" AllowableFormats="A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Data ID." />
+    <DataItem Name="DATALENGTH" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Total bytes to be sent." />
+    <DataItem Name="DATASEG" AllowableFormats="A" Length="-1" Description="Used to identify the data requested." />
+    <DataItem Name="DATASRC" AllowableFormats="A" Length="-1" Description="Object type for Data Source Objects." />
+    <DataItem Name="DATLC" AllowableFormats="U1" Length="-1" Description="Data location." />
+    <DataItem Name="DELRSPSTAT" AllowableFormats="U1" Length="-1" Description="Status response for the Delete PDE request." />
+    <DataItem Name="DIRRSPSTAT" AllowableFormats="U1" Length="-1" Description="Status response for the GET PDE Directory request." />
+    <DataItem Name="DRACK" AllowableFormats="B" Length="-1" Description="Define Report Acknowledge Code, 1 byte." />
+    <DataItem Name="DRRACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the service." />
+    <DataItem Name="DSID" AllowableFormats="A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Data set ID." />
+    <DataItem Name="DSNAME" AllowableFormats="A" Length="-1" Description="The name of the Data Set." />
+    <DataItem Name="DSPER" AllowableFormats="A" Length="-1" Description="Data sample period. DSPER has two allowable formats:" />
+    <DataItem Name="DUTMS" AllowableFormats="A" Length="-1" Description="Die Units of Measure." />
+    <DataItem Name="DVNAME" AllowableFormats="I1, I2, I4, I8, A, U1, U2, U4, U8" Length="-1" Description="Data value name." />
+    <DataItem Name="DVVAL" AllowableFormats="L, B, Boolean, A, J, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Data value." />
+    <DataItem Name="DVVALNAME" AllowableFormats="A" Length="-1" Description="A descriptive name for the data variable." />
+    <DataItem Name="EAC" AllowableFormats="B" Length="-1" Description="Equipment acknowledge code, 1 byte." />
+    <DataItem Name="ECDEF" AllowableFormats="B, Boolean, A, J, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Equipment constant default value." />
+    <DataItem Name="ECID" AllowableFormats="I1, I2, I4, I8, A, U1, U2, U4, U8" Length="-1" Description="Equipment Constant ID." />
+    <DataItem Name="ECMAX" AllowableFormats="B, Boolean, A, J, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Equipment constant maximum value." />
+    <DataItem Name="ECMIN" AllowableFormats="B, Boolean, A, J, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Equipment constant minimum value." />
+    <DataItem Name="ECNAME" AllowableFormats="A" Length="-1" Description="Equipment constant name." />
+    <DataItem Name="ECV" AllowableFormats="B, Boolean, A, J, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Equipment Constant Value." />
+    <DataItem Name="EDID" AllowableFormats="B, A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Expected data Identification." />
+    <DataItem Name="EMID" AllowableFormats="B, A" Length="-1" Description="Equivalent material ID  (16 bytes maximum)." />
+    <DataItem Name="EPD" AllowableFormats="B" Length="-1" Description="Executive program data." />
+    <DataItem Name="EQID" AllowableFormats="A" Length="-1" Description="Identifier that indicates equipment which the recipe is tuned for." />
+    <DataItem Name="EQNAME" AllowableFormats="A" Length="-1" Description="A unique ASCII equipment identifier assigned by the factory to the equipment. Limited to a maximum of 80 characters." />
+    <DataItem Name="ERACK" AllowableFormats="B" Length="-1" Description="Enable/Disable Event Report. Acknowledge Code, 1 byte." />
+    <DataItem Name="ERCACK" AllowableFormats="U1" Length="-1" Description="Response component for single recipe check." />
+    <DataItem Name="ERRCODE" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Code identifying an error." />
+    <DataItem Name="ERRTEXT" AllowableFormats="A" Length="-1" Description="Text string describing the error noted in the corresponding ERRCODE. Limited to 120 characters maximum." />
+    <DataItem Name="ERRW7" AllowableFormats="A" Length="-1" Description="Text string describing error found in process program." />
+    <DataItem Name="ERXACK" AllowableFormats="U1" Length="-1" Description="Response component for single recipe transfer." />
+    <DataItem Name="EVNTSRC" AllowableFormats="A" Length="-1" Description="Object type for Event Source Objects." />
+    <DataItem Name="EXID" AllowableFormats="A" Length="-1" Description="Unique identifier for the exception. Maximum length of 20 characters." />
+    <DataItem Name="EXMESSAGE" AllowableFormats="A" Length="-1" Description="Text which describes the nature of the exception." />
+    <DataItem Name="EXRECVRA" AllowableFormats="A" Length="-1" Description="Text which specifies a recovery action for an exception. Maximum length of 40 bytes." />
+    <DataItem Name="EXTYPE" AllowableFormats="A" Length="-1" Description="Text which identifies the type of an exception. It is usually a single word of text." />
+    <DataItem Name="FCNID" AllowableFormats="U1" Length="-1" Description="Function Identification." />
+    <DataItem Name="FFROT" AllowableFormats="U2" Length="-1" Description="Film Frame Rotation." />
+    <DataItem Name="FILDAT" AllowableFormats="B, A" Length="-1" Description="Data from the Data Set." />
+    <DataItem Name="FNLOC" AllowableFormats="U2" Length="-1" Description="Flat/Notch Location." />
+    <DataItem Name="FRMLEN" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Formatted Process Program Length." />
+    <DataItem Name="GETRSPSTAT" AllowableFormats="U1" Length="-1" Description="Status response for the Get PDE and Get PDEheader requests." />
+    <DataItem Name="GRANT" AllowableFormats="B" Length="-1" Description="Grant code, 1 byte." />
+    <DataItem Name="GRANT6" AllowableFormats="B" Length="-1" Description="Permission to send, 1 byte." />
+    <DataItem Name="GRNT1" AllowableFormats="B" Length="-1" Description="Grant code, 1 byte." />
+    <DataItem Name="GRXLACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the service." />
+    <DataItem Name="HANDLE" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Logical unit or channel." />
+    <DataItem Name="HCACK" AllowableFormats="B" Length="-1" Description="Host Command Parameter Acknowledge Code, 1 byte." />
+    <DataItem Name="HOACK" AllowableFormats="Boolean" Length="-1" Description="Conveys whether the corresponding handoff activity succeeded (= True) or failed (= False)." />
+    <DataItem Name="HOCANCELACK" AllowableFormats="U1" Length="-1" Description="Tells whether the cancel ready message was accepted or rejected." />
+    <DataItem Name="HOCMDNAME" AllowableFormats="A" Length="-1" Description="Identifier for the handoff command to be executed." />
+    <DataItem Name="HOHALTACK" AllowableFormats="U1" Length="-1" Description="Tells whether the halt command was accepted or rejected." />
+    <DataItem Name="IACDS" AllowableFormats="I2, U2" Length="-1" Description="Immediately After Command Codes." />
+    <DataItem Name="IBCDS" AllowableFormats="I2, U2" Length="-1" Description="Immediately Before Command Codes." />
+    <DataItem Name="IDTYP" AllowableFormats="B" Length="-1" Description="Id type." />
+    <DataItem Name="INPTN" AllowableFormats="B, U1" Length="-1" Description="A specialized version of PTN indicating the InputPort." />
+    <DataItem Name="JOBACTION" AllowableFormats="A" Length="-1" Description="Specifies the action for a ReticleTransferJob." />
+    <DataItem Name="LENGTH" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Length of the service program or process program in bytes." />
+    <DataItem Name="LIMITACK" AllowableFormats="B" Length="-1" Description="Acknowledgment code for variable limit attribute set, 1 byte." />
+    <DataItem Name="LIMITID" AllowableFormats="B" Length="-1" Description="The identifier of a specific limit in the set of limits (as defined by UPPERDB and LOWERDB) for a variable to which the corresponding limit attributes refer, 1 byte." />
+    <DataItem Name="LIMITMAX" AllowableFormats="Boolean, A, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="The maximum allowed value for the limit values of a specific variable." />
+    <DataItem Name="LIMITMIN" AllowableFormats="Boolean, A, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="The minimum allowed value for the limit values of a specific variable." />
+    <DataItem Name="LINKID" AllowableFormats="U4" Length="-1" Description="Used to link a completion message with a request that an operation be performed. LINKID is set to the value of RMOPID in the initial request except for the last completion message to be sent, where it is set to zero." />
+    <DataItem Name="LLIM" AllowableFormats="I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Lower limit for numeric value." />
+    <DataItem Name="LOC" AllowableFormats="B" Length="-1" Description="Machine material location code, 1 byte." />
+    <DataItem Name="LOCID" AllowableFormats="A" Length="-1" Description="The logical identifier of a material location." />
+    <DataItem Name="LOWERDB" AllowableFormats="Boolean, A, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="A variable limit attribute which defines the lower boundary of the deadband of a limit. The value applies to a single limit (LIMITID) for a specified VID. Thus, UPPERDB and LOWERDB as a pair define a limit." />
+    <DataItem Name="LRACK" AllowableFormats="B" Length="-1" Description="Link Report Acknowledge Code, 1 byte." />
+    <DataItem Name="LVACK" AllowableFormats="B" Length="-1" Description="Variable limit definition acknowledge code, 1 byte. Defines the error with the limit attributes for the referenceVID." />
+    <DataItem Name="MAPER" AllowableFormats="B" Length="-1" Description="Map Error." />
+    <DataItem Name="MAPFT" AllowableFormats="B" Length="-1" Description="Map data format type." />
+    <DataItem Name="MAXNUMBER" AllowableFormats="A" Length="-1" Description="Provides MaxNumber information for each subspace. Used in the data item MAXNUMBERLIST." />
+    <DataItem Name="MAXNUMBERLIST" AllowableFormats="L" Length="-1" Description="Maximum number of PEM Recipes allowed to be preserved in PRC after PJ creation. MaxNumber has a list structure so that it can be applied to each subspace. The usage of the list structure is equipment defined." />
+    <DataItem Name="MAXTIME" AllowableFormats="U1" Length="-1" Description="Maximum time during which a PEM Recipe allowed to be in PRC after use." />
+    <DataItem Name="MCINDEX" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Identifier used to link a handoff command message with its eventual completion message. Corresponding messages carry the same value for this data item." />
+    <DataItem Name="MDACK" AllowableFormats="B" Length="-1" Description="Map data acknowledge." />
+    <DataItem Name="MDLN" AllowableFormats="A" Length="-1" Description="Equipment Model Type, 20 bytes max." />
+    <DataItem Name="MEXP" AllowableFormats="A" Length="-1" Description="Message expected in the form SxxFyy where x is stream and y is function." />
+    <DataItem Name="MF" AllowableFormats="B, A" Length="-1" Description="Material format code 1 byte by Format 10." />
+    <DataItem Name="MHEAD" AllowableFormats="B" Length="-1" Description="SECS message block header associated with message block in error." />
+    <DataItem Name="MID" AllowableFormats="B, A" Length="-1" Description="Material ID." />
+    <DataItem Name="MIDAC" AllowableFormats="B" Length="-1" Description="Material ID Acknowledge Code, 1 byte." />
+    <DataItem Name="MIDRA" AllowableFormats="B" Length="-1" Description="Material ID Acknowledge Code, 1 byte." />
+    <DataItem Name="MLCL" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Message length." />
+    <DataItem Name="MMODE" AllowableFormats="B" Length="-1" Description="Matrix mode select, 1 byte." />
+    <DataItem Name="NACDS" AllowableFormats="I2, U2" Length="-1" Description="Not After Command Codes." />
+    <DataItem Name="NBCDS" AllowableFormats="I2, U2" Length="-1" Description="Not Before Command Codes." />
+    <DataItem Name="NULBC" AllowableFormats="A, U1" Length="-1" Description="Null bin code value." />
+    <DataItem Name="OBJACK" AllowableFormats="U1" Length="-1" Description="Acknowledge code:" />
+    <DataItem Name="OBJCMD" AllowableFormats="U1" Length="-1" Description="Specifies an action to be performed by an object:" />
+    <DataItem Name="OBJID" AllowableFormats="A, U1, U2, U4, U8" Length="-1" Description="Identifier for an object." />
+    <DataItem Name="OBJSPEC" AllowableFormats="A" Length="-1" Description="A text string that has an internal format and that is used to point to a specific object instance. The string is formed out of a sequence of formatted substrings, each specifying an object’s type and identifier. The substring format has the following four fields: object type,  colon character ‘:’,  object identifier,  greater-than symbol ‘>’ where the colon character ‘:’ is used to terminate an object type and the greater than symbol ‘>’ is used to terminate an identifier field. The object type field may be omitted where it may be otherwise determined. The final ‘>’ is optional." />
+    <DataItem Name="OBJTOKEN" AllowableFormats="U4" Length="-1" Description="Token used for authorization." />
+    <DataItem Name="OBJTYPE" AllowableFormats="A, U1, U2, U4, U8" Length="-1" Description="Identifier for a group or class of objects. All objects of the same type must have the same set of attributes available." />
+    <DataItem Name="OFLACK" AllowableFormats="B" Length="-1" Description="Acknowledge code for OFF-LINE request." />
+    <DataItem Name="ONLACK" AllowableFormats="B" Length="-1" Description="Acknowledge code for ONLINE request." />
+    <DataItem Name="OPID" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Operation ID. A unique integer generated by the requestor of an operation, used where multiple completion confirmations may occur." />
+    <DataItem Name="OPRID" AllowableFormats="A" Length="-1" Description="Host-registered identifier of the operator who uses the Remote Access session" />
+    <DataItem Name="OPRPWORD" AllowableFormats="A" Length="-1" Description="Host-registered password of the operator who uses the Remote Access session." />
+    <DataItem Name="ORAACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the service." />
+    <DataItem Name="ORAEACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the event." />
+    <DataItem Name="ORLOC" AllowableFormats="B" Length="-1" Description="Origin Location." />
+    <DataItem Name="OUTPTN" AllowableFormats="B, U1" Length="-1" Description="A specialized version of PTN indicating the OutPutPort." />
+    <DataItem Name="PARAMNAME" AllowableFormats="A" Length="-1" Description="The name of a parameter in a request." />
+    <DataItem Name="PARAMVAL" AllowableFormats="L, B, Boolean, A, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="The value of the parameter named in PARAMNAME. Values that are lists are restricted to lists of single items of the same format type." />
+    <DataItem Name="PDEATTRIBUTE" AllowableFormats="U1" Length="-1" Description="Selection from available PDE attributes whose values could be reported." />
+    <DataItem Name="PDEATTRIBUTENAME" AllowableFormats="U1" Length="-1" Description="Selection from available PDE attributes that can be used to filter the PDE directory report." />
+    <DataItem Name="PDEATTRIBUTEVALUE" AllowableFormats="B, Boolean, A, J, U1" Length="-1" Description="Contains the value of the corresponding PDEATTRIBUTE in the appropriate format." />
+    <DataItem Name="PDEREF" AllowableFormats="A" Length="-1" Description="Contains the unique identifier of a PDE (uid) or of a PDE group (gid)." />
+    <DataItem Name="PDFLT" AllowableFormats="Boolean, A, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Parameter Default Value." />
+    <DataItem Name="PECACK" AllowableFormats="U1" Length="-1" Description="OK/NG response from the host to Pre-Exe Check event from equipment." />
+    <DataItem Name="PECEACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the event." />
+    <DataItem Name="PECRACK" AllowableFormats="U1" Length="-1" Description="Response component for single recipe check." />
+    <DataItem Name="PEMFLAG" AllowableFormats="A" Length="-1" Description="PEMFlag holds SecurityID to be used for PJ creation:" />
+    <DataItem Name="PFCD" AllowableFormats="B" Length="-1" Description="Predefined form code, 1 byte." />
+    <DataItem Name="PGRPACTION" AllowableFormats="A" Length="-1" Description="The action to be performed on a port group." />
+    <DataItem Name="PMAX" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Parameter Count Maximum." />
+    <DataItem Name="PNAME" AllowableFormats="A" Length="-1" Description="Parameter Name ≤16 characters." />
+    <DataItem Name="PORTACTION" AllowableFormats="A" Length="-1" Description="The action to be performed on a port." />
+    <DataItem Name="PORTGRPNAME" AllowableFormats="A" Length="-1" Description="The identifier of a group of ports." />
+    <DataItem Name="PPARM" AllowableFormats="Boolean, A, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Process Parameter." />
+    <DataItem Name="PPBODY" AllowableFormats="B, A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Process program body." />
+    <DataItem Name="PPGNT" AllowableFormats="B" Length="-1" Description="Process program grant status, 1 byte." />
+    <DataItem Name="PPID" AllowableFormats="B, A" Length="-1" Description="Process program ID." />
+    <DataItem Name="PRAXI" AllowableFormats="B" Length="-1" Description="Process axis." />
+    <DataItem Name="PRCMDNAME" AllowableFormats="A" Length="-1" Description="Commands sent to a Process Job:" />
+    <DataItem Name="PRCPREEXECHK" AllowableFormats="U1" Length="-1" Description="Enable/Disable of PreExecution Check option. This defines use of optional Pre-Execution Check." />
+    <DataItem Name="PRCSWITCH" AllowableFormats="U1" Length="-1" Description="Enable/Disable of entire PRC functionalities." />
+    <DataItem Name="PRDCT" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Process Die Count." />
+    <DataItem Name="PREACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the event." />
+    <DataItem Name="PREVENTID" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Processing related event identification:" />
+    <DataItem Name="PRJOBID" AllowableFormats="A" Length="-1" Description="Text string which uniquely identifies a Process Job." />
+    <DataItem Name="PRJOBMILESTONE" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Notification of Processing status shall have one of the following values:" />
+    <DataItem Name="PRJOBSPACE" AllowableFormats="U2" Length="-1" Description="The number of Process Jobs that can be created." />
+    <DataItem Name="PRMTRLORDER" AllowableFormats="U1" Length="-1" Description="Defines the order by which material in the Process Jobs material list will be processed. Possible values are assigned as follows:" />
+    <DataItem Name="PRPAUSEEVENT" AllowableFormats="L" Length="-1" Description="The list of event identifiers, which may be sent as an attribute value to a Process Job. When a Process Job encounters one of these events it will pause, until it receives the PRJobCommand RESUME." />
+    <DataItem Name="PRPROCESSSTART" AllowableFormats="Boolean" Length="-1" Description="Indicates that the process resource start processing immediately when ready:" />
+    <DataItem Name="PRRECIPEMETHOD" AllowableFormats="U1" Length="-1" Description="Indicates the recipe specification type, whether tuning is applied and which method is used:" />
+    <DataItem Name="PRSTATE" AllowableFormats="U1" Length="-1" Description="Enumerated value, 1 byte." />
+    <DataItem Name="PRXACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the service." />
+    <DataItem Name="PSRACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the service." />
+    <DataItem Name="PTN" AllowableFormats="B, U1" Length="-1" Description="Material Port number, 1 byte." />
+    <DataItem Name="QREACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the event." />
+    <DataItem Name="QRXACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the service." />
+    <DataItem Name="QRXLEACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the event." />
+    <DataItem Name="QUA" AllowableFormats="B" Length="-1" Description="Quantity in format, 1 byte." />
+    <DataItem Name="RAC" AllowableFormats="I1, U1" Length="-1" Description="Reset acknowledge, 1 byte." />
+    <DataItem Name="RACSWITCH" AllowableFormats="U1" Length="-1" Description="Enable/Disable of entire RAC functionalities." />
+    <DataItem Name="RCMD" AllowableFormats="A, I1, U1" Length="-1" Description="Remote command code or string." />
+    <DataItem Name="RCPBODYA" AllowableFormats="L, B, A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Recipe body allowed list structure." />
+    <DataItem Name="RCPATTRDATA" AllowableFormats="L, B, Boolean, A, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="The contents (value) of a recipe attribute." />
+    <DataItem Name="RCPATTRID" AllowableFormats="A" Length="-1" Description="The name (identifier) of a non-identifier recipe attribute." />
+    <DataItem Name="RCPBODY" AllowableFormats="B, A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Recipe body." />
+    <DataItem Name="RCPCLASS" AllowableFormats="A" Length="-1" Description="Recipe class." />
+    <DataItem Name="RCPCMD" AllowableFormats="U1" Length="-1" Description="Indicates an action to be performed on a recipe." />
+    <DataItem Name="RCPDEL" AllowableFormats="U1" Length="-1" Description="" />
+    <DataItem Name="RCPDESCLTH" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="The length in bytes of a recipe section." />
+    <DataItem Name="RCPDESCNM" AllowableFormats="A" Length="-1" Description="Identifies a type of descriptor of a recipe: ‘ASDesc’, ‘BodyDesc’, ‘GenDesc.’" />
+    <DataItem Name="RCPDESCTIME" AllowableFormats="A" Length="-1" Description="The timestamp of a recipe section, in the format ‘YYYYMMDDhhmmsscc.’" />
+    <DataItem Name="RCPID" AllowableFormats="A" Length="-1" Description="Recipe identifier. Formatted text conforming to the requirements of OBJSPEC." />
+    <DataItem Name="RCPNAME" AllowableFormats="A" Length="-1" Description="Recipe name." />
+    <DataItem Name="RCPNEWID" AllowableFormats="A" Length="-1" Description="The new recipe identifier assigned as the result of a copy or rename operation." />
+    <DataItem Name="RCPOWCODE" AllowableFormats="Boolean" Length="-1" Description="Indicates whether any preexisting recipe is to be overwritten (= TRUE) or not (= FALSE) on download." />
+    <DataItem Name="RCPPARNM" AllowableFormats="A" Length="-1" Description="The name of a recipe variable parameter. Maximum length of 256 characters." />
+    <DataItem Name="RCPPARRULE" AllowableFormats="A" Length="-1" Description="The restrictions applied to a recipe variable parameter setting. Maximum length of 80 characters." />
+    <DataItem Name="RCPPARVAL" AllowableFormats="L, B, Boolean, A, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="The initial setting assigned to a recipe variable parameter. Text form restricted to maximum of 80 characters." />
+    <DataItem Name="RCPRENAME" AllowableFormats="Boolean" Length="-1" Description="Indicates whether a recipe is to be renamed (= TRUE) or copied (= FALSE)." />
+    <DataItem Name="RCPSECCODE" AllowableFormats="B" Length="-1" Description="Indicates the sections of a recipe requested for transfer or being transferred:" />
+    <DataItem Name="RCPSECNM" AllowableFormats="A" Length="-1" Description="Recipe section name: ‘Generic’, ‘Body’, or ‘ASDS.’" />
+    <DataItem Name="RCPSPEC" AllowableFormats="A" Length="-1" Description="Recipe specifier. The object specifier of a recipe." />
+    <DataItem Name="RCPSTAT" AllowableFormats="U1" Length="-1" Description="The status of a managed recipe." />
+    <DataItem Name="RCPUPDT" AllowableFormats="Boolean" Length="-1" Description="Indicates if an existing recipe is to be updated (= True) or a new recipe is to be created (= False)." />
+    <DataItem Name="RCPVERS" AllowableFormats="A" Length="-1" Description="Recipe version." />
+    <DataItem Name="READLN" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Maximum length to read." />
+    <DataItem Name="RecID" AllowableFormats="A" Length="-1" Description="RCPSPEC' or 'PPID' RecID may not always be a unique identifier." />
+    <DataItem Name="RECLEN" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Maximum length of a Discrete record." />
+    <DataItem Name="REFP" AllowableFormats="I1, I2, I4, I8" Length="-1" Description="Reference Point." />
+    <DataItem Name="REPGSZ" AllowableFormats="A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Reporting group size." />
+    <DataItem Name="RESC" AllowableFormats="I1, U1" Length="-1" Description="Resolution code for numeric data." />
+    <DataItem Name="RESOLUTION" AllowableFormats="A" Length="-1" Description="Contains the unique identifier of a PDE (uid)." />
+    <DataItem Name="RESPDESTAT" AllowableFormats="U1" Length="-1" Description="Status response for the Resolve PDE request. If more than one of these conditions applies, the first value on the list that applies should be returned." />
+    <DataItem Name="RESPEC" AllowableFormats="A" Length="-1" Description="Object specifier for the recipe executor." />
+    <DataItem Name="RESV" AllowableFormats="I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Resolution value for numeric data." />
+    <DataItem Name="RETICLEID" AllowableFormats="A" Length="-1" Description="The object identifier for a reticle. Conforms to OBJSPEC." />
+    <DataItem Name="RETPLACEINSTR" AllowableFormats="U1" Length="-1" Description="Instructions to indicate which pod slots will have reticles placed. Possible values for Reticle-PlacementInstruction are:" />
+    <DataItem Name="RETREMOVEINSTR" AllowableFormats="U1" Length="-1" Description="Instructions to indicate which pod slots will have reticles removed." />
+    <DataItem Name="RIC" AllowableFormats="I1, U1" Length="-1" Description="Reset code, 1 byte." />
+    <DataItem Name="RMACK" AllowableFormats="U1" Length="-1" Description="Conveys whether a requested action was successfully completed, denied, completed with errors, or will be completed with notification to the requestor." />
+    <DataItem Name="RMCHGSTAT" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Indicates the change that occurred for an object." />
+    <DataItem Name="RMCHGTYPE" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Indicates the type of change for a recipe." />
+    <DataItem Name="RMDATASIZE" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="The maximum total length, in bytes, of a multi-block message, used by the receiver to determine if the anticipated message exceeds the receiver’s capacity." />
+    <DataItem Name="RMGRNT" AllowableFormats="B" Length="-1" Description="Grant code, used to grant or deny a request. 1 byte." />
+    <DataItem Name="RMNEWNS" AllowableFormats="A" Length="-1" Description="New name (identifier) assigned to a recipe namespace." />
+    <DataItem Name="RMNSCMD" AllowableFormats="U1" Length="-1" Description="Action to be performed on a recipe namespace." />
+    <DataItem Name="RMNSSPEC" AllowableFormats="A" Length="-1" Description="The object specifier of a recipe namespace." />
+    <DataItem Name="RMRECSPEC" AllowableFormats="A" Length="-1" Description="The object specifier of a distributed recipe namespace recorder." />
+    <DataItem Name="RMREQUESTOR" AllowableFormats="Boolean" Length="-1" Description="Set to TRUE if initiator of change request was an attached segment. Set to FALSE otherwise." />
+    <DataItem Name="RMSEGSPEC" AllowableFormats="A" Length="-1" Description="The object specifier of a distributed recipe namespace segment." />
+    <DataItem Name="RMSPACE" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="The amount of storage available for at least one recipe in a recipe namespace, in bytes." />
+    <DataItem Name="ROWCT" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Row count in die increments." />
+    <DataItem Name="RPMACK" AllowableFormats="U1" Length="-1" Description="Reticle Pod management service acknowledge code. 1 byte." />
+    <DataItem Name="RPMDESTLOC" AllowableFormats="A" Length="-1" Description="The LocationID towards which a reticle must be moved. Conforms to OBJID." />
+    <DataItem Name="RPMSOURLOC" AllowableFormats="L, B, Boolean, A, J, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="The LocationID of the location from which to pick-up a reticle for moving it to another location. Conforms to OBJID." />
+    <DataItem Name="RPSEL" AllowableFormats="U1" Length="-1" Description="Reference Point Select." />
+    <DataItem Name="RPTID" AllowableFormats="A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Report ID." />
+    <DataItem Name="RPTOC" AllowableFormats="Boolean" Length="-1" Description="A Trace Object attribute for a flag which, if set TRUE, causes only variables which have changed during the sample period to be included in a report." />
+    <DataItem Name="RQCMD" AllowableFormats="Boolean" Length="-1" Description="Required Command." />
+    <DataItem Name="RQPAR" AllowableFormats="Boolean" Length="-1" Description="Required Parameter." />
+    <DataItem Name="RRACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the service." />
+    <DataItem Name="RSACK" AllowableFormats="B" Length="-1" Description="Ready to Send Acknowledge code, 1 byte." />
+    <DataItem Name="RSDA" AllowableFormats="B" Length="-1" Description="Request Spool Data Acknowledge." />
+    <DataItem Name="RSDC" AllowableFormats="U1" Length="-1" Description="Request Spool Data Code." />
+    <DataItem Name="RSINF" AllowableFormats="I1, I2, I4, I8" Length="-1" Description="Starting location for row or column. This item consists of 3 values (x,y,direction). If direction value is negative, it equals decreasing direction. If the value is positive, it equals increasing direction. Direction must be a nonzero value." />
+    <DataItem Name="RSPACK" AllowableFormats="B" Length="-1" Description="Reset Spooling Acknowledge." />
+    <DataItem Name="RTSRSPSTAT" AllowableFormats="U1" Length="-1" Description="Status response for the Ready To Send request." />
+    <DataItem Name="RTYPE" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Type of record." />
+    <DataItem Name="RXACK" AllowableFormats="U1" Length="-1" Description="Response component for a list of recipe transfer." />
+    <DataItem Name="SDACK" AllowableFormats="B" Length="-1" Description="Map set-up data acknowledge." />
+    <DataItem Name="SDBIN" AllowableFormats="B" Length="-1" Description="Send bin information flag." />
+    <DataItem Name="SECID" AllowableFormats="A" Length="-1" Description="Identifier of Security Class of the recipe." />
+    <DataItem Name="SENDRESULT" AllowableFormats="U1" Length="-1" Description="Reports overall success or failure of the sendPDE() request." />
+    <DataItem Name="SENDRSPSTAT" AllowableFormats="U1" Length="-1" Description="Status response for the Send PDE request." />
+    <DataItem Name="SEQNUM" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Command Number." />
+    <DataItem Name="SFCD" AllowableFormats="B" Length="-1" Description="Status form code, 1 byte." />
+    <DataItem Name="SHEAD" AllowableFormats="B" Length="-1" Description="Stored header related to the transaction timer." />
+    <DataItem Name="SLOTID" AllowableFormats="U1" Length="-1" Description="Used to reference material by slot (a position that holds material/substrates) in a carrier. This item may be implemented as an array in some messages." />
+    <DataItem Name="SMPLN" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Sample number" />
+    <DataItem Name="SOFTREV" AllowableFormats="A" Length="-1" Description="Software revision code 20 bytes maximum." />
+    <DataItem Name="SPAACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the service." />
+    <DataItem Name="SPD" AllowableFormats="B" Length="-1" Description="Service program data." />
+    <DataItem Name="SPFACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the service." />
+    <DataItem Name="SPID" AllowableFormats="A" Length="-1" Description="Service program ID, 6 characters." />
+    <DataItem Name="SPNAME" AllowableFormats="A" Length="-1" Description="Service parameter name defined in specific standard. If service parameter is defined as an object attribute, this is completely the same as ATTRID except format restrictions above." />
+    <DataItem Name="SPR" AllowableFormats="L, B, Boolean, A, J, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Service program results." />
+    <DataItem Name="SPVAL" AllowableFormats="L, B, Boolean, A, J, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Service parameter value, corresponding to SPNAME. If service parameter is defined as an object attribute, this is completely the same as ATTRDATA except format restrictions for the attribute." />
+    <DataItem Name="SRAACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the service." />
+    <DataItem Name="SRSSWITCH" AllowableFormats="U1" Length="-1" Description="Enable/Disable entire SRS functionalities. Default is Disabled." />
+    <DataItem Name="SSACK" AllowableFormats="A" Length="-1" Description="Indicates the success or failure of a requested action. Two characters." />
+    <DataItem Name="SSCMD" AllowableFormats="A" Length="-1" Description="Indicates an action to be performed by the subsystem." />
+    <DataItem Name="SSSACK" AllowableFormats="U1" Length="-1" Description="Information concerning the result of the service." />
+    <DataItem Name="STATUS" AllowableFormats="A" Length="-1" Description="Provides status information for a subsystem component. Used in the data item STATUSLIST." />
+    <DataItem Name="STATUSLIST" AllowableFormats="L" Length="-1" Description="A list of STATUS data sent in a fixed order. STATUSLIST has the following form:" />
+    <DataItem Name="STATUSTXT" AllowableFormats="A" Length="-1" Description="Text string describing the corresponding status response. Maximum length of 80 characters." />
+    <DataItem Name="STEMP" AllowableFormats="A" Length="-1" Description="String template. ASCII text string acceptable to equipment as a parameter value. A data string matches a template string if the data string is at least as long as the template and each character of the data string matches the corresponding character of the template. A null list indicates all user data is acceptable to the machine." />
+    <DataItem Name="STIME" AllowableFormats="A" Length="-1" Description="Sample time, 12, 16 bytes, or Extended format as specified by the TimeFormat equipment constant value setting." />
+    <DataItem Name="STRACK" AllowableFormats="B" Length="-1" Description="Spool Stream Acknowledge." />
+    <DataItem Name="STRID" AllowableFormats="U1" Length="-1" Description="Stream Identification." />
+    <DataItem Name="STRP" AllowableFormats="I1, I2, I4, I8" Length="-1" Description="Starting position in die coordinate position. Must be in (X,Y) order." />
+    <DataItem Name="SV" AllowableFormats="L, B, Boolean, A, J, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Status variable value." />
+    <DataItem Name="SVCACK" AllowableFormats="B" Length="-1" Description="Service acceptance acknowledge code, 1 byte." />
+    <DataItem Name="SVCNAME" AllowableFormats="A" Length="-1" Description="Service name provided on specified object asking by the host." />
+    <DataItem Name="SVID" AllowableFormats="A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Status variable ID." />
+    <DataItem Name="SVNAME" AllowableFormats="A" Length="-1" Description="Status Variable Name." />
+    <DataItem Name="TARGETID" AllowableFormats="A" Length="-1" Description="Identifies where a request for action or data is to be applied. If text, conforms to OBJSPEC." />
+    <DataItem Name="TARGETPDE" AllowableFormats="A" Length="-1" Description="Contains the unique identifier (uid) of the PDE that is the starting point for the verification process." />
+    <DataItem Name="TARGETSPEC" AllowableFormats="A" Length="-1" Description="Object specifier of target object." />
+    <DataItem Name="TBLACK" AllowableFormats="U1" Length="-1" Description="Indicates success or failure." />
+    <DataItem Name="TBLCMD" AllowableFormats="U1" Length="-1" Description="Provides information about the table or parts of the table being transferred or requested. Enumerated:" />
+    <DataItem Name="TBLELT" AllowableFormats="L, B, Boolean, A, J, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Table element. The first table element in a row is used to identify the row." />
+    <DataItem Name="TBLID" AllowableFormats="A" Length="-1" Description="Table identifier. Text conforming to the requirements of OBJSPEC." />
+    <DataItem Name="TBLTYP" AllowableFormats="A" Length="-1" Description="A reserved text string to denote the format and application of the table. Text conforming to the requirements of OBJSPEC." />
+    <DataItem Name="TCID" AllowableFormats="A" Length="-1" Description="TCID is the identifier of the TransferContainer." />
+    <DataItem Name="TEXT" AllowableFormats="B, A, 22, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="A single line of characters." />
+    <DataItem Name="TIAACK" AllowableFormats="B" Length="-1" Description="Equipment acknowledgement code, 1 byte." />
+    <DataItem Name="TIACK" AllowableFormats="B" Length="-1" Description="Time Acknowledge Code, 1 byte." />
+    <DataItem Name="TID" AllowableFormats="B" Length="-1" Description="Terminal number, 1 byte." />
+    <DataItem Name="TIME" AllowableFormats="A" Length="-1" Description="Time of day, 12, 16 bytes, or Extended format as specified by the TimeFormat equipment constant value setting." />
+    <DataItem Name="TIMESTAMP" AllowableFormats="A" Length="-1" Description="Timestamp in 12, 16 bytes, or Extended format indicating the time of an event, which encodes time as specified by the TimeFormat equipment constant value setting." />
+    <DataItem Name="TOTSMP" AllowableFormats="A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Total samples to be made." />
+    <DataItem Name="TRACK" AllowableFormats="Boolean" Length="-1" Description="Tells whether the related transfer activity was successful (= True) or unsuccessful (= False)." />
+    <DataItem Name="TRANSFERSIZE" AllowableFormats="U8" Length="-1" Description="Size, in bytes, of the TransferContainer proposed for transfer." />
+    <DataItem Name="TRATOMICID" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Equipment assigned identifier for an atomic transfer." />
+    <DataItem Name="TRAUTOD" AllowableFormats="Boolean" Length="-1" Description="A Trace Object attribute for a control flag which, if set TRUE, causes the Trace Object to delete itself when it has completed a report." />
+    <DataItem Name="TRAUTOSTART" AllowableFormats="Boolean" Length="-1" Description="For each atomic transfer, this data item tells the equipment if it should automatically start the handoff when ready (= TRUE) or await the host’s ‘StartHandoff’ command (= FALSE) following setup. This data item only affects the primary transfer partner." />
+    <DataItem Name="TRCMDNAME" AllowableFormats="A" Length="-1" Description="Identifier of the transfer job-related command to be executed. Possible values:" />
+    <DataItem Name="TRDIR" AllowableFormats="U1" Length="-1" Description="Direction of handoff." />
+    <DataItem Name="TRID" AllowableFormats="A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Trace request ID." />
+    <DataItem Name="TRJOBID" AllowableFormats="B" Length="-1" Description="Equipment assigned identifier for the transfer job." />
+    <DataItem Name="TRJOBMS" AllowableFormats="U1" Length="-1" Description="Milestone for a transfer job (e.g., started or complete)." />
+    <DataItem Name="TRJOBNAME" AllowableFormats="A" Length="-1" Description="Host assigned identifier for the transfer job. Limited to a maximum of 80 characters." />
+    <DataItem Name="TRLINK" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Common identifier for the atomic transfer used by the transfer partners to confirm that they are working on the same host-defined task." />
+    <DataItem Name="TRLOCATION" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Identifier of the material location involved with the transfer. For one transfer partner, this will represent the designated source location for the material to be sent. For the other transfer partner, it will represent the designated destination location for the material to be received." />
+    <DataItem Name="TROBJNAME" AllowableFormats="A" Length="-1" Description="Identifier for the material (transfer object) to be transferred." />
+    <DataItem Name="TROBJTYPE" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Type of object to be transferred." />
+    <DataItem Name="TRPORT" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Identifier of the equipment port to be used for the handoff." />
+    <DataItem Name="TRPTNR" AllowableFormats="A" Length="-1" Description="Name of the equipment which will serve as the other transfer partner for this atomic transfer. This corresponds to EQNAME." />
+    <DataItem Name="TRPTPORT" AllowableFormats="U1, U2, U4, U8" Length="-1" Description="Identifier of the transfer partner’s port to be used for the transfer." />
+    <DataItem Name="TRRCP" AllowableFormats="A" Length="-1" Description="Name of the transfer recipe for this handoff. Limited to a maximum of 80 characters." />
+    <DataItem Name="TRROLE" AllowableFormats="U1" Length="-1" Description="Tells whether the equipment is to be the primary or secondary transfer partner." />
+    <DataItem Name="TRSPER" AllowableFormats="F4, F8" Length="-1" Description="A Trace Object attribute which holds the value for sampling interval time." />
+    <DataItem Name="TRTYPE" AllowableFormats="U1" Length="-1" Description="Tells whether the equipment is to be an active or passive participant in the transfer." />
+    <DataItem Name="TSIP" AllowableFormats="B" Length="-1" Description="Transfer status of input port, 1 byte." />
+    <DataItem Name="TSOP" AllowableFormats="B" Length="-1" Description="Transfer status of output port, 1 byte." />
+    <DataItem Name="TTC" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Time to completion." />
+    <DataItem Name="TYPEID" AllowableFormats="A" Length="-1" Description="Identifier of the Type of the recipe." />
+    <DataItem Name="UID" AllowableFormats="A" Length="-1" Description="Contains a unique identifier for a PDE." />
+    <DataItem Name="ULIM" AllowableFormats="I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Upper limit for numeric value." />
+    <DataItem Name="UNFLEN" AllowableFormats="I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Unformatted Process Program Length." />
+    <DataItem Name="UNITS" AllowableFormats="A" Length="-1" Description="Units Identifier." />
+    <DataItem Name="UPPERDB" AllowableFormats="Boolean, A, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="A variable limit attribute which defines the upper boundary of the deadband of a limit. The value applies to a single limit (LIMITID) for a specified VID. Thus, UPPERDB and LOWERDB as a pair define a limit." />
+    <DataItem Name="V" AllowableFormats="L, B, Boolean, A, J, I1, I2, I4, I8, F4, F8, U1, U2, U4, U8" Length="-1" Description="Variable data." />
+    <DataItem Name="VERID" AllowableFormats="A" Length="-1" Description="Optional unique identifier of recipes." />
+    <DataItem Name="VERIFYDEPTH" AllowableFormats="U1" Length="-1" Description="Selects whether to check only the target PDE or all associated PDEs within a multi-part recipe." />
+    <DataItem Name="VERIFYRSPSTAT" AllowableFormats="U1" Length="-1" Description="Verification result." />
+    <DataItem Name="VERIFYSUCCESS" AllowableFormats="Boolean" Length="-1" Description="Boolean." />
+    <DataItem Name="VERIFYTYPE" AllowableFormats="U1" Length="-1" Description="Choice of the type of verification to perform." />
+    <DataItem Name="VID" AllowableFormats="A, I1, I2, I4, I8, U1, U2, U4, U8" Length="-1" Description="Variable ID." />
+    <DataItem Name="VLAACK" AllowableFormats="B" Length="-1" Description="Variable Limit Attribute Acknowledge Code, 1 byte." />
+    <DataItem Name="XDIES" AllowableFormats="F4, F8, U1, U2, U4, U8" Length="-1" Description="X-axis die size (index)." />
+    <DataItem Name="XYPOS" AllowableFormats="I1, I2, I4, I8" Length="-1" Description="X and Y Coordinate Position. Must be in (X,Y) order." />
+    <DataItem Name="YDIES" AllowableFormats="F4, F8, U1, U2, U4, U8" Length="-1" Description="Y-axis die size (index)." />
+  </DataItemList>
+</PreDefined>

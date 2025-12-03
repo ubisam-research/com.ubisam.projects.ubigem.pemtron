@@ -1,0 +1,52 @@
+﻿<Window x:Class="UbiGEM.Net.Simulator.Host.Popup.SettingProcessProgramDelete"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.Popup"
+        xmlns:UserControl="clr-namespace:UbiGEM.Net.Simulator.Host.UserControls"
+        mc:Ignorable="d"
+        Title="SettingProcessProgramDelete" Height="300" Width="300" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" WindowStyle="None" >
+    <Grid Background="{StaticResource UbiSamThemeBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 5 0">
+            <GroupBox Name="grbTitle" Header="Process Program Delete Setting" Grid.Row="0" >
+                <Grid>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="120" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+
+                    <Grid Name="grdMultiMessage" Grid.Row="1" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="32" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <UserControl:ClientMenuControl OnAdd="ClientMenuControl_OnAdd" OnRemove="ClientMenuControl_OnRemove" />
+                        <DataGrid Name="dgrPPID" Grid.Row="1" HeadersVisibility="None"
+                              CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="False" >
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="PPID" Binding="{Binding Value}" Width="*" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Grid>
+            </GroupBox>
+        </Border>
+
+        <Border Grid.Row="1" Style="{StaticResource PopupBottomArea}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Content="Close" Click="btnClose_Click" IsCancel="True"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:UbiSam.Common.Themes.WPF.Themes">
+    
+    <Style x:Key="UbiSamThemeThumb" TargetType="{x:Type Thumb}">
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Padding" Value="8"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border x:Name="PART_Border"
+                            Padding="{TemplateBinding Padding}"
+                            Background="{TemplateBinding Background}"
+                            SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="UbiSamThemeGridRowHeaderGripper" TargetType="{x:Type Thumb}" BasedOn="{StaticResource UbiSamThemeThumb}">
+        <Setter Property="Height" Value="8"/>
+        <Setter Property="Cursor" Value="SizeNS"/>
+    </Style>
+
+    <Style x:Key="UbiSamThemeGridColumnHeaderGripper" TargetType="{x:Type Thumb}" BasedOn="{StaticResource UbiSamThemeThumb}">
+        <Setter Property="Width" Value="8"/>
+        <Setter Property="Cursor" Value="SizeWE"/>
+    </Style>
+</ResourceDictionary>

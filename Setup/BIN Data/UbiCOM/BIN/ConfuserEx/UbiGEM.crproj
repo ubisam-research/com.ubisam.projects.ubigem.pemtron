@@ -1,0 +1,9 @@
+<project outputDir="..\BIN\Confused" baseDir="..\" xmlns="http://confuser.codeplex.com">
+  <rule pattern="true" preset="maximum" inherit="false">
+    <protection id="anti debug" action="remove" />
+    <protection id="resources" action="remove" />
+    <protection id="invalid metadata" action="remove" />
+  </rule>
+  <module path="UbiCom.Net.dll" />
+  <module path="UbiGEM.Net.dll" />
+</project>

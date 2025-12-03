@@ -1,0 +1,90 @@
+﻿<Window x:Class="UbiGEM.Net.Simulator.Host.Popup.EquipmentConstantWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.Popup"
+        xmlns:Controls="clr-namespace:UbiGEM.Net.Simulator.Host.UserControls"
+        xmlns:common="clr-namespace:UbiGEM.Net.Simulator.Host.Common"
+        mc:Ignorable="d"
+        Title="EquipmentConstantWindow" Height="700" Width="800" Loaded="Window_Loaded" 
+        WindowStartupLocation="CenterOwner" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" WindowStyle="None" >
+    <Window.Resources>
+        <common:SECSItemFormatAllWithL x:Key="SECSItemFormatAllWithL" />
+    </Window.Resources>
+    <Grid Background="{StaticResource UbiSamThemeBackground}">
+        <Grid.RowDefinitions >
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 5 0" >
+            <GroupBox Header="Equipment Constants" >
+                <Grid Margin="0 -24 0 0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="24" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+
+                    <Controls:ClientMenuControl x:Name="ctlFunction" Grid.Row="0" OnAdd="ClientMenuControl_OnAdd" OnRemove="ClientMenuControl_OnRemove" Margin="0 -27 1 0" />
+                    <DataGrid Name="dgrEquipmentConstant" Grid.Row="1" FrozenColumnCount="4" SelectionChanged="dgrEquipmentConstant_SelectionChanged"
+                                          IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                          >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="UGC" Binding="{Binding IsInheritance}" IsReadOnly="True" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                            <DataGridTextColumn x:Name="dgcVID" Header="ECID" Binding="{Binding VID}" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                            <DataGridTextColumn x:Name="dgcName" Header="Name" Binding="{Binding Name}" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                            <DataGridComboBoxColumn x:Name="dgcFormat" Header="Format" CanUserSort="False" 
+                                                                SelectedValueBinding="{Binding Format}" ItemsSource="{StaticResource SECSItemFormatAllWithL}" 
+                                                    EditingElementStyle="{StaticResource DataGridComboBoxColumnEditing}"
+                                                    >
+                                <DataGridComboBoxColumn.ElementStyle>
+                                    <Style TargetType="ComboBox" BasedOn="{StaticResource DataGridComboBoxColumnElement}">
+                                        <EventSetter Event="SelectionChanged" Handler="dgcFormat_SelectionChanged" />
+                                    </Style>
+                                </DataGridComboBoxColumn.ElementStyle>
+                            </DataGridComboBoxColumn>
+
+                            <DataGridTextColumn x:Name="dgcLength" Header="Length" Binding="{Binding Length}" ElementStyle="{StaticResource DataGridTextColumnElement}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" />
+                            <DataGridTextColumn Header="Value" Binding="{Binding Value}" IsReadOnly="False" ElementStyle="{StaticResource DataGridTextColumnElement}">
+                                <DataGridTextColumn.EditingElementStyle>
+                                    <Style TargetType="TextBox" BasedOn="{StaticResource DataGridTextColumnEditing}">
+                                        <Setter Property="AcceptsReturn" Value="False" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Format}" Value="A">
+                                                <Setter Property="AcceptsReturn" Value="False" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGridTextColumn.EditingElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn x:Name="dgcDescription" Header="Description" Binding="{Binding Description}" ElementStyle="{StaticResource DataGridTextColumnElement}">
+                                <DataGridTextColumn.EditingElementStyle>
+                                    <Style TargetType="TextBox" BasedOn="{StaticResource DataGridTextColumnEditing}">
+                                        <Setter Property="AcceptsReturn" Value="False" />
+                                    </Style>
+                                </DataGridTextColumn.EditingElementStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
+        </Border>
+
+        <Border Grid.Row="1" Style="{StaticResource PopupBottomArea}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Name="btnListEdit" Content="List Edit" Click="btnListEdit_Click" Visibility="Collapsed" />
+                <Button Grid.Column="2" Content="Save" Click="btnSave_Click" />
+                <Button Grid.Column="4" Content="Close" Click="btnClose_Click" IsCancel="True"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
+    

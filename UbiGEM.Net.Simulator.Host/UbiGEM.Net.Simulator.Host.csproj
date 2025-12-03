@@ -1,0 +1,820 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9CC713D1-CB42-45B6-83FA-0BCC373AA82C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UbiGEM.Net.Simulator.Host</RootNamespace>
+    <AssemblyName>UbiGEM.Net.Simulator.Host</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>256_2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\BIN\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\..\BIN\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\BIN\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\..\BIN\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>UbiGEM.Net.Simulator.Host.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UbiCom.Net, Version=1.0.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BIN\Confused\UbiCom.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="UbiGEM.Net, Version=2.0.2.9, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BIN\Confused\UbiGEM.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="UbiSam.Common, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BIN\UbiSam.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="UbiSam.Common.Colors.WPF, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BIN\UbiSam.Common.Colors.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="UbiSam.Common.Controls, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BIN\UbiSam.Common.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="UbiSam.Common.Controls.WPF, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BIN\UbiSam.Common.Controls.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="UbiSam.Common.Models, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BIN\UbiSam.Common.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="UbiSam.Common.MVVM, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BIN\UbiSam.Common.MVVM.dll</HintPath>
+    </Reference>
+    <Reference Include="UbiSam.Common.Themes.Dark, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BIN\UbiSam.Common.Themes.Dark.dll</HintPath>
+    </Reference>
+    <Reference Include="UbiSam.Common.Themes.WPF, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BIN\UbiSam.Common.Themes.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="UbiSam.Net.KeyLock, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BIN\Confused\UbiSam.Net.KeyLock.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Common\DataGridProxy.cs" />
+    <Compile Include="Common\SecsFormatForComboBox.cs" />
+    <Compile Include="Common\SystemSetting.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Info\AckCollection.cs" />
+    <Compile Include="Info\DataDictionaryList.cs" />
+    <Compile Include="Info\ErrCode.cs" />
+    <Compile Include="Info\MapDataType3.cs" />
+    <Compile Include="Info\MapDataType2.cs" />
+    <Compile Include="Info\MapDataType1.cs" />
+    <Compile Include="Info\MapSetupData.cs" />
+    <Compile Include="Info\SupervisedGEMObject.cs" />
+    <Compile Include="Info\GEMObjectAttribute.cs" />
+    <Compile Include="Info\GEMObjectID.cs" />
+    <Compile Include="Info\GEMObject.cs" />
+    <Compile Include="Info\ExpandedStructure\ExpandedEnhancedRemoteCommandValueSetInfo.cs" />
+    <Compile Include="Info\ExpandedStructure\ExpandedRemoteCommandValueSetInfo.cs" />
+    <Compile Include="Info\FormattedProcessProgramInfo.cs" />
+    <Compile Include="Info\AutoSendTrigger.cs" />
+    <Compile Include="Info\ExpandedStructure\ExpandedEnhancedRemoteCommandParameterItem.cs" />
+    <Compile Include="Info\ExpandedStructure\ExpandedEnhancedRemoteCommandParameterInfo.cs" />
+    <Compile Include="Info\ExpandedStructure\ExpandedEnhancedRemoteCommandInfo.cs" />
+    <Compile Include="Info\ExpandedStructure\ExpandedRemoteCommandParameterInfo.cs" />
+    <Compile Include="Info\ExpandedStructure\ExpandedCollectionEventInfo.cs" />
+    <Compile Include="Info\ExpandedStructure\ExpandedAlarmInfo.cs" />
+    <Compile Include="Info\ExpandedStructure\ExpandedReportInfo.cs" />
+    <Compile Include="Info\ExpandedStructure\ExpandedVariableInfo.cs" />
+    <Compile Include="Info\ExpandedStructure\ExpandedRemoteCommandInfo.cs" />
+    <Compile Include="Info\ExpandedStructure\UserMessage.cs" />
+    <Compile Include="Popup\Configuration\AckAndReplyWindow.xaml.cs">
+      <DependentUpon>AckAndReplyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\GEMObjectCreatedWindow.xaml.cs">
+      <DependentUpon>GEMObjectCreatedWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\GEMObjectCreatedListWindow.xaml.cs">
+      <DependentUpon>GEMObjectCreatedListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\MapDataType3Window.xaml.cs">
+      <DependentUpon>MapDataType3Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\MapDataType2Window.xaml.cs">
+      <DependentUpon>MapDataType2Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\MapDataType1Window.xaml.cs">
+      <DependentUpon>MapDataType1Window.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\WaferMapWindow.xaml.cs">
+      <DependentUpon>WaferMapWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\SupervisedGEMObjectListWindow.xaml.cs">
+      <DependentUpon>SupervisedGEMObjectListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\GEMObjectListWindow.xaml.cs">
+      <DependentUpon>GEMObjectListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\SupervisedGEMObjectWindow.xaml.cs">
+      <DependentUpon>SupervisedGEMObjectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\GEMObjectWindow.xaml.cs">
+      <DependentUpon>GEMObjectWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\ValueSetNameEditWindow.xaml.cs">
+      <DependentUpon>ValueSetNameEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\FormattedProcessProgramWindow.xaml.cs">
+      <DependentUpon>FormattedProcessProgramWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\CommandParameterListWindow.xaml.cs">
+      <DependentUpon>CommandParameterListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\EnhancedRemoteCommandWindow.xaml.cs">
+      <DependentUpon>EnhancedRemoteCommandWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingAlarmWindowForS5F3.xaml.cs">
+      <DependentUpon>SettingAlarmWindowForS5F3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingFormattedProcessProgram.xaml.cs">
+      <DependentUpon>SettingFormattedProcessProgram.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingObjectSelectorForS14F17.xaml.cs">
+      <DependentUpon>SettingObjectSelectorForS14F17.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingObjectSelectorForS14F15.xaml.cs">
+      <DependentUpon>SettingObjectSelectorForS14F15.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingObjectSelectorForS14F13.xaml.cs">
+      <DependentUpon>SettingObjectSelectorForS14F13.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingObjectSelectorForS14F11.xaml.cs">
+      <DependentUpon>SettingObjectSelectorForS14F11.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingMapError.xaml.cs">
+      <DependentUpon>SettingMapError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingObjectSelectorForS14F9.xaml.cs">
+      <DependentUpon>SettingObjectSelectorForS14F9.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingObjectSelectorForS14F7.xaml.cs">
+      <DependentUpon>SettingObjectSelectorForS14F7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingObjectSelectorForS14F5.xaml.cs">
+      <DependentUpon>SettingObjectSelectorForS14F5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingObjectSelectorForS14F3.xaml.cs">
+      <DependentUpon>SettingObjectSelectorForS14F3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingObjectSelectorForS14F1.xaml.cs">
+      <DependentUpon>SettingObjectSelectorForS14F1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingProcessProgramDelete.xaml.cs">
+      <DependentUpon>SettingProcessProgramDelete.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingCollectionEventWindow.xaml.cs">
+      <DependentUpon>SettingCollectionEventWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\TriggerListWindow.xaml.cs">
+      <DependentUpon>TriggerListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\GeneratingRuleWindow.xaml.cs">
+      <DependentUpon>GeneratingRuleWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\TriggerWindow.xaml.cs">
+      <DependentUpon>TriggerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\ValueEdit\CommandParameterValueEditListWindow.xaml.cs">
+      <DependentUpon>CommandParameterValueEditListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\ValueEdit\EnhancedRemoteCommandValueEditWindow.xaml.cs">
+      <DependentUpon>EnhancedRemoteCommandValueEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\ValueEdit\LimitMonitoringValueEditWindow.xaml.cs">
+      <DependentUpon>LimitMonitoringValueEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\ValueEdit\TraceDataValueEditWindow.xaml.cs">
+      <DependentUpon>TraceDataValueEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\ValueEdit\RemoteCommandValueEditWindow.xaml.cs">
+      <DependentUpon>RemoteCommandValueEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\MessageProcessor.cs" />
+    <Compile Include="Resources\SECSResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SECSResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageTest\MapErrorControl.xaml.cs">
+      <DependentUpon>MapErrorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReplyMessageControl.xaml.cs">
+      <DependentUpon>ReplyMessageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PropertyGridControl.xaml.cs">
+      <DependentUpon>PropertyGridControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EnhancedRemoteCommandControl.xaml.cs">
+      <DependentUpon>EnhancedRemoteCommandControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LimitMonitoringControl.xaml.cs">
+      <DependentUpon>LimitMonitoringControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageTest\GEMObjectControl.xaml.cs">
+      <DependentUpon>GEMObjectControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserMessageControl.xaml.cs">
+      <DependentUpon>UserMessageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StandaloneTestControl.xaml.cs">
+      <DependentUpon>StandaloneTestControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RemoteCommandControl.xaml.cs">
+      <DependentUpon>RemoteCommandControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AckSettingControl.xaml.cs">
+      <DependentUpon>AckSettingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageTest\ETCControl.xaml.cs">
+      <DependentUpon>ETCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageTest\SpoolControl.xaml.cs">
+      <DependentUpon>SpoolControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageTest\ProcessProgramControl.xaml.cs">
+      <DependentUpon>ProcessProgramControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageTest\CollectionEventControl.xaml.cs">
+      <DependentUpon>CollectionEventControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageTest\ReportControl.xaml.cs">
+      <DependentUpon>ReportControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageTest\VariableDataControl.xaml.cs">
+      <DependentUpon>VariableDataControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageTest\DefineEventReportControl.xaml.cs">
+      <DependentUpon>DefineEventReportControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageTest\ControlStateControl.xaml.cs">
+      <DependentUpon>ControlStateControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageTest\AlarmControl.xaml.cs">
+      <DependentUpon>AlarmControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MessageTest\ConnectionControl.xaml.cs">
+      <DependentUpon>ConnectionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ClientMenuControl.xaml.cs">
+      <DependentUpon>ClientMenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SecsFormatComboBoxControl.xaml.cs">
+      <DependentUpon>SecsFormatComboBoxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TraceDataControl.xaml.cs">
+      <DependentUpon>TraceDataControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCSelectUnSelectButton.xaml.cs">
+      <DependentUpon>UCSelectUnSelectButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCUpDownButton.xaml.cs">
+      <DependentUpon>UCUpDownButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\UmdLoader.cs" />
+    <Compile Include="ValidRule\IpAddressValidationRule.cs" />
+    <Compile Include="ValidRule\ValidRule.cs" />
+    <Compile Include="ValidRule\NumberOnlyWithMinMaxValidationRule.cs" />
+    <Compile Include="ValidRule\NumberOnlyValidationRule.cs" />
+    <Compile Include="ValidRule\ValidationError.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Converter.cs" />
+    <Compile Include="Common\RecipeManager.cs" />
+    <Compile Include="Common\SecsFormatViewModel.cs" />
+    <Compile Include="Info\CurrentSetting.cs" />
+    <Compile Include="Info\ExpandedStructure\ExpandedLimitMonitoringInfo.cs" />
+    <Compile Include="Info\ExpandedStructure\ExpandedTraceInfo.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Popup\Configuration\AckAndReplyWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\GEMObjectCreatedWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\GEMObjectCreatedListWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\MapDataType3Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\MapDataType2Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\MapDataType1Window.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\WaferMapWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\SupervisedGEMObjectListWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\GEMObjectListWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\SupervisedGEMObjectWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\GEMObjectWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\ValueSetNameEditWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\FormattedProcessProgramWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\CommandParameterListWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\EnhancedRemoteCommandWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingAlarmWindowForS5F3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingFormattedProcessProgram.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingObjectSelectorForS14F17.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingObjectSelectorForS14F15.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingObjectSelectorForS14F13.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingObjectSelectorForS14F11.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingMapError.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingObjectSelectorForS14F9.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingObjectSelectorForS14F7.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingObjectSelectorForS14F5.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingObjectSelectorForS14F3.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingObjectSelectorForS14F1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingProcessProgramDelete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingCollectionEventWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\TriggerListWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\GeneratingRuleWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\TriggerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\ValueEdit\CommandParameterValueEditListWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\ValueEdit\EnhancedRemoteCommandValueEditWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\ValueEdit\LimitMonitoringValueEditWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\ValueEdit\TraceDataValueEditWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\ValueEdit\RemoteCommandValueEditWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\AlarmWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\CollectionEventWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\ConfigurationWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\EquipmentConstantWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\RemoteCommandWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\ReportWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingAlarmWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\LimitMonitoringWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingLoopback.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingSpoolWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingTerminalWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\TraceDataWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Settings\SettingVariableWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\VariableListWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Popup\Configuration\VariableWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Styles\Local.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MessageTest\MapErrorControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ReplyMessageControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\PropertyGridControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\EnhancedRemoteCommandControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\LimitMonitoringControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MessageTest\GEMObjectControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\UserMessageControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\StandaloneTestControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\RemoteCommandControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\AckSettingControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MessageTest\ETCControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MessageTest\SpoolControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MessageTest\ProcessProgramControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MessageTest\CollectionEventControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MessageTest\ReportControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MessageTest\VariableDataControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MessageTest\DefineEventReportControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MessageTest\ControlStateControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MessageTest\AlarmControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\MessageTest\ConnectionControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ClientMenuControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\SecsFormatComboBoxControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\TraceDataControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\UCSelectUnSelectButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\UCUpDownButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Popup\Configuration\AlarmWindow.xaml.cs">
+      <DependentUpon>AlarmWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\CollectionEventWindow.xaml.cs">
+      <DependentUpon>CollectionEventWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\ConfigurationWindow.xaml.cs">
+      <DependentUpon>ConfigurationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\EquipmentConstantWindow.xaml.cs">
+      <DependentUpon>EquipmentConstantWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\RemoteCommandWindow.xaml.cs">
+      <DependentUpon>RemoteCommandWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\ReportWindow.xaml.cs">
+      <DependentUpon>ReportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingAlarmWindow.xaml.cs">
+      <DependentUpon>SettingAlarmWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\LimitMonitoringWindow.xaml.cs">
+      <DependentUpon>LimitMonitoringWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingLoopback.xaml.cs">
+      <DependentUpon>SettingLoopback.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingSpoolWindow.xaml.cs">
+      <DependentUpon>SettingSpoolWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingTerminalWindow.xaml.cs">
+      <DependentUpon>SettingTerminalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\TraceDataWindow.xaml.cs">
+      <DependentUpon>TraceDataWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Settings\SettingVariableWindow.xaml.cs">
+      <DependentUpon>SettingVariableWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\VariableListWindow.xaml.cs">
+      <DependentUpon>VariableListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Popup\Configuration\VariableWindow.xaml.cs">
+      <DependentUpon>VariableWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\SECSResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>SECSResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\btn_cell_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\btn_cell_remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\list_in_out_s_bt_5_a.png" />
+    <Resource Include="Resources\Images\list_in_out_s_bt_6_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\list_in_out_s_bt_1_a.png" />
+    <Resource Include="Resources\Images\list_in_out_s_bt_2_a.png" />
+    <Resource Include="Resources\Images\list_in_out_s_bt_3_a.png" />
+    <Resource Include="Resources\Images\list_in_out_s_bt_4_a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="256.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\32_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="256_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UbiCom.Net.Automata.SECS2\UbiCom.Net.Automata.SECS2.csproj">
+      <Project>{ed1e60df-7b77-4411-8216-ef99b1dda997}</Project>
+      <Name>UbiCom.Net.Automata.SECS2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

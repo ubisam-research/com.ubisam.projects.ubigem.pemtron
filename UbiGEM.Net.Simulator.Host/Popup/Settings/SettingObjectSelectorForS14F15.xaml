@@ -1,0 +1,141 @@
+﻿<Window x:Class="UbiGEM.Net.Simulator.Host.Popup.SettingObjectSelectorForS14F15"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.Popup"
+        xmlns:UserControl="clr-namespace:UbiGEM.Net.Simulator.Host.UserControls"
+        xmlns:common="clr-namespace:UbiGEM.Net.Simulator.Host.Common"
+        mc:Ignorable="d"
+        Title="SettingObjectSelectorForS14F1" Height="350" Width="400" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" WindowStyle="None" >
+    <Window.Resources>
+        <common:SECSItemFormatAllWithL x:Key="SECSItemFormatAllWithL" />
+    </Window.Resources>
+    <Grid Background="{StaticResource UbiSamThemeBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 5 0">
+            <GroupBox Name="grbTitle" Header="Object Selector">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="32"/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="Specifier" VerticalContentAlignment="Center"/>
+                    <ComboBox Grid.Row="0" Grid.Column="1" Name="cboObjectSpecifier" DropDownOpened="cboObjectSpecifier_DropDownOpened" SelectionChanged="cboObjectSpecifier_SelectionChanged"/>
+                    <Label Grid.Row="2" Grid.Column="0" Content="OBJCMD" VerticalContentAlignment="Center"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Name="txtOBJCMD" TextChanged="txtOBJCMD_TextChanged" IsReadOnly="True"/>
+                    <Label Grid.Row="4" Grid.Column="0" Content="OBJTOKEN" VerticalContentAlignment="Center"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Name="txtOBJTOKEN" TextChanged="txtOBJTOKEN_TextChanged" IsReadOnly="True"/>
+                    <Label Grid.Row="6" Grid.Column="0" Content="Attribute" VerticalContentAlignment="Top" />
+                    <DataGrid Name="dgrAttributes" Grid.Row="6" Grid.Column="1"
+                              CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="False"
+                              >
+                        <DataGrid.Columns>
+                            <DataGridCheckBoxColumn Header="V" Binding="{Binding IsSelected}" IsReadOnly="False" />
+                            <DataGridTextColumn Header="ATTRID" Binding="{Binding ATTRID}"  IsReadOnly="True" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                            <DataGridComboBoxColumn Header="Format" CanUserSort="False" 
+                                                                SelectedValueBinding="{Binding Format}" ItemsSource="{StaticResource SECSItemFormatAllWithL}" 
+                                                    ElementStyle="{StaticResource DataGridComboBoxColumnElement}"
+                                                    >
+                                <DataGridComboBoxColumn.EditingElementStyle>
+                                    <Style TargetType="ComboBox" BasedOn="{StaticResource DataGridComboBoxColumnEditing}">
+                                        <EventSetter Event="SelectionChanged" Handler="dgcAttrFormat_SelectionChanged" />
+                                    </Style>
+                                </DataGridComboBoxColumn.EditingElementStyle>
+                            </DataGridComboBoxColumn>
+
+                            <DataGridTemplateColumn Header="Value">
+                                <DataGridTemplateColumn.CellEditingTemplate>
+                                    <DataTemplate>
+                                        <Grid HorizontalAlignment="Stretch">
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Grid.Style>
+                                                <TextBox Text="{Binding ATTRDATA}" TextAlignment="Left" TextChanged="txtAttributeValue_TextChanged" Style="{DynamicResource CustomTextBoxStyleForDataGridTemplateColumn}"/>
+                                            </Grid>
+
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Grid.Style>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellEditingTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid HorizontalAlignment="Stretch">
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                        <Setter Property="Visibility" Value="Visible" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                                <Setter Property="Visibility" Value="Collapsed" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Grid.Style>
+                                                <TextBlock Text="{Binding ATTRDATA}" TextAlignment="Left" Style="{DynamicResource CustomTextBlockStyleForDataGridTemplateColumn}"/>
+                                            </Grid>
+
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.Style>
+                                                    <Style TargetType="Grid">
+                                                        <Setter Property="Visibility" Value="Collapsed" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding Format}" Value="L" >
+                                                                <Setter Property="Visibility" Value="Visible" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Grid.Style>
+                                            </Grid>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
+        </Border>
+
+        <Border Grid.Row="1" Style="{StaticResource PopupBottomArea}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Content="Close" Click="btnClose_Click" IsCancel="True"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

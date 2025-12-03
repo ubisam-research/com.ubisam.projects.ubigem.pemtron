@@ -1,0 +1,82 @@
+﻿<Window x:Class="UbiGEM.Net.Simulator.Host.Popup.Settings.GeneratingRuleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.Popup"
+        xmlns:Controls="clr-namespace:UbiGEM.Net.Simulator.Host.UserControls"
+        mc:Ignorable="d"
+        Title="Trigger Editor" Height="350" Width="700" Loaded="Window_Loaded" WindowStartupLocation="CenterOwner" AllowsTransparency="True" WindowStyle="None" ResizeMode="CanResizeWithGrip" >
+    <Grid Background="{StaticResource UbiSamThemeBackground}">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 5 0" >
+            <GroupBox Name="gbHeader" Header="Generating Rule Editor" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="7" />
+                        <RowDefinition Height="32" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="140" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Grid.Row="0" Content="Type" VerticalContentAlignment="Center" />
+                    <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal">
+                        <RadioButton Name="radEC" Content="EC" Style="{DynamicResource CustomRadioButton}" Checked="radEC_Checked"/>
+                        <RadioButton Name="radV" Content="Variable" Style="{DynamicResource CustomRadioButton}" Checked="radV_Checked"/>
+                        <RadioButton Name="radRandom" Content="Random" Style="{DynamicResource CustomRadioButton}" Checked="radRandom_Checked"/>
+                        <RadioButton Name="radIncremental" Content="Incremental" Style="{DynamicResource CustomRadioButton}" Checked="radIncremental_Checked"/>
+                    </StackPanel>
+                    <Label Grid.Column="0" Grid.Row="2" Content="Rule" VerticalContentAlignment="Center" />
+                    <TextBox Name="txtRule" Grid.Column="1" Grid.Row="2" VerticalContentAlignment="Center" />
+
+                    <Label Name="lblTarget" Grid.Column="0" Grid.Row="3" Content="ECV" VerticalContentAlignment="Center" />
+                    <DataGrid Name="dgrEC" Grid.Column="1" Grid.Row="3" IsReadOnly="False" 
+                            CanUserAddRows="False" CanUserDeleteRows="False" 
+                            SelectionChanged="dgrEC_SelectionChanged"
+                            >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ECID" Binding="{Binding VID}" />
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                            <DataGridTextColumn Header="Format" Binding="{Binding Format}" />
+                            <DataGridTextColumn Header="Value" Binding="{Binding Value}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <DataGrid Name="dgrV" Grid.Column="1" Grid.Row="3" IsReadOnly="True" 
+                            CanUserAddRows="False" CanUserDeleteRows="False" 
+                            SelectionChanged="dgrV_SelectionChanged"
+                            >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="VID" Binding="{Binding VID}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                            <DataGridTextColumn Header="Name" Binding="{Binding Name}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                            <DataGridTextColumn Header="Format" Binding="{Binding Format}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
+        </Border>
+
+        <Border Grid.Row="1" Style="{StaticResource PopupBottomArea}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" Content="Clear" Click="btnClear_Click" />
+                <Button Grid.Column="2" Content="OK" Click="btnOK_Click" />
+                <Button Grid.Column="4" Content="Cancel" Click="btnCancel_Click" IsCancel="True"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

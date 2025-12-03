@@ -1,0 +1,4548 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MessageList>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F1</MessageName>
+      <Stream>1</Stream>
+      <Function>1</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Are You There Request (R)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F2ToEqp</MessageName>
+      <Stream>1</Stream>
+      <Function>2</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>On Line Data (D)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="0" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F2ToHost</MessageName>
+      <Stream>1</Stream>
+      <Function>2</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>On Line Data (D)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <A ItemName="MDLN" Count="20" IsFixed="false" DefaultValue="UbiSAM" />
+        <A ItemName="SOFTREV" Count="20" IsFixed="false" DefaultValue="SWREV" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F3</MessageName>
+      <Stream>1</Stream>
+      <Function>3</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Selected Equipment Status Request (SSR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="SVIDCOUNT" Count="10000" IsFixed="false">
+        <X ItemName="SVID" Count="100" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F4</MessageName>
+      <Stream>1</Stream>
+      <Function>4</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Selected Equipment Status Data (SSD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="SVCOUNT" Count="10000" IsFixed="false">
+        <X ItemName="SV" Count="10000" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F5</MessageName>
+      <Stream>1</Stream>
+      <Function>5</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Formatted Status Request (FSR)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="SFCD" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F6</MessageName>
+      <Stream>1</Stream>
+      <Function>6</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Formatted Status Data (FSD)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F7</MessageName>
+      <Stream>1</Stream>
+      <Function>7</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Fixed Form Request (FFR)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="SFCD" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F8</MessageName>
+      <Stream>1</Stream>
+      <Function>8</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Fixed Form Data (FFD)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F9</MessageName>
+      <Stream>1</Stream>
+      <Function>9</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material Transfer Status Request (TSR)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F10</MessageName>
+      <Stream>1</Stream>
+      <Function>10</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material Transfer Status Data (TSD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <B ItemName="TSIP" Count="1000" IsFixed="false" />
+        <B ItemName="TSOP" Count="1000" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F11</MessageName>
+      <Stream>1</Stream>
+      <Function>11</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Status Variable Namelist Request (SVNR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="SVIDCOUNT" Count="10000" IsFixed="false">
+        <X ItemName="SVID" Count="100" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F12</MessageName>
+      <Stream>1</Stream>
+      <Function>12</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Status Variable Namelist Reply (SVNRR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="SVIDCOUNT" Count="10000" IsFixed="false">
+        <L ItemName="SVINFO" Count="3" IsFixed="true">
+          <X ItemName="SVID" Count="100" IsFixed="false" />
+          <A ItemName="SVNAME" Count="1000" IsFixed="false" />
+          <A ItemName="UNITS" Count="100" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F13ToEqp</MessageName>
+      <Stream>1</Stream>
+      <Function>13</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Establish Communications Request (CR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="EQPINFO" Count="0" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F13ToHost</MessageName>
+      <Stream>1</Stream>
+      <Function>13</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Establish Communications Request (CR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <A ItemName="MDLN" Count="20" IsFixed="false" DefaultValue="UbiSAM" />
+        <A ItemName="SOFTREV" Count="20" IsFixed="false" DefaultValue="SWREV" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F14ToEqp</MessageName>
+      <Stream>1</Stream>
+      <Function>14</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Establish Communications Request Acknowledge (CRA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <B ItemName="COMMACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="EQPINFO" Count="0" IsFixed="true" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F14ToHost</MessageName>
+      <Stream>1</Stream>
+      <Function>14</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Establish Communications Request Acknowledge (CRA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <B ItemName="COMMACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="EQPINFO" Count="2" IsFixed="true">
+          <A ItemName="MDLN" Count="6" IsFixed="true" DefaultValue="UbiSAM" />
+          <A ItemName="SOFTREV" Count="6" IsFixed="true" DefaultValue="SWREV" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F15</MessageName>
+      <Stream>1</Stream>
+      <Function>15</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Request OFF-LINE (ROFL)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F16</MessageName>
+      <Stream>1</Stream>
+      <Function>16</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>OFF-LINE Acknowledge (OFLA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="OFLACK" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F17</MessageName>
+      <Stream>1</Stream>
+      <Function>17</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Request ON-LINE (RONL)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F18</MessageName>
+      <Stream>1</Stream>
+      <Function>18</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>ON-LINE Acknowledge (ONLA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ONLACK" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F19</MessageName>
+      <Stream>1</Stream>
+      <Function>19</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Get Attribute (GA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <X ItemName="OBJTYPE" Count="100" IsFixed="false" />
+        <L ItemName="OBJECTCOUNT" Count="1000" IsFixed="false">
+          <X ItemName="OBJID" Count="100" IsFixed="false" />
+        </L>
+        <L ItemName="ATTRCOUNT" Count="1000" IsFixed="false">
+          <X ItemName="ATTRID" Count="100" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F20</MessageName>
+      <Stream>1</Stream>
+      <Function>20</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Attribute Data (AD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <L ItemName="OBJECTCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="ATTRCOUNT" Count="1000" IsFixed="false">
+            <X ItemName="ATTRDATA" Count="100" IsFixed="false" />
+          </L>
+        </L>
+        <L ItemName="ERRORCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="ERRINFO" Count="2" IsFixed="true">
+            <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+            <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F21</MessageName>
+      <Stream>1</Stream>
+      <Function>21</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Data Variable Namelist Request (DVNR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="VIDCOUNT" Count="10000" IsFixed="false">
+        <X ItemName="VID" Count="100" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F22</MessageName>
+      <Stream>1</Stream>
+      <Function>22</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Data Variable Namelist (DVN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="VCOUNT" Count="10000" IsFixed="false">
+        <L ItemName="DVINFO" Count="3" IsFixed="true">
+          <X ItemName="VID" Count="100" IsFixed="false" />
+          <A ItemName="DVVALNAME" Count="1000" IsFixed="false" />
+          <A ItemName="UNITS" Count="100" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F23</MessageName>
+      <Stream>1</Stream>
+      <Function>23</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Collection Event Namelist Request (CENR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="CEIDCOUNT" Count="1000" IsFixed="false">
+        <X ItemName="CEID" Count="100" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F24</MessageName>
+      <Stream>1</Stream>
+      <Function>24</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Collection Event Namelist (CEN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="CEIDCOUNT" Count="1000" IsFixed="false">
+        <L ItemName="CEINFO" Count="3" IsFixed="true">
+          <X ItemName="CEID" Count="100" IsFixed="false" />
+          <A ItemName="CENAME" Count="1000" IsFixed="false" />
+          <L ItemName="VIDCOUNT" Count="1000" IsFixed="false">
+            <X ItemName="VID" Count="100" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F1</MessageName>
+      <Stream>2</Stream>
+      <Function>1</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Service Program Load Inquire (SPI)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="SPINFO" Count="2" IsFixed="true">
+        <A ItemName="SPID" Count="6" IsFixed="false" />
+        <X ItemName="LENGTH" Count="1" IsFixed="true" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F2</MessageName>
+      <Stream>2</Stream>
+      <Function>2</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Service Program Load Grant (SPG)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="GRANT" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F3</MessageName>
+      <Stream>2</Stream>
+      <Function>3</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Service Program Send (SPS)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="SPD" Count="0" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F4</MessageName>
+      <Stream>2</Stream>
+      <Function>4</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Service Program Send Acknowledge (SPA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="SPAACK" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F5</MessageName>
+      <Stream>2</Stream>
+      <Function>5</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Service Program Load Request (SPR)</Description>
+    </Header>
+    <DataItem>
+      <A ItemName="SPID" Count="6" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F6</MessageName>
+      <Stream>2</Stream>
+      <Function>6</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Service Program Load Data (SPD)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="SPD" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F7</MessageName>
+      <Stream>2</Stream>
+      <Function>7</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Service Program Run Send (CSS)</Description>
+    </Header>
+    <DataItem>
+      <A ItemName="SPID" Count="0" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F8</MessageName>
+      <Stream>2</Stream>
+      <Function>8</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Service Program Run Acknowledge (CSA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="CSAACK" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F9</MessageName>
+      <Stream>2</Stream>
+      <Function>9</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Service Program Results Request (SRR)</Description>
+    </Header>
+    <DataItem>
+      <A ItemName="SPID" Count="6" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F10</MessageName>
+      <Stream>2</Stream>
+      <Function>10</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Service Program Results Data (SRD)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="SPR" Count="10000" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F11</MessageName>
+      <Stream>2</Stream>
+      <Function>11</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Service Program Directory Request (SDR)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F12</MessageName>
+      <Stream>2</Stream>
+      <Function>12</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Service Program Directory Data (SDD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="PROGRAMCOUNT" Count="10000" IsFixed="false">
+        <A ItemName="SPID" Count="6" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F13</MessageName>
+      <Stream>2</Stream>
+      <Function>13</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Equipment Constant Request (ECR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="ECIDCOUNT" Count="10000" IsFixed="false">
+        <X ItemName="ECID" Count="100" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F14</MessageName>
+      <Stream>2</Stream>
+      <Function>14</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Equipment Constant Data (ECD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="ECVCOUNT" Count="10000" IsFixed="false">
+        <X ItemName="ECV" Count="1000" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F15</MessageName>
+      <Stream>2</Stream>
+      <Function>15</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>New Equipment Constant Send (ECS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="ECIDCOUNT" Count="10000" IsFixed="false">
+        <L ItemName="ECINFO" Count="2" IsFixed="true">
+          <X ItemName="ECID" Count="100" IsFixed="false" />
+          <X ItemName="ECV" Count="1000" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F16</MessageName>
+      <Stream>2</Stream>
+      <Function>16</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>New Equipment Constant Acknowledge (ECA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="EAC" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F17</MessageName>
+      <Stream>2</Stream>
+      <Function>17</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Date and Time Request (DTR)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F18</MessageName>
+      <Stream>2</Stream>
+      <Function>18</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Date and Time Data (DTD)</Description>
+    </Header>
+    <DataItem>
+      <A ItemName="TIMEDATE" Count="16" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F19</MessageName>
+      <Stream>2</Stream>
+      <Function>19</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Reset/Initialize Send (RIS)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="CCODE" Count="1" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F20</MessageName>
+      <Stream>2</Stream>
+      <Function>20</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Reset Acknowledge (RIA)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="RAC" Count="1" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F21</MessageName>
+      <Stream>2</Stream>
+      <Function>21</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Remote Command Send (RCS)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="RCMD" Count="100" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F22</MessageName>
+      <Stream>2</Stream>
+      <Function>22</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Remote Command Acknowledge (RCA)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="CMDA" Count="1" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F23</MessageName>
+      <Stream>2</Stream>
+      <Function>23</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Trace Initialize Send (TIS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="5" IsFixed="true">
+        <X ItemName="TRID" Count="100" IsFixed="false" />
+        <A ItemName="DSPER" Count="8" IsFixed="false" />
+        <X ItemName="TOTSMP" Count="100" IsFixed="false" />
+        <X ItemName="REPGSZ" Count="100" IsFixed="false" />
+        <L ItemName="SVIDCOUNT" Count="10000" IsFixed="false">
+          <X ItemName="SVID" Count="100" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F24</MessageName>
+      <Stream>2</Stream>
+      <Function>24</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Trace Initialize Acknowledge (TIA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="TIAACK" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F25</MessageName>
+      <Stream>2</Stream>
+      <Function>25</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Loopback Diagnostic Request (LDR)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ABS" Count="100" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F26</MessageName>
+      <Stream>2</Stream>
+      <Function>26</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Loopback Diagnostic Data (LDD)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ABS" Count="100" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F27</MessageName>
+      <Stream>2</Stream>
+      <Function>27</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Initiate Processing Request (IPR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <B ItemName="LOC" Count="1" IsFixed="true" />
+        <X ItemName="PPID" Count="100" IsFixed="false" />
+        <L ItemName="MIDCOUNT" Count="1000" IsFixed="false">
+          <X ItemName="MID" Count="80" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F28</MessageName>
+      <Stream>2</Stream>
+      <Function>28</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Initiate Processing Acknowledge (IPA)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="CMDA" Count="1" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F29</MessageName>
+      <Stream>2</Stream>
+      <Function>29</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Equipment Constant Namelist Request (ECNR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="ECIDCOUNT" Count="10000" IsFixed="false">
+        <X ItemName="ECID" Count="100" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F30</MessageName>
+      <Stream>2</Stream>
+      <Function>30</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Equipment Constant Namelist Request</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="ECIDCOUNT" Count="10000" IsFixed="false">
+        <L ItemName="ECINFO" Count="6" IsFixed="true">
+          <X ItemName="ECID" Count="100" IsFixed="false" />
+          <A ItemName="ECNAME" Count="1000" IsFixed="false" />
+          <X ItemName="ECMIN" Count="100" IsFixed="false" />
+          <X ItemName="ECMAX" Count="100" IsFixed="false" />
+          <X ItemName="ECDEF" Count="100" IsFixed="false" />
+          <X ItemName="UNITS" Count="100" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F31</MessageName>
+      <Stream>2</Stream>
+      <Function>31</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Date and Time Set Request (DTS)</Description>
+    </Header>
+    <DataItem>
+      <A ItemName="TIME" Count="16" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F32</MessageName>
+      <Stream>2</Stream>
+      <Function>32</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Date and Time Set Acknowledge (DTA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="TIACK" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F33</MessageName>
+      <Stream>2</Stream>
+      <Function>33</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Define Report (DR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <L ItemName="RPTIDCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="RPTINFO" Count="2" IsFixed="true">
+            <X ItemName="RPTID" Count="100" IsFixed="false" />
+            <L ItemName="VIDCOUNT" Count="10000" IsFixed="false">
+              <X ItemName="VID" Count="100" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F34</MessageName>
+      <Stream>2</Stream>
+      <Function>34</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Define Report Acknowledge (DRA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="DRACK" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F35</MessageName>
+      <Stream>2</Stream>
+      <Function>35</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Link Event Report (LER)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <L ItemName="CEIDCOUNT" Count="10000" IsFixed="false">
+          <L ItemName="CEINFO" Count="2" IsFixed="true">
+            <X ItemName="CEID" Count="100" IsFixed="false" />
+            <L ItemName="RPTIDCOUNT" Count="10000" IsFixed="false">
+              <X ItemName="RPTID" Count="100" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F36</MessageName>
+      <Stream>2</Stream>
+      <Function>36</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Link Event Report Acknowledge (LERA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="LRACK" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F37</MessageName>
+      <Stream>2</Stream>
+      <Function>37</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Enable/Disable Event Report (EDER)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <Boolean ItemName="CEED" Count="1" IsFixed="true" />
+        <L ItemName="CEIDCOUNT" Count="10000" IsFixed="false">
+          <X ItemName="CEID" Count="100" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F38</MessageName>
+      <Stream>2</Stream>
+      <Function>38</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Enable/Disable Event Report Acknowledge (EERA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ERACK" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F39</MessageName>
+      <Stream>2</Stream>
+      <Function>39</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Multi-Block Inquire (DMBI</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <X ItemName="DATALENGTH" Count="1" IsFixed="true" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F40</MessageName>
+      <Stream>2</Stream>
+      <Function>40</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Multi-Block Grant (DMBG)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="GRANT" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F41</MessageName>
+      <Stream>2</Stream>
+      <Function>41</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Host Command Send (HCS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="RCMD" Count="100" IsFixed="false" />
+        <L ItemName="CPCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="CPINFO" Count="2" IsFixed="true">
+            <X ItemName="CPNAME" Count="100" IsFixed="false" />
+            <X ItemName="CPVAL" Count="100" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F42</MessageName>
+      <Stream>2</Stream>
+      <Function>42</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Host Command Acknowledge (HCA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <B ItemName="HCACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="CPCOUNT" Count="10000" IsFixed="false">
+          <L ItemName="CPINFO" Count="2" IsFixed="true">
+            <X ItemName="CPNAME" Count="100" IsFixed="false" />
+            <B ItemName="CPACK" Count="1" IsFixed="true" DefaultValue="0" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F43</MessageName>
+      <Stream>2</Stream>
+      <Function>43</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Reset Spooling Streams and Functions (RSSF)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="STRIDCOUNT" Count="100" IsFixed="false">
+        <L ItemName="STRINFO" Count="2" IsFixed="true">
+          <U1 ItemName="STRID" Count="1" IsFixed="true" DefaultValue="0" />
+          <L ItemName="FCNIDCOUNT" Count="100" IsFixed="false">
+            <U1 ItemName="FCNID" Count="1" IsFixed="true" DefaultValue="0" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F44</MessageName>
+      <Stream>2</Stream>
+      <Function>44</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Reset Spooling Acknowledge (RSA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <B ItemName="RSACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="STRIDCOUNT" Count="100" IsFixed="false">
+          <L ItemName="STRINFO" Count="3" IsFixed="true">
+            <U1 ItemName="STRID" Count="1" IsFixed="true" DefaultValue="0" />
+            <B ItemName="STRACK" Count="1" IsFixed="true" DefaultValue="0" />
+            <L ItemName="FCNIDCOUNT" Count="100" IsFixed="false">
+              <U1 ItemName="FCNID" Count="1" IsFixed="true" DefaultValue="0" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F45</MessageName>
+      <Stream>2</Stream>
+      <Function>45</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Define Variable Limit Attributes (DVLA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <L ItemName="VIDCOUNT" Count="10000" IsFixed="false">
+          <L ItemName="VINFO" Count="2" IsFixed="true">
+            <X ItemName="VID" Count="100" IsFixed="false" />
+            <L ItemName="LIMITIDCOUNT" Count="1000" IsFixed="false">
+              <L ItemName="LIMITINFO" Count="2" IsFixed="true">
+                <B ItemName="LIMITID" Count="1" IsFixed="true" DefaultValue="0" />
+                <X ItemName="LIMITS" Count="10000" IsFixed="false" />
+              </L>
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F46</MessageName>
+      <Stream>2</Stream>
+      <Function>46</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Variable Limit Attribute Acknowledge (VLAA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <B ItemName="VLAACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="VIDCOUNT" Count="10000" IsFixed="false">
+          <L ItemName="VINFO" Count="3" IsFixed="true">
+            <X ItemName="VID" Count="100" IsFixed="false" />
+            <U2 ItemName="LVACK" Count="1" IsFixed="true" DefaultValue="0" />
+            <X ItemName="LIMITS" Count="10000" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F47</MessageName>
+      <Stream>2</Stream>
+      <Function>47</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Variable Limit Attribute Request (VLAR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="VIDCOUNT" Count="10000" IsFixed="false">
+        <X ItemName="VID" Count="100" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F48</MessageName>
+      <Stream>2</Stream>
+      <Function>48</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Variable Limit Attributes Send (VLAS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="VIDCOUNT" Count="10000" IsFixed="false">
+        <L ItemName="VINFO" Count="2" IsFixed="true">
+          <X ItemName="VID" Count="100" IsFixed="false" />
+          <X ItemName="LIMITS" Count="10000" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F49</MessageName>
+      <Stream>2</Stream>
+      <Function>49</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Enhanced Remote Command</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="4" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <A ItemName="OBJSPEC" Count="100" IsFixed="false" />
+        <X ItemName="RCMD" Count="100" IsFixed="false" />
+        <L ItemName="CPCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="CPINFO" Count="2" IsFixed="true">
+            <X ItemName="CPNAME" Count="100" IsFixed="false" />
+            <X ItemName="CEPVAL" Count="1000" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F50</MessageName>
+      <Stream>2</Stream>
+      <Function>50</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Enhanced Remote Command Acknowledge</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <U2 ItemName="HCACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="CPCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="CPINFO" Count="2" IsFixed="true">
+            <X ItemName="CPNAME" Count="100" IsFixed="false" />
+            <X ItemName="CEPACK" Count="1000" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F1</MessageName>
+      <Stream>3</Stream>
+      <Function>1</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material Status Request (MSR)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F2</MessageName>
+      <Stream>3</Stream>
+      <Function>2</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material Status Data (MSD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="MF" Count="100" IsFixed="false" />
+        <L ItemName="MCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="MCINFO" Count="3" IsFixed="true">
+            <B ItemName="LOC" Count="1" IsFixed="true" DefaultValue="0" />
+            <B ItemName="QUA" Count="1" IsFixed="true" DefaultValue="0" />
+            <X ItemName="MID" Count="80" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F3</MessageName>
+      <Stream>3</Stream>
+      <Function>3</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Time to Completion Request (TCR)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F4</MessageName>
+      <Stream>3</Stream>
+      <Function>4</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Time to Completion Data (TCD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="MF" Count="100" IsFixed="false" />
+        <L ItemName="MCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="MCINFO" Count="3" IsFixed="true">
+            <X ItemName="TTC" Count="1" IsFixed="true" />
+            <B ItemName="QUA" Count="1" IsFixed="true" DefaultValue="0" />
+            <X ItemName="MID" Count="80" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F5</MessageName>
+      <Stream>3</Stream>
+      <Function>5</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material Found Send (MFS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="MF" Count="100" IsFixed="false" />
+        <B ItemName="QUA" Count="1" IsFixed="true" DefaultValue="0" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F6</MessageName>
+      <Stream>3</Stream>
+      <Function>6</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material Found Acknowledge (MFA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC3" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F7</MessageName>
+      <Stream>3</Stream>
+      <Function>7</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material Lost Send (MLS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <X ItemName="MF" Count="100" IsFixed="false" />
+        <B ItemName="QUA" Count="1" IsFixed="true" DefaultValue="0" />
+        <X ItemName="MID" Count="80" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F8</MessageName>
+      <Stream>3</Stream>
+      <Function>8</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material Lost Acknowledge (MLA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC3" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F9</MessageName>
+      <Stream>3</Stream>
+      <Function>9</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material ID Equate Send (IES)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="MID" Count="80" IsFixed="false" />
+        <X ItemName="EMID" Count="16" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F10</MessageName>
+      <Stream>3</Stream>
+      <Function>10</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material ID Equate Acknowledge (IEA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC3" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F11</MessageName>
+      <Stream>3</Stream>
+      <Function>11</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material ID Request (MIDR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="PTN" Count="1" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F12</MessageName>
+      <Stream>3</Stream>
+      <Function>12</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material ID Request Acknowledge (MIRA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <X ItemName="PTN" Count="1" IsFixed="true" />
+        <B ItemName="MIDRA" Count="1" IsFixed="true" DefaultValue="0" />
+        <X ItemName="MID" Count="80" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F13</MessageName>
+      <Stream>3</Stream>
+      <Function>13</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material ID Send (MIS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PTN" Count="1" IsFixed="true" />
+        <X ItemName="MTID" Count="80" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F14</MessageName>
+      <Stream>3</Stream>
+      <Function>14</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material ID Acknowledge (MIA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="MIDAC" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F15</MessageName>
+      <Stream>3</Stream>
+      <Function>15</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Materials Multi-Block Inquire (MMBI)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="true" />
+        <X ItemName="DATALENGTH" Count="1" IsFixed="true" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F16</MessageName>
+      <Stream>3</Stream>
+      <Function>16</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Materials Multi-Block Grant (MMBG)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="GRANT" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F17</MessageName>
+      <Stream>3</Stream>
+      <Function>17</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Carrier Action Request</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="5" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <A ItemName="CARRIERACTION" Count="100" IsFixed="false" />
+        <A ItemName="CARRIERID" Count="100" IsFixed="false" />
+        <X ItemName="PTN" Count="1" IsFixed="true" />
+        <L ItemName="CARRIERCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="CARRIERINFO" Count="2" IsFixed="true">
+            <A ItemName="CATTRID" Count="100" IsFixed="false" />
+            <X ItemName="CATTRDATA" Count="100" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F18</MessageName>
+      <Stream>3</Stream>
+      <Function>18</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Carrier Action Acknowledge</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <U1 ItemName="CAACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="ERRCOUNT" Count="100" IsFixed="false">
+          <L ItemName="ERRINFO" Count="2" IsFixed="true">
+            <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+            <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F19</MessageName>
+      <Stream>3</Stream>
+      <Function>19</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Cancel All Carrier Out Request</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F20</MessageName>
+      <Stream>3</Stream>
+      <Function>20</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Cancel All Carrier Out Acknowledge</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <U1 ItemName="CAACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="ERRCOUNT" Count="100" IsFixed="false">
+          <L ItemName="ERRINFO" Count="2" IsFixed="true">
+            <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+            <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F21</MessageName>
+      <Stream>3</Stream>
+      <Function>21</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Port Group Definition</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <A ItemName="PORTGRPNAME" Count="100" IsFixed="false" />
+        <U1 ItemName="ACCESSMODE" Count="1" IsFixed="true" />
+        <L ItemName="PTNCOUNT" Count="1000" IsFixed="false">
+          <X ItemName="PTN" Count="1" IsFixed="true" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F22</MessageName>
+      <Stream>3</Stream>
+      <Function>22</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Port Group Definition Acknowledge</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <U1 ItemName="CAACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="ERRCOUNT" Count="100" IsFixed="false">
+          <L ItemName="ERRINFO" Count="2" IsFixed="true">
+            <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+            <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F23</MessageName>
+      <Stream>3</Stream>
+      <Function>23</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Port Group Action Request</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <A ItemName="PGRPACTION" Count="100" IsFixed="false" />
+        <A ItemName="PORTGRPNAME" Count="100" IsFixed="false" />
+        <L ItemName="PAPAMCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="PARAMINFO" Count="2" IsFixed="true">
+            <A ItemName="PARAMNAME" Count="100" IsFixed="false" />
+            <X ItemName="PARAMVAL" Count="100" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F24</MessageName>
+      <Stream>3</Stream>
+      <Function>24</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Port Group Action Acknowledge</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <U1 ItemName="CAACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="ERRCOUNT" Count="100" IsFixed="false">
+          <L ItemName="ERRINFO" Count="2" IsFixed="true">
+            <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+            <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F25</MessageName>
+      <Stream>3</Stream>
+      <Function>25</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Port Action Request</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <A ItemName="PORTACTION" Count="100" IsFixed="false" />
+        <X ItemName="PTN" Count="1" IsFixed="true" />
+        <L ItemName="PAPAMCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="PARAMINFO" Count="2" IsFixed="true">
+            <A ItemName="PARAMNAME" Count="100" IsFixed="false" />
+            <X ItemName="PARAMVAL" Count="100" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F26</MessageName>
+      <Stream>3</Stream>
+      <Function>26</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Port Action Acknowledge</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <U1 ItemName="CAACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="ERRCOUNT" Count="100" IsFixed="false">
+          <L ItemName="ERRINFO" Count="2" IsFixed="true">
+            <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+            <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F27</MessageName>
+      <Stream>3</Stream>
+      <Function>27</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Change Access</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <U1 ItemName="ACCESSMODE" Count="1" IsFixed="true" />
+        <L ItemName="PTNCOUNT" Count="1000" IsFixed="false">
+          <X ItemName="PTN" Count="1" IsFixed="true" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F28</MessageName>
+      <Stream>3</Stream>
+      <Function>28</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Change Access Acknowledge</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <U1 ItemName="CAACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="ERRCOUNT" Count="100" IsFixed="false">
+          <L ItemName="ERRINFO" Count="2" IsFixed="true">
+            <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+            <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F29</MessageName>
+      <Stream>3</Stream>
+      <Function>29</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Carrier Tag Read Request</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="4" IsFixed="true">
+        <A ItemName="LOCID" Count="100" IsFixed="false" />
+        <A ItemName="CARRIERSPEC" Count="100" IsFixed="true" />
+        <A ItemName="DATASEG" Count="100" IsFixed="false" />
+        <X ItemName="DATALENGTH" Count="1" IsFixed="true" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F30</MessageName>
+      <Stream>3</Stream>
+      <Function>30</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Carrier Tag Read Data (CTRD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <A ItemName="DATA" Count="100" IsFixed="false" />
+        <L ItemName="ACKINFO" Count="2" IsFixed="true">
+          <U1 ItemName="CAACK" Count="1" IsFixed="true" DefaultValue="0" />
+          <L ItemName="ERRCOUNT" Count="100" IsFixed="false">
+            <L ItemName="ERRINFO" Count="2" IsFixed="true">
+              <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+              <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F31</MessageName>
+      <Stream>3</Stream>
+      <Function>31</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Carrier Tag Write Data Request (CTWDR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="5" IsFixed="true">
+        <A ItemName="LOCID" Count="100" IsFixed="false" />
+        <A ItemName="CARRIERSPEC" Count="100" IsFixed="true" />
+        <A ItemName="DATASEG" Count="100" IsFixed="false" />
+        <X ItemName="DATALENGTH" Count="1" IsFixed="true" />
+        <A ItemName="DATA" Count="100" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S3F32</MessageName>
+      <Stream>3</Stream>
+      <Function>32</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Carrier Tag Write Data Acknowledge (CTWDA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <U1 ItemName="CAACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="ERRCOUNT" Count="100" IsFixed="false">
+          <L ItemName="ERRINFO" Count="2" IsFixed="true">
+            <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+            <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F1</MessageName>
+      <Stream>4</Stream>
+      <Function>1</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Ready to Send Materials (RSN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PTN" Count="1" IsFixed="true" />
+        <X ItemName="MID" Count="80" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F2</MessageName>
+      <Stream>4</Stream>
+      <Function>2</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Ready to Send Acknowledge (RSA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="RSACK" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F3</MessageName>
+      <Stream>4</Stream>
+      <Function>3</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Send Material (SMN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PTN" Count="1" IsFixed="true" />
+        <X ItemName="MID" Count="80" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F5</MessageName>
+      <Stream>4</Stream>
+      <Function>5</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Handshake Complete (HCN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PTN" Count="1" IsFixed="true" />
+        <X ItemName="MID" Count="80" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F7</MessageName>
+      <Stream>4</Stream>
+      <Function>7</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Not Ready to Send (ABN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PTN" Count="1" IsFixed="true" />
+        <X ItemName="MID" Count="80" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F9</MessageName>
+      <Stream>4</Stream>
+      <Function>9</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Stuck in Sender (SSN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PTN" Count="1" IsFixed="true" />
+        <X ItemName="MID" Count="80" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F11</MessageName>
+      <Stream>4</Stream>
+      <Function>11</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Stuck in Receiver (SRN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PTN" Count="1" IsFixed="true" />
+        <X ItemName="MID" Count="80" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F13</MessageName>
+      <Stream>4</Stream>
+      <Function>13</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Send Incomplete Timeout (SIN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PTN" Count="1" IsFixed="true" />
+        <X ItemName="MID" Count="80" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F15</MessageName>
+      <Stream>4</Stream>
+      <Function>15</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Material Received (MRN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PTN" Count="1" IsFixed="true" />
+        <X ItemName="MID" Count="80" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F17</MessageName>
+      <Stream>4</Stream>
+      <Function>17</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Request to Receive (RTR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PTN" Count="1" IsFixed="true" />
+        <X ItemName="MID" Count="80" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F18</MessageName>
+      <Stream>4</Stream>
+      <Function>18</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Request to Receive Acknowledge (RRA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="RRACK" Count="1" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F19</MessageName>
+      <Stream>4</Stream>
+      <Function>19</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Transfer Job Create (TJ)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <L ItemName="TRJOBINFO" Count="2" IsFixed="true">
+          <A ItemName="TRJOBNAME" Count="100" IsFixed="false" />
+          <L ItemName="JOBCOUNT" Count="100" IsFixed="false">
+            <L ItemName="JOBINFO" Count="12" IsFixed="true">
+              <X ItemName="TRLINK" Count="1" IsFixed="true" />
+              <X ItemName="TRPORT" Count="1" IsFixed="true" />
+              <A ItemName="TROBJNAME" Count="100" IsFixed="false" />
+              <X ItemName="TROBJTYPE" Count="1" IsFixed="true" />
+              <U1 ItemName="TRROLE" Count="1" IsFixed="true" />
+              <A ItemName="TRRCP" Count="100" IsFixed="false" />
+              <A ItemName="TRPTNR" Count="100" IsFixed="false" />
+              <X ItemName="TRPTPORT" Count="1" IsFixed="true" />
+              <U1 ItemName="TRDIR" Count="1" IsFixed="true" />
+              <U1 ItemName="TRTYPE" Count="1" IsFixed="true" />
+              <X ItemName="TRLOCATION" Count="1" IsFixed="true" />
+              <Boolean ItemName="TRAUTOSTART" Count="1" IsFixed="true" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F20</MessageName>
+      <Stream>4</Stream>
+      <Function>20</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Transfer Job Acknowledge (TJA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <B ItemName="TRJOBID" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="TRANSFERCOUNT" Count="1000" IsFixed="false">
+          <X ItemName="TRATOMICID" Count="100" IsFixed="false" />
+        </L>
+        <L ItemName="ACKINFO" Count="2" IsFixed="true">
+          <Boolean ItemName="TRACK" Count="1" IsFixed="true" />
+          <L ItemName="ERRORCOUNT" Count="100" IsFixed="false">
+            <L ItemName="ERRINFO" Count="2" IsFixed="true">
+              <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+              <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F21</MessageName>
+      <Stream>4</Stream>
+      <Function>21</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Transfer Job Command (TC)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <B ItemName="TRJOBID" Count="1" IsFixed="true" DefaultValue="0" />
+        <A ItemName="TRCMDNAME" Count="100" IsFixed="false" />
+        <L ItemName="PARAMCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="PARAMINFO" Count="2" IsFixed="true">
+            <X ItemName="CPNAME" Count="100" IsFixed="false" />
+            <X ItemName="CPVAL" Count="100" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F22</MessageName>
+      <Stream>4</Stream>
+      <Function>22</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Transfer Command Acknowledge (TCA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <Boolean ItemName="TRACK" Count="1" IsFixed="true" />
+        <L ItemName="ERRORCOUNT" Count="100" IsFixed="false">
+          <L ItemName="ERRINFO" Count="2" IsFixed="true">
+            <X ItemName="ERRCODE" Count="1" IsFixed="false" />
+            <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F23</MessageName>
+      <Stream>4</Stream>
+      <Function>23</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Transfer Job Alert (TJA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="4" IsFixed="true">
+        <B ItemName="TRJOBID" Count="1" IsFixed="true" DefaultValue="0" />
+        <A ItemName="TRJOBNAME" Count="100" IsFixed="false" />
+        <U1 ItemName="TRJOBMS" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="ACKINFO" Count="2" IsFixed="true">
+          <Boolean ItemName="TRACK" Count="1" IsFixed="true" />
+          <L ItemName="ERRORCOUNT" Count="100" IsFixed="false">
+            <L ItemName="ERRINFO" Count="2" IsFixed="true">
+              <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+              <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F24</MessageName>
+      <Stream>4</Stream>
+      <Function>24</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Transfer Alert Acknowledge (TLA)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F25</MessageName>
+      <Stream>4</Stream>
+      <Function>25</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Multi-Block Inquire (MB14)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <X ItemName="DATALENGTH" Count="1" IsFixed="true" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F26</MessageName>
+      <Stream>4</Stream>
+      <Function>26</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Multi-Block Grant (MBG4)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="GRANT" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F27</MessageName>
+      <Stream>4</Stream>
+      <Function>27</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Handoff Ready (HR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <A ItemName="EQNAME" Count="0" IsFixed="true" />
+        <L ItemName="XFRINFO" Count="11" IsFixed="true">
+          <X ItemName="TRLINK" Count="1" IsFixed="true" />
+          <X ItemName="TRPORT" Count="1" IsFixed="true" />
+          <A ItemName="TROBJNAME" Count="100" IsFixed="false" />
+          <X ItemName="TROBJTYPE" Count="1" IsFixed="true" />
+          <U1 ItemName="TRROLE" Count="1" IsFixed="true" />
+          <A ItemName="TRRCP" Count="100" IsFixed="false" />
+          <A ItemName="TRPTNR" Count="100" IsFixed="false" />
+          <X ItemName="TRPTPORT" Count="1" IsFixed="true" />
+          <U1 ItemName="TRDIR" Count="1" IsFixed="true" />
+          <U1 ItemName="TRTYPE" Count="1" IsFixed="true" />
+          <X ItemName="TRLOCATION" Count="1" IsFixed="true" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F29</MessageName>
+      <Stream>4</Stream>
+      <Function>29</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Handoff Command (HC)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="4" IsFixed="true">
+        <X ItemName="TRLINK" Count="1" IsFixed="true" />
+        <X ItemName="MCINDEX" Count="1" IsFixed="true" />
+        <A ItemName="HOCMDNAME" Count="100" IsFixed="false" />
+        <L ItemName="PARAMCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="PARAMINFO" Count="2" IsFixed="true">
+            <X ItemName="CPNAME" Count="100" IsFixed="false" />
+            <X ItemName="CPVAL" Count="100" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F31</MessageName>
+      <Stream>4</Stream>
+      <Function>31</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Handoff Command Complete (HCC)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <X ItemName="TRLINK" Count="1" IsFixed="true" />
+        <X ItemName="MCINDEX" Count="1" IsFixed="true" />
+        <L ItemName="ACKINFO" Count="2" IsFixed="true">
+          <Boolean ItemName="HOACK" Count="1" IsFixed="true" />
+          <L ItemName="ERRORCOUNT" Count="100" IsFixed="false">
+            <L ItemName="ERRINFO" Count="2" IsFixed="true">
+              <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+              <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F33</MessageName>
+      <Stream>4</Stream>
+      <Function>33</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Handoff Verified (HV)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="TRLINK" Count="1" IsFixed="true" />
+        <L ItemName="ACKINFO" Count="2" IsFixed="true">
+          <Boolean ItemName="HOACK" Count="1" IsFixed="true" />
+          <L ItemName="ERRORCOUNT" Count="100" IsFixed="false">
+            <L ItemName="ERRINFO" Count="2" IsFixed="true">
+              <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+              <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F35</MessageName>
+      <Stream>4</Stream>
+      <Function>35</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Handoff Cancel Ready (HCR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="TRLINK" Count="1" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F37</MessageName>
+      <Stream>4</Stream>
+      <Function>37</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Handoff Cancel Ready Acknowledge (HCA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="TRLINK" Count="1" IsFixed="true" />
+        <U1 ItemName="HOCANCELACK" Count="1" IsFixed="true" DefaultValue="0" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F39</MessageName>
+      <Stream>4</Stream>
+      <Function>39</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Handoff Halt (HH)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="TRLINK" Count="1" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S4F41</MessageName>
+      <Stream>4</Stream>
+      <Function>41</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Handoff Halt Acknowledge (HHA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="TRLINK" Count="1" IsFixed="true" />
+        <U1 ItemName="HOHALTACK" Count="1" IsFixed="true" DefaultValue="0" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F1</MessageName>
+      <Stream>5</Stream>
+      <Function>1</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Alarm Report Send (ARS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <B ItemName="ALCD" Count="1" IsFixed="true" DefaultValue="0" />
+        <X ItemName="ALID" Count="1" IsFixed="true" />
+        <A ItemName="ALTX" Count="120" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F2</MessageName>
+      <Stream>5</Stream>
+      <Function>2</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Alarm Report Acknowledge (ARA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC5" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F3</MessageName>
+      <Stream>5</Stream>
+      <Function>3</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Enable/Disable Alarm Send (EAS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <B ItemName="ALED" Count="1" IsFixed="true" DefaultValue="0" />
+        <X ItemName="ALID" Count="1" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F4</MessageName>
+      <Stream>5</Stream>
+      <Function>4</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Enable/Disable Alarm Acknowledge (EAA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC5" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F5</MessageName>
+      <Stream>5</Stream>
+      <Function>5</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>List Alarms Request (LAR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="ALID" Count="10000" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F6</MessageName>
+      <Stream>5</Stream>
+      <Function>6</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>List Alarm Data (LAD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="ALIDCOUNT" Count="10000" IsFixed="false">
+        <L ItemName="ALINFO" Count="3" IsFixed="true">
+          <B ItemName="ALCD" Count="1" IsFixed="true" DefaultValue="0" />
+          <X ItemName="ALID" Count="1" IsFixed="true" />
+          <A ItemName="ALTX" Count="120" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F7</MessageName>
+      <Stream>5</Stream>
+      <Function>7</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>List Enabled Alarm Request (LEAR)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F8</MessageName>
+      <Stream>5</Stream>
+      <Function>8</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>List Enabled Alarm Data (LEAD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="ALIDCOUNT" Count="10000" IsFixed="false">
+        <L ItemName="ALINFO" Count="3" IsFixed="true">
+          <B ItemName="ALCD" Count="1" IsFixed="true" DefaultValue="0" />
+          <X ItemName="ALID" Count="1" IsFixed="true" />
+          <A ItemName="ALTX" Count="120" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F9</MessageName>
+      <Stream>5</Stream>
+      <Function>9</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Exception Post Notify (EXPN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="5" IsFixed="true">
+        <A ItemName="TIMESTAMP" Count="16" IsFixed="false" />
+        <A ItemName="EXID" Count="20" IsFixed="false" />
+        <A ItemName="EXTYPE" Count="100" IsFixed="false" />
+        <A ItemName="EXMESSAGE" Count="100" IsFixed="false" />
+        <L ItemName="EXCOUNT" Count="100" IsFixed="false">
+          <A ItemName="EXRECVRA" Count="40" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F10</MessageName>
+      <Stream>5</Stream>
+      <Function>10</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Exception Post Confirm (EXPC)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F11</MessageName>
+      <Stream>5</Stream>
+      <Function>11</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Exception Clear Notify (EXCN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="4" IsFixed="true">
+        <A ItemName="TIMESTAMP" Count="16" IsFixed="false" />
+        <A ItemName="EXID" Count="20" IsFixed="false" />
+        <A ItemName="EXTYPE" Count="100" IsFixed="false" />
+        <A ItemName="EXMESSAGE" Count="100" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F12</MessageName>
+      <Stream>5</Stream>
+      <Function>12</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Exception Clear Confirm (EXCC)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F13</MessageName>
+      <Stream>5</Stream>
+      <Function>13</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Exception Recover Request (EXRR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <A ItemName="EXID" Count="20" IsFixed="false" />
+        <A ItemName="EXRECVRA" Count="40" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F14</MessageName>
+      <Stream>5</Stream>
+      <Function>14</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Exception Recover Acknowledge (EXRA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <A ItemName="EXID" Count="20" IsFixed="false" />
+        <L ItemName="ACKINFO" Count="2" IsFixed="true">
+          <Boolean ItemName="ACKA" Count="1" IsFixed="true" />
+          <X ItemName="ERRORCOUNT" Count="1000" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F15</MessageName>
+      <Stream>5</Stream>
+      <Function>15</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Exception Recovery Complete Notify (EXRCN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <A ItemName="TIMESTAMP" Count="16" IsFixed="false" />
+        <A ItemName="EXID" Count="20" IsFixed="false" />
+        <L ItemName="ACKINFO" Count="2" IsFixed="true">
+          <Boolean ItemName="ACKA" Count="1" IsFixed="true" />
+          <X ItemName="ERRORCOUNT" Count="1000" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F16</MessageName>
+      <Stream>5</Stream>
+      <Function>16</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Exception Recovery Complete Confirm (EXRCC)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F17</MessageName>
+      <Stream>5</Stream>
+      <Function>17</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Exception Recovery Abort Request (EXRAR)</Description>
+    </Header>
+    <DataItem>
+      <A ItemName="EXID" Count="20" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S5F18</MessageName>
+      <Stream>5</Stream>
+      <Function>18</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Exception Recovery Abort Acknowledge (EXRAA)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <A ItemName="EXID" Count="20" IsFixed="false" />
+        <L ItemName="ACKINFO" Count="2" IsFixed="true">
+          <Boolean ItemName="ACKA" Count="1" IsFixed="true" />
+          <X ItemName="ERRORCOUNT" Count="1000" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F1</MessageName>
+      <Stream>6</Stream>
+      <Function>1</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Trace Data Send (TDS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="4" IsFixed="true">
+        <X ItemName="TRID" Count="100" IsFixed="false" />
+        <X ItemName="SMPLN" Count="1" IsFixed="true" />
+        <X ItemName="STIME" Count="16" IsFixed="false" />
+        <L ItemName="SVCOUNT" Count="10000" IsFixed="false">
+          <X ItemName="SV" Count="100" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F2</MessageName>
+      <Stream>6</Stream>
+      <Function>2</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Trace Data Acknowledge (TDA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC6" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F3</MessageName>
+      <Stream>6</Stream>
+      <Function>3</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Discrete Variable Data Send (DVS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <X ItemName="CEID" Count="100" IsFixed="false" />
+        <L ItemName="DSIDCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="DSINFO" Count="2" IsFixed="true">
+            <X ItemName="DSID" Count="100" IsFixed="false" />
+            <L ItemName="DVCOUNT" Count="1000" IsFixed="false">
+              <L ItemName="DVINFO" Count="2" IsFixed="true">
+                <A ItemName="DVNAME" Count="1000" IsFixed="false" />
+                <X ItemName="DVVALUE" Count="10000" IsFixed="false" />
+              </L>
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F4</MessageName>
+      <Stream>6</Stream>
+      <Function>4</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Discrete Variable Data Acknowledge (DVA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC6" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F5</MessageName>
+      <Stream>6</Stream>
+      <Function>5</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Multi-Block Data Send Inquire (MBI)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <X ItemName="LENGTH" Count="1" IsFixed="true" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F6</MessageName>
+      <Stream>6</Stream>
+      <Function>6</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Multi-Block Grant (MBG)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="GRANT6" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F7</MessageName>
+      <Stream>6</Stream>
+      <Function>7</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Data Transfer Request (DDR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="DATAID" Count="100" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F8</MessageName>
+      <Stream>6</Stream>
+      <Function>8</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Data Transfer Data (DDD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <X ItemName="CEID" Count="100" IsFixed="false" />
+        <L ItemName="DSIDCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="DSINFO" Count="2" IsFixed="true">
+            <X ItemName="DSID" Count="100" IsFixed="false" />
+            <L ItemName="DVCOUNT" Count="1000" IsFixed="false">
+              <L ItemName="DVINFO" Count="2" IsFixed="true">
+                <A ItemName="DVNAME" Count="1000" IsFixed="false" />
+                <X ItemName="DVVALUE" Count="10000" IsFixed="false" />
+              </L>
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F9</MessageName>
+      <Stream>6</Stream>
+      <Function>9</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Formatted Variable Send (FVS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="4" IsFixed="true">
+        <B ItemName="PFCD" Count="1" IsFixed="true" DefaultValue="0" />
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <X ItemName="CEID" Count="100" IsFixed="false" />
+        <L ItemName="DSIDCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="DSINFO" Count="2" IsFixed="true">
+            <X ItemName="DSID" Count="100" IsFixed="false" />
+            <L ItemName="DVCOUNT" Count="1000" IsFixed="false">
+              <X ItemName="DVVALUE" Count="10000" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F10</MessageName>
+      <Stream>6</Stream>
+      <Function>10</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Formatted Variable Acknowledge (FVA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC6" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F11</MessageName>
+      <Stream>6</Stream>
+      <Function>11</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Event Report Send (ERS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <X ItemName="CEID" Count="100" IsFixed="false" />
+        <L ItemName="RPTIDCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="RPTINFO" Count="2" IsFixed="true">
+            <X ItemName="RPTID" Count="100" IsFixed="false" />
+            <L ItemName="VCOUNT" Count="10000" IsFixed="false">
+              <X ItemName="V" Count="10000" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F12</MessageName>
+      <Stream>6</Stream>
+      <Function>12</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Event Report Acknowledge (ERA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC6" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F13</MessageName>
+      <Stream>6</Stream>
+      <Function>13</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Annotated Event Report Send (AERS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <X ItemName="CEID" Count="100" IsFixed="false" />
+        <L ItemName="REPORTCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="RPTINFO" Count="2" IsFixed="true">
+            <X ItemName="RPTID" Count="100" IsFixed="false" />
+            <L ItemName="VIDCOUNT" Count="1000" IsFixed="false">
+              <L ItemName="VINFO" Count="2" IsFixed="true">
+                <X ItemName="VID" Count="100" IsFixed="false" />
+                <X ItemName="V" Count="10000" IsFixed="false" />
+              </L>
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F14</MessageName>
+      <Stream>6</Stream>
+      <Function>14</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Annotated Event Report Acknowledge (AERA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC6" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F15</MessageName>
+      <Stream>6</Stream>
+      <Function>15</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Event Report Request (ERR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="CEID" Count="100" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F16</MessageName>
+      <Stream>6</Stream>
+      <Function>16</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Event Report Data (ERD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <X ItemName="CEID" Count="100" IsFixed="false" />
+        <L ItemName="RPTIDCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="RPTINFO" Count="2" IsFixed="true">
+            <X ItemName="RPTID" Count="100" IsFixed="false" />
+            <L ItemName="VCOUNT" Count="10000" IsFixed="false">
+              <X ItemName="V" Count="10000" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F17</MessageName>
+      <Stream>6</Stream>
+      <Function>17</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Annotated Event Report Request (AERR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="CEID" Count="100" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F18</MessageName>
+      <Stream>6</Stream>
+      <Function>18</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Annotated Event Report Data (AERD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <X ItemName="CEID" Count="100" IsFixed="false" />
+        <L ItemName="RPTIDCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="RPTINFO" Count="2" IsFixed="true">
+            <X ItemName="RPTID" Count="100" IsFixed="false" />
+            <L ItemName="VIDCOUNT" Count="1000" IsFixed="false">
+              <L ItemName="VINFO" Count="2" IsFixed="true">
+                <U2 ItemName="VID" Count="1" IsFixed="true" DefaultValue="0" />
+                <X ItemName="V" Count="10000" IsFixed="false" />
+              </L>
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F19</MessageName>
+      <Stream>6</Stream>
+      <Function>19</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Individual Report Request (IRR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="RPTID" Count="100" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F20</MessageName>
+      <Stream>6</Stream>
+      <Function>20</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Individual Report Data (IRD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="VCOUNT" Count="10000" IsFixed="false">
+        <X ItemName="V" Count="10000" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F21</MessageName>
+      <Stream>6</Stream>
+      <Function>21</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Annotated Individual Report Request (AIRR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="RPTID" Count="100" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F22</MessageName>
+      <Stream>6</Stream>
+      <Function>22</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Annotated Individual Report Data (AIRD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="VIDCOUNT" Count="1000" IsFixed="false">
+        <L ItemName="VINFO" Count="2" IsFixed="true">
+          <X ItemName="VID" Count="100" IsFixed="false" />
+          <X ItemName="V" Count="10000" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F23</MessageName>
+      <Stream>6</Stream>
+      <Function>23</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Request Spooled Data (RSD)</Description>
+    </Header>
+    <DataItem>
+      <U1 ItemName="RSDC" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F24</MessageName>
+      <Stream>6</Stream>
+      <Function>24</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Request Spooled Data Acknowledgement Send (RSDAS)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="RSDA" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F25</MessageName>
+      <Stream>6</Stream>
+      <Function>25</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Notification Report Send</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="7" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <X ItemName="OPID" Count="1" IsFixed="true" />
+        <U4 ItemName="LINKID" Count="1" IsFixed="true" DefaultValue="0" />
+        <A ItemName="RCPSPEC" Count="100" IsFixed="false" />
+        <X ItemName="RMCHGSTAT" Count="1" IsFixed="true" />
+        <L ItemName="ATTRCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="ATTRINFO" Count="2" IsFixed="true">
+            <A ItemName="RCPATTRID" Count="100" IsFixed="false" />
+            <X ItemName="RCPATTRDATA" Count="100" IsFixed="false" />
+          </L>
+        </L>
+        <L ItemName="ACKINFO" Count="2" IsFixed="true">
+          <U1 ItemName="RMACK" Count="1" IsFixed="true" DefaultValue="0" />
+          <L ItemName="ERRORCOUNT" Count="100" IsFixed="false">
+            <L ItemName="ERRINFO" Count="2" IsFixed="true">
+              <X ItemName="ERRCODE" Count="1" IsFixed="true" />
+              <A ItemName="ERRTEXT" Count="120" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F26</MessageName>
+      <Stream>6</Stream>
+      <Function>26</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Notification Report Send Acknowledge</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC6" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F27</MessageName>
+      <Stream>6</Stream>
+      <Function>27</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Trace Report Send (TRS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <X ItemName="DATAID" Count="100" IsFixed="false" />
+        <X ItemName="TRID" Count="100" IsFixed="false" />
+        <L ItemName="GROUPCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="REPORTCOUNT" Count="1000" IsFixed="false">
+            <L ItemName="RPTINFO" Count="2" IsFixed="true">
+              <X ItemName="RPTID" Count="100" IsFixed="false" />
+              <L ItemName="VCOUNT" Count="10000" IsFixed="false">
+                <X ItemName="V" Count="10000" IsFixed="false" />
+              </L>
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F28</MessageName>
+      <Stream>6</Stream>
+      <Function>28</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Trace Report Send Acknowledge</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="TRID" Count="100" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F29</MessageName>
+      <Stream>6</Stream>
+      <Function>29</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Trace Report Request (TRR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="TRID" Count="100" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F30</MessageName>
+      <Stream>6</Stream>
+      <Function>30</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Trace Report Data (TRD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="TRID" Count="100" IsFixed="false" />
+        <L ItemName="REPORTCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="RPTINFO" Count="2" IsFixed="true">
+            <X ItemName="RPTID" Count="100" IsFixed="false" />
+            <L ItemName="VCOUNT" Count="10000" IsFixed="false">
+              <X ItemName="V" Count="10000" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F1</MessageName>
+      <Stream>7</Stream>
+      <Function>1</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program Load Inquire (PPI)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+        <X ItemName="LENGTH" Count="1" IsFixed="true" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F2</MessageName>
+      <Stream>7</Stream>
+      <Function>2</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program Load Grant (PPG)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="PPGNT" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F3</MessageName>
+      <Stream>7</Stream>
+      <Function>3</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program Send (PPS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+        <X ItemName="PPBODY" Count="100000" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F4</MessageName>
+      <Stream>7</Stream>
+      <Function>4</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program Acknowledge (PPA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC7" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F5</MessageName>
+      <Stream>7</Stream>
+      <Function>5</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program Request (PPR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="PPID" Count="120" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F6</MessageName>
+      <Stream>7</Stream>
+      <Function>6</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program Data (PPD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+        <X ItemName="PPBODY" Count="100000" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F7</MessageName>
+      <Stream>7</Stream>
+      <Function>7</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program ID Request (PIR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="MID" Count="80" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F8</MessageName>
+      <Stream>7</Stream>
+      <Function>8</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program ID Data (PID)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+        <X ItemName="MID" Count="80" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F9</MessageName>
+      <Stream>7</Stream>
+      <Function>9</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>M/PM Request (MMR)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F10</MessageName>
+      <Stream>7</Stream>
+      <Function>10</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>M/PM Data (MMD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="PPIDCOUNT" Count="1000" IsFixed="false">
+        <L ItemName="PPINFO" Count="2" IsFixed="true">
+          <X ItemName="PPID" Count="120" IsFixed="false" />
+          <L ItemName="MIDCOUNT" Count="1000" IsFixed="false">
+            <X ItemName="MID" Count="80" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F11</MessageName>
+      <Stream>7</Stream>
+      <Function>11</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>M/PM Update Send (UMS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="PPIDCOUNT" Count="1000" IsFixed="false">
+        <L ItemName="PPINFO" Count="2" IsFixed="true">
+          <X ItemName="PPID" Count="120" IsFixed="false" />
+          <L ItemName="MIDCOUNT" Count="1000" IsFixed="false">
+            <X ItemName="MID" Count="80" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F12</MessageName>
+      <Stream>7</Stream>
+      <Function>12</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>M/PM Update Acknowledge (UMA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC7" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F13</MessageName>
+      <Stream>7</Stream>
+      <Function>13</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Delete M/PM Entry Send (DES)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="PPIDCOUNT" Count="1" IsFixed="true">
+        <L ItemName="PPINFO" Count="2" IsFixed="true">
+          <X ItemName="PPID" Count="120" IsFixed="false" />
+          <L ItemName="MIDCOUNT" Count="1000" IsFixed="false">
+            <X ItemName="MID" Count="80" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F14</MessageName>
+      <Stream>7</Stream>
+      <Function>14</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Delete M/PM Entry Acknowledge (DEA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC7" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F15</MessageName>
+      <Stream>7</Stream>
+      <Function>15</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Matrix Mode Select Send (MMS)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="MMODE" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F16</MessageName>
+      <Stream>7</Stream>
+      <Function>16</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Matrix Mode Select Acknowledge (MMA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC7" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F17</MessageName>
+      <Stream>7</Stream>
+      <Function>17</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Delete Process Program Send (DPS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="PPIDCOUNT" Count="1000" IsFixed="false">
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F18</MessageName>
+      <Stream>7</Stream>
+      <Function>18</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Delete Process Program Acknowledge (DPA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC7" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F19</MessageName>
+      <Stream>7</Stream>
+      <Function>19</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Current EPPD Request (RER)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F20</MessageName>
+      <Stream>7</Stream>
+      <Function>20</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Current EPPD Data (RED)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="PPIDCOUNT" Count="1000" IsFixed="false">
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F21</MessageName>
+      <Stream>7</Stream>
+      <Function>21</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Equipment Process Capabilities Request (PCR)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F22</MessageName>
+      <Stream>7</Stream>
+      <Function>22</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Equipment Process Capabilities Data (PCD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="5" IsFixed="true">
+        <A ItemName="MDLN" Count="20" IsFixed="false" />
+        <A ItemName="SOFTREV" Count="20" IsFixed="false" />
+        <X ItemName="CMDMAX" Count="1" IsFixed="true" />
+        <X ItemName="BYTMAX" Count="1" IsFixed="true" />
+        <L ItemName="COMMANDCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="COMMANDINFO" Count="11" IsFixed="true">
+            <X ItemName="CCODE" Count="100" IsFixed="false" />
+            <A ItemName="CNAME" Count="16" IsFixed="false" />
+            <Boolean ItemName="RQCMD" Count="1" IsFixed="true" />
+            <X ItemName="BLKDEF" Count="1" IsFixed="true" />
+            <X ItemName="BCDS" Count="1" IsFixed="true" />
+            <X ItemName="IBCDS" Count="1" IsFixed="true" />
+            <X ItemName="NBCDS" Count="1" IsFixed="true" />
+            <X ItemName="ACDS" Count="1" IsFixed="true" />
+            <X ItemName="IACDS" Count="1" IsFixed="true" />
+            <X ItemName="NACDS" Count="1" IsFixed="true" />
+            <L ItemName="PARAMCOUNT" Count="1000" IsFixed="false">
+              <X ItemName="PARAM" Count="1000" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F23</MessageName>
+      <Stream>7</Stream>
+      <Function>23</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Formatted Process Program Send (FPS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="4" IsFixed="true">
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+        <A ItemName="MDLN" Count="20" IsFixed="false" />
+        <A ItemName="SOFTREV" Count="20" IsFixed="false" />
+        <L ItemName="COMMANDCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="COMMANDINFO" Count="2" IsFixed="true">
+            <X ItemName="CCODE" Count="100" IsFixed="false" />
+            <L ItemName="PPARMCOUNT" Count="1000" IsFixed="false">
+              <A ItemName="PPARM" Count="100" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F24</MessageName>
+      <Stream>7</Stream>
+      <Function>24</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Formatted Process Program Acknowledge (FPA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC7" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F25</MessageName>
+      <Stream>7</Stream>
+      <Function>25</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Formatted Process Program Request (FPR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="PPID" Count="120" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F26</MessageName>
+      <Stream>7</Stream>
+      <Function>26</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Formatted Process Program Data (FPD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="4" IsFixed="true">
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+        <A ItemName="MDLN" Count="20" IsFixed="false" />
+        <A ItemName="SOFTREV" Count="20" IsFixed="false" />
+        <L ItemName="COMMANDCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="COMMANDINFO" Count="2" IsFixed="true">
+            <X ItemName="CCODE" Count="100" IsFixed="false" />
+            <L ItemName="PPARMCOUNT" Count="1000" IsFixed="false">
+              <A ItemName="PPARM" Count="100" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F27</MessageName>
+      <Stream>7</Stream>
+      <Function>27</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program Verification Send (PVS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+        <L ItemName="ERRORCOUNT" Count="100" IsFixed="false">
+          <L ItemName="ERRINFO" Count="3" IsFixed="true">
+            <B ItemName="ACKC7A" Count="1" IsFixed="true" DefaultValue="0" />
+            <X ItemName="SEQNUM" Count="1" IsFixed="true" />
+            <A ItemName="ERRW7" Count="100" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F28</MessageName>
+      <Stream>7</Stream>
+      <Function>28</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program Verification Acknowledge (PVA)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F29</MessageName>
+      <Stream>7</Stream>
+      <Function>29</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program Verification Inquire (PVI)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="LENGTH" Count="1" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F30</MessageName>
+      <Stream>7</Stream>
+      <Function>30</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program Verification Grant (PVG)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="PPGNT" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F31</MessageName>
+      <Stream>7</Stream>
+      <Function>31</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Verification Request Send (VRS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="4" IsFixed="true">
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+        <A ItemName="MDLN" Count="20" IsFixed="false" />
+        <A ItemName="SOFTREV" Count="20" IsFixed="false" />
+        <L ItemName="CCODECOUNT" Count="1000" IsFixed="false">
+          <L ItemName="COMMANDINFO" Count="2" IsFixed="true">
+            <X ItemName="CCODE" Count="100" IsFixed="false" />
+            <L ItemName="PPARMCOUNT" Count="1000" IsFixed="false">
+              <A ItemName="PPARM" Count="100" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F32</MessageName>
+      <Stream>7</Stream>
+      <Function>32</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Verification Request Acknowledge (VRA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC7" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F33</MessageName>
+      <Stream>7</Stream>
+      <Function>33</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program Available Request (PAR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="PPID" Count="120" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F34</MessageName>
+      <Stream>7</Stream>
+      <Function>34</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program Availability Data (PAD</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+        <X ItemName="UNFLEN" Count="1" IsFixed="true" />
+        <X ItemName="FRMLEN" Count="1" IsFixed="true" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F35</MessageName>
+      <Stream>7</Stream>
+      <Function>35</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program for MID Request (PPMR)</Description>
+    </Header>
+    <DataItem>
+      <X ItemName="MID" Count="80" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F36</MessageName>
+      <Stream>7</Stream>
+      <Function>36</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Process Program for MID Data (PPMD)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <X ItemName="MID" Count="80" IsFixed="false" />
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+        <X ItemName="PPBODY" Count="100000" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F37</MessageName>
+      <Stream>7</Stream>
+      <Function>37</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Large Process Program Send (LPPS)</Description>
+    </Header>
+    <DataItem>
+      <A ItemName="DSNAME" Count="200" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F38</MessageName>
+      <Stream>7</Stream>
+      <Function>38</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Large Process Program Acknowledge(LPPA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC7" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F39</MessageName>
+      <Stream>7</Stream>
+      <Function>39</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Large Formatted Process Program Send (LFPPS)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="4" IsFixed="true">
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+        <A ItemName="MDLN" Count="20" IsFixed="false" />
+        <A ItemName="SOFTREV" Count="20" IsFixed="false" />
+        <L ItemName="COMMANDCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="COMMANDINFO" Count="2" IsFixed="true">
+            <X ItemName="CCODE" Count="100" IsFixed="false" />
+            <L ItemName="PPARMCOUNT" Count="1000" IsFixed="false">
+              <A ItemName="PPARM" Count="100" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F40</MessageName>
+      <Stream>7</Stream>
+      <Function>40</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Large Formatted Process Program Acknowledge (LFPPA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC7" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F41</MessageName>
+      <Stream>7</Stream>
+      <Function>41</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Large Process Program Request(LPPR)</Description>
+    </Header>
+    <DataItem>
+      <A ItemName="DSNAME" Count="200" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F42</MessageName>
+      <Stream>7</Stream>
+      <Function>42</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Large Process Program Acknowledge (LPPA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC7" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F43</MessageName>
+      <Stream>7</Stream>
+      <Function>43</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Large Formatted Process Program Request (LFPPR)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="4" IsFixed="true">
+        <X ItemName="PPID" Count="120" IsFixed="false" />
+        <A ItemName="MDLN" Count="20" IsFixed="false" />
+        <A ItemName="SOFTREV" Count="20" IsFixed="false" />
+        <L ItemName="COMMANDCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="COMMANDINFO" Count="2" IsFixed="true">
+            <X ItemName="CCODE" Count="100" IsFixed="false" />
+            <L ItemName="PPARMCOUNT" Count="1000" IsFixed="false">
+              <A ItemName="PPARM" Count="100" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S7F44</MessageName>
+      <Stream>7</Stream>
+      <Function>44</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Large Formatted Process Program Acknowledge (LFPPA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC7" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S8F2</MessageName>
+      <Stream>8</Stream>
+      <Function>2</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Boot Program Data (BPD)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="BPD" Count="100000" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S8F3</MessageName>
+      <Stream>8</Stream>
+      <Function>3</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Executive Program Request (EPR)</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S8F4</MessageName>
+      <Stream>8</Stream>
+      <Function>4</Function>
+      <Direction>Both</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Executive Program Data (EPD)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="EPD" Count="100000" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S9F1</MessageName>
+      <Stream>9</Stream>
+      <Function>1</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Unrecognized Device ID (UDN)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="MHEAD" Count="10" IsFixed="true" DefaultValue="0 0 0 0 0 0 0 0 0 0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S9F3</MessageName>
+      <Stream>9</Stream>
+      <Function>3</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Unrecognized Stream Type (USN)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="MHEAD" Count="10" IsFixed="true" DefaultValue="0 0 0 0 0 0 0 0 0 0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S9F5</MessageName>
+      <Stream>9</Stream>
+      <Function>5</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Unrecognized Function Type (UFN)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="MHEAD" Count="10" IsFixed="true" DefaultValue="0 0 0 0 0 0 0 0 0 0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S9F7</MessageName>
+      <Stream>9</Stream>
+      <Function>7</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Illegal Data (IDN)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="MHEAD" Count="10" IsFixed="true" DefaultValue="0 0 0 0 0 0 0 0 0 0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S9F9</MessageName>
+      <Stream>9</Stream>
+      <Function>9</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Transaction Timer Timeout (TTN)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="SHEAD" Count="10" IsFixed="true" DefaultValue="0 0 0 0 0 0 0 0 0 0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S9F11</MessageName>
+      <Stream>9</Stream>
+      <Function>11</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Data Too Long (DLN)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="MHEAD" Count="10" IsFixed="true" DefaultValue="0 0 0 0 0 0 0 0 0 0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S9F13</MessageName>
+      <Stream>9</Stream>
+      <Function>13</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Conversation Timeout (CTN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <A ItemName="MEXP" Count="10" IsFixed="false" />
+        <A ItemName="EDID" Count="100" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S10F1</MessageName>
+      <Stream>10</Stream>
+      <Function>1</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Terminal Request (TRN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <B ItemName="TID" Count="1" IsFixed="true" DefaultValue="0" />
+        <A ItemName="TEXT" Count="200" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S10F2</MessageName>
+      <Stream>10</Stream>
+      <Function>2</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Terminal Request Acknowledge (TRA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC10" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S10F3</MessageName>
+      <Stream>10</Stream>
+      <Function>3</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Terminal Display, Single (VTN)</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <B ItemName="TID" Count="1" IsFixed="true" DefaultValue="0" />
+        <A ItemName="TEXT" Count="200" IsFixed="false" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S10F4</MessageName>
+      <Stream>10</Stream>
+      <Function>4</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Terminal Display, Single Acknowledge (VTA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC10" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S10F5</MessageName>
+      <Stream>10</Stream>
+      <Function>5</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Terminal Display, Multi-Block (VTN</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <B ItemName="TID" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="TEXTCOUNT" Count="100" IsFixed="false">
+          <A ItemName="TEXT" Count="200" IsFixed="false" />
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S10F6</MessageName>
+      <Stream>10</Stream>
+      <Function>6</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Terminal Display, Multi-Block Acknowledge (VMA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC10" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S10F7</MessageName>
+      <Stream>10</Stream>
+      <Function>7</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Multi-Block Not Allowed (MNN)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="TID" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S10F9</MessageName>
+      <Stream>10</Stream>
+      <Function>9</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Broadcast (BCN)</Description>
+    </Header>
+    <DataItem>
+      <A ItemName="TEXT" Count="200" IsFixed="false" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S10F10</MessageName>
+      <Stream>10</Stream>
+      <Function>10</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Broadcast Acknowledge (BCA)</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC10" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <WrapperInfo>
+    <FileName>D:\Work\UbiSam\UbiCom\MessageDefine_Wrapper\Data\WrapperTest.dll</FileName>
+    <Namespace>NS</Namespace>
+    <ClassName>WrapperTest</ClassName>
+    <DeviceType>Host</DeviceType>
+  </WrapperInfo>
+</MessageList>

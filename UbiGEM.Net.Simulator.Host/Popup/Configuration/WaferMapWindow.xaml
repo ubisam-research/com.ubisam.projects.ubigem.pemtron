@@ -1,0 +1,120 @@
+﻿<Window x:Class="UbiGEM.Net.Simulator.Host.Popup.WaferMapWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiGEM.Net.Simulator.Host.Popup"
+        xmlns:Controls="clr-namespace:UbiGEM.Net.Simulator.Host.UserControls"
+        xmlns:common="clr-namespace:UbiGEM.Net.Simulator.Host.Common"
+        mc:Ignorable="d"
+        Title="WaferMapWindow" Height="600" Width="1000" Loaded="Window_Loaded" 
+        WindowStartupLocation="CenterOwner" AllowsTransparency="True" ResizeMode="CanResizeWithGrip" WindowStyle="None" >
+    <Window.Resources>
+        <common:SECSItemFormatData x:Key="SECSItemFormatData" />
+    </Window.Resources>
+    <Grid Background="{StaticResource UbiSamThemeBackground}">
+        <Grid.RowDefinitions >
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+
+        <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" Margin="5 5 5 0" >
+            <GroupBox Grid.Row="0" Header="Wafer Map Setting" Style="{StaticResource UbiSamThemeGroupBox}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="19" MinWidth="19" MaxWidth="19" />
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
+                    <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" >
+                        <GroupBox Header="Map Setup Data" >
+                            <Grid Margin="0 -24 0 0" >
+                                <Grid.RowDefinitions >
+                                    <RowDefinition Height="24" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <Controls:ClientMenuControl x:Name="ctlFunctionMapSetupData" Grid.Row="0" OnAdd="MapSetupData_OnAdd" OnRemove="MapSetupData_OnRemove" Margin="0 -27 1 0" />
+
+                                <DataGrid Name="dgrMapSetupData" Grid.Row="1" SelectionChanged="dgrMapSetupData_SelectionChanged" FrozenColumnCount="1"
+                                          IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                          >
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="MID" Binding="{Binding MaterialID}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="IDTYP" Binding="{Binding IDType}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="FNLOC" Binding="{Binding FlatNotchLocation}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="FFROT" Binding="{Binding FilmFrameRotation}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="ORLOC" Binding="{Binding OriginLocation}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="RPSEL" Binding="{Binding ReferencePointSelect}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="DUTMS" Binding="{Binding DieUnitsOfMeasure}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="XDIES" Binding="{Binding XAxisDieSize}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="YDIES" Binding="{Binding YAxisDieSize}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="ROWCT" Binding="{Binding RowCount}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="COLCT" Binding="{Binding ColumnCount}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="NULBC" Binding="{Binding NullBinCodeValue}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="BCEQU" Binding="{Binding BinCodeEquivalent}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="PRDCT" Binding="{Binding ProcessDieCount}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="PRAXI" Binding="{Binding ProcessAxis}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        <DataGridTextColumn Header="MLCL" Binding="{Binding MessageLength}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </GroupBox>
+                    </Border>
+
+                    <GridSplitter Grid.Column="1" Grid.Row="0" Style="{DynamicResource UbiSamThemeGridSplitter}" HorizontalAlignment="Center" ResizeDirection="Columns"/>
+
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="33" MinWidth="33" MaxWidth="33"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Row="0" Grid.Column="0" BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}" >
+                            <GroupBox Header="Reference Points" >
+                                <Grid Margin="0 -24 0 0" >
+                                    <Grid.RowDefinitions >
+                                        <RowDefinition Height="24" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+
+                                    <Controls:ClientMenuControl x:Name="ctlFunctionReferencePoint" Grid.Row="0" OnAdd="ReferencePoint_OnAdd" OnRemove="ReferencePoint_OnRemove" Margin="0 -27 1 0" />
+
+                                    <DataGrid Name="dgrReferencePoint" Grid.Row="1" FrozenColumnCount="1"
+                                          IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False"
+                                          >
+                                        <DataGrid.Columns>
+                                            <DataGridTextColumn Header="X" Binding="{Binding X}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                            <DataGridTextColumn Header="Y" Binding="{Binding Y}" EditingElementStyle="{StaticResource DataGridTextColumnEditing}" ElementStyle="{StaticResource DataGridTextColumnElement}" />
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+                                </Grid>
+                            </GroupBox>
+                        </Border>
+
+                        <Grid Grid.Row="1" Grid.Column="1" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Controls:UCUpDownButton x:Name="ctlUpDown" Grid.Row="1" OnFirst="ctlUpDown_OnFirst" OnUp="ctlUpDown_OnUp" OnDown="ctlUpDown_OnDown" OnLast="ctlUpDown_OnLast"/>
+                        </Grid>
+                    </Grid>
+                    
+                </Grid>
+            </GroupBox>
+        </Border>
+        <Border Grid.Row="1" Style="{StaticResource PopupBottomArea}">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Content="Save" Click="btnSave_Click" />
+                <Button Grid.Column="3" Content="Close" Click="btnClose_Click" IsCancel="True"/>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

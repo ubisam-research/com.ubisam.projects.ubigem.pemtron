@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 14.0.25420.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UbiSam.GEM.Sample.CSharp", "Ubisam.GEM.Sample.CSharp\UbiSam.GEM.Sample.CSharp.csproj", "{96331E43-783A-480C-AF1B-90408AE5ED83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96331E43-783A-480C-AF1B-90408AE5ED83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96331E43-783A-480C-AF1B-90408AE5ED83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96331E43-783A-480C-AF1B-90408AE5ED83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96331E43-783A-480C-AF1B-90408AE5ED83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B69D6B1-5E46-425A-A0D2-C3D6892E181E}
+	EndGlobalSection
+EndGlobal

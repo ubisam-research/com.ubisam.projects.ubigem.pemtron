@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MessageList>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F1</MessageName>
+      <Stream>1</Stream>
+      <Function>1</Function>
+      <Direction>Both</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Are You There Request</Description>
+    </Header>
+    <DataItem />
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F2_ToHost</MessageName>
+      <Stream>1</Stream>
+      <Function>2</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Are You There Request</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <A ItemName="MDLN" Count="20" IsFixed="false" DefaultValue="UbiSAM" />
+        <A ItemName="SOFTREV" Count="20" IsFixed="false" DefaultValue="SWREV" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S1F2_ToEqp</MessageName>
+      <Stream>1</Stream>
+      <Function>2</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Are You There Request</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="0" IsFixed="true" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F41</MessageName>
+      <Stream>2</Stream>
+      <Function>41</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Host Command Send</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <A ItemName="RCMD" Count="1000" IsFixed="false" />
+        <L ItemName="CPCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="CPINFO" Count="2" IsFixed="true">
+            <A ItemName="CPNAME" Count="1000" IsFixed="false" />
+            <X ItemName="CPVAL" Count="1000" IsFixed="false" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F42</MessageName>
+      <Stream>2</Stream>
+      <Function>42</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Host Command Send</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="2" IsFixed="true">
+        <B ItemName="HCACK" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="CPCOUNT" Count="1000" IsFixed="false">
+          <L ItemName="CPINFO" Count="2" IsFixed="true">
+            <A ItemName="CPNAME" Count="1000" IsFixed="false" />
+            <B ItemName="CPACK" Count="1" IsFixed="true" DefaultValue="0" />
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F11</MessageName>
+      <Stream>6</Stream>
+      <Function>11</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Event Report Send</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <I4 ItemName="DATAID" Count="1" IsFixed="true" DefaultValue="0" />
+        <I4 ItemName="CEID" Count="1" IsFixed="true" DefaultValue="0" />
+        <L ItemName="RPTIDCOUNT" Count="100" IsFixed="false">
+          <L ItemName="RPTINFO" Count="2" IsFixed="true">
+            <I4 ItemName="RPTID" Count="1" IsFixed="true" DefaultValue="0" />
+            <L ItemName="VCOUNT" Count="1000" IsFixed="false">
+              <X ItemName="V" Count="10000" IsFixed="false" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S6F12</MessageName>
+      <Stream>6</Stream>
+      <Function>12</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Event Report Send</Description>
+    </Header>
+    <DataItem>
+      <B ItemName="ACKC6" Count="1" IsFixed="true" DefaultValue="0" />
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F79</MessageName>
+      <Stream>2</Stream>
+      <Function>79</Function>
+      <Direction>ToHost</Direction>
+      <WaitBit>true</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Glass Data Request</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="4" IsFixed="true">
+        <U2 ItemName="UNITID" Count="1" IsFixed="true" />
+        <A ItemName="GLSID" Count="16" IsFixed="true" />
+        <U2 ItemName="GLSCODE" Count="1" IsFixed="true" />
+        <A ItemName="REQOPTION" Count="1" IsFixed="true" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F80_L0</MessageName>
+      <Stream>2</Stream>
+      <Function>80</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Glass Data</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <U2 ItemName="UNITID" Count="1" IsFixed="true" />
+        <B ItemName="ACKC2" Count="1" IsFixed="true" />
+        <L ItemName="GLSINFO" Count="0" IsFixed="true" />
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <SECSMessage>
+    <Header>
+      <MessageName>S2F80_L21</MessageName>
+      <Stream>2</Stream>
+      <Function>80</Function>
+      <Direction>ToEquipment</Direction>
+      <WaitBit>false</WaitBit>
+      <AutoReply>false</AutoReply>
+      <NoLogging>false</NoLogging>
+      <Description>Glass Data</Description>
+    </Header>
+    <DataItem>
+      <L ItemName="L" Count="3" IsFixed="true">
+        <U2 ItemName="UNITID" Count="1" IsFixed="true" />
+        <B ItemName="ACKC2" Count="1" IsFixed="true" />
+        <L ItemName="GLSINFO" Count="21" IsFixed="true">
+          <A ItemName="LOTID" Count="16" IsFixed="true" />
+          <A ItemName="CSTID" Count="14" IsFixed="true" />
+          <A ItemName="SLOTID" Count="3" IsFixed="true" />
+          <A ItemName="RECIPEID" Count="24" IsFixed="true" />
+          <A ItemName="PRCID" Count="8" IsFixed="true" />
+          <A ItemName="GLSODR" Count="1" IsFixed="true" />
+          <A ItemName="GLSID" Count="16" IsFixed="true" />
+          <A ItemName="GLSJUDGE" Count="2" IsFixed="true" />
+          <A ItemName="PNLIF" Count="400" IsFixed="true" />
+          <A ItemName="SUBMDLIF" Count="400" IsFixed="true" />
+          <B ItemName="PORTID" Count="1" IsFixed="true" />
+          <U2 ItemName="GLSCODE" Count="1" IsFixed="true" />
+          <B ItemName="REINPUT" Count="1" IsFixed="true" />
+          <A ItemName="GLSTHICK" Count="5" IsFixed="true" />
+          <A ItemName="PARTNUM" Count="14" IsFixed="true" />
+          <A ItemName="PRODTYPE" Count="12" IsFixed="true" />
+          <A ItemName="ATTRIBUTE" Count="12" IsFixed="true" />
+          <A ItemName="GLSTYPE" Count="1" IsFixed="true" />
+          <A ItemName="KEYID" Count="32" IsFixed="true" />
+          <L ItemName="LSDCOUNT" Count="100" IsFixed="false">
+            <L ItemName="LSDINFO" Count="2" IsFixed="true">
+              <A ItemName="LSDITEM" Count="24" IsFixed="true" />
+              <A ItemName="LSDVALUE" Count="40" IsFixed="true" />
+            </L>
+          </L>
+          <L ItemName="GSDCOUNT" Count="100" IsFixed="false">
+            <L ItemName="GSDINFO" Count="2" IsFixed="true">
+              <A ItemName="GSDITEM" Count="24" IsFixed="true" />
+              <A ItemName="GSDVALUE" Count="40" IsFixed="true" />
+            </L>
+          </L>
+        </L>
+      </L>
+    </DataItem>
+  </SECSMessage>
+  <WrapperInfo>
+    <FileName>D:\Work\UbiSam\UbiCom\MessageDefine_Wrapper\Data\WrapperTest.dll</FileName>
+    <Namespace>UbiCom.Sample.Wrapper.EQP</Namespace>
+    <ClassName>EQPDriver</ClassName>
+    <DeviceType>Equipment</DeviceType>
+  </WrapperInfo>
+</MessageList>

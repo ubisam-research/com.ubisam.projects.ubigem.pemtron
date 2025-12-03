@@ -1,0 +1,76 @@
+﻿<Window x:Class="UbiSam.Net.KeyLock.Checker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UbiSam.Net.KeyLock.Checker"
+        x:Name="mainWindow"
+        mc:Ignorable="d"
+        Background="{StaticResource UbiSamThemeBackground}"
+        Title="UBISAM Keylock Checker V2.2.0" Height="500" Width="800" WindowStartupLocation="CenterScreen" 
+        ResizeMode="NoResize"
+        Loaded="mainWindow_Loaded" Closing="mainWindow_Closing">
+    <Window.Resources>
+        <Style x:Key="Button" TargetType="Button">
+            <Setter Property="IsEnabled" Value="True" />
+        </Style>
+        <Style x:Key="DataGrid" TargetType="DataGrid">
+            <Setter Property="IsEnabled" Value="True" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="120" />
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Border BorderThickness="1" >
+            <GroupBox Header="License Info" >
+                <Border BorderThickness="1" BorderBrush="{StaticResource UbiSamThemeBorderBrush}">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="Verify Result"/>
+                        <Label Grid.Row="0" Grid.Column="1" Name="lblVerifyResult"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Licensed Products"/>
+                        <Label Grid.Row="1" Grid.Column="1" Name="lblLicensedProducts"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="Licensed Products"/>
+                    </Grid>
+                </Border>
+            </GroupBox>
+        </Border>
+        <Border Grid.Row="1" Name="borderUSBLicense" BorderThickness="1" >
+            <GroupBox Header="Available USB" >
+                <Grid >
+                    <DataGrid Name="dgrAvailableTarget" FrozenColumnCount="1"
+                              IsReadOnly="False" CanUserAddRows="False" CanUserDeleteRows="False" AutoGenerateColumns="False"
+                              >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Result" Binding="{Binding LicenseInfo.Result}" IsReadOnly="True" />
+                            <DataGridTextColumn Header="Licensed Products" Binding="{Binding LicenseInfo.LicensedProducts}" IsReadOnly="True" />
+                            <DataGridTextColumn Header="Protected" Binding="{Binding IsProtected}" IsReadOnly="True" />
+                            <DataGridTextColumn Header="Key Info" Binding="{Binding LicenseInfo.USBKeyInfo}" IsReadOnly="True" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </GroupBox>
+        </Border>
+        <Border Grid.Column="0" Grid.Row="3" BorderThickness="0" Margin="5 5 5 0" Padding="0 5 0 5" >
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Content="Exit" Click="btnExit_Click" Style="{DynamicResource Button}" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

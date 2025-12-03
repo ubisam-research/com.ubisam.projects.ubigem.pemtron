@@ -1,0 +1,10 @@
+﻿### 1.0.2.1 : 2022/07/22
+  -. Keylock log 추가 : Keylock-OnRequestLogging
+  -. Timeout(T6, T7, T8) 발생 시 connection retry 하도록 보완
+
+### 1.0.2.0 : 2022/06/13
+  -. .net frame work 4.5 적용
+  -. 코드 정리
+
+### 1.0.0.13 : 2021/11/10
+  -. S9 중복 생성 시 마지막 instance 로 모든 message 변경되는 문제 수정
