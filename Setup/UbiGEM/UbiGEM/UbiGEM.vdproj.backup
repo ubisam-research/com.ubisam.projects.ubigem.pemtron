@@ -5776,7 +5776,7 @@
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CC1E0904454E450D9CBF10AC9D4A73E3"
             {
-            "SourcePath" = "8:C:\\Windows\\explorer.exe"
+            "SourcePath" = "8:C:\\Windows\\System32\\explorer.exe"
             "TargetName" = "8:explorer.exe"
             "Tag" = "8:"
             "Folder" = "8:_9FCD4D9B53DE43CC9067740F4FAFD866"
