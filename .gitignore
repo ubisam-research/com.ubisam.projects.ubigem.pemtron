@@ -223,5 +223,8 @@ FakesAssemblies/
 !BIN/
 !BIN/**
 
-!**/UbisamGEMSampleCPP.rc
 !**/UbiSam.GEM.Sample.CSharp.pdb
+!**/Ubisam.GEM.Sample.VBnet.pdb
+!**/UbisamGEMSampleCPP.rc
+!**/Ubisam.GEM.Sample.CPP.vcxproj.user
+!**/UbisamGEMSampleCPP.aps
