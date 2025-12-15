@@ -224,3 +224,4 @@ FakesAssemblies/
 !BIN/**
 
 !**/UbisamGEMSampleCPP.rc
+!**/UbiSam.GEM.Sample.CSharp.pdb
